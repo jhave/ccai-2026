@@ -6,9 +6,9 @@
    <title>Planetary Ecology II: The Water &amp; Wattage of #genAI in Context | A Comparative Analysis with Data Estimates (2026)</title>
 
    <!-- Standard meta tags -->
-   <meta name="description" content="A 2026 update to the comparative analysis of generative AI's environmental footprint. The year of disclosures (Google, Mistral, OpenAI), peer-reviewed water and carbon research, and IEA actuals confirm: a year of heavy chatbot use costs the atmosphere less than one tank of gasoline, and the watershed less than one hamburger — while the aggregate buildout becomes the fastest-growing industrial electricity load on Earth.">
+   <meta name="description" content="A 2026 update to the comparative analysis of generative AI's environmental footprint. The year of disclosures (Google, Mistral, OpenAI), peer-reviewed water and carbon research, and IEA actuals confirm: a year of standard chatbot use costs the atmosphere less than one tank of gasoline, and the watershed less than one hamburger — while the aggregate buildout becomes the fastest-growing industrial electricity load on Earth.">
    <meta name="author" content="Claude (Anthropic), from a prompt by David Jhave Johnston">
-   <meta name="keywords" content="carbon emissions, water footprint, climate impact, generative AI, data centers, military emissions, carbon footprint, planetary ecology, technosphere metabolism, Jevons paradox, extrapolation, climate crisis">
+   <meta name="keywords" content="carbon emissions, water footprint, climate impact, generative AI, data centers, military emissions, carbon footprint, planetary ecology, technosphere metabolism, Jevons paradox, extrapolation, climate crisis, agentic coding">
    <meta name="robot" content="index,follow">
 
    <!-- Open Graph meta tags for social media -->
@@ -327,6 +327,13 @@
   padding-bottom: 0.5rem;
 }
 
+.emissions-chart h3 {
+  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
 .chart-row {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
@@ -384,6 +391,16 @@
   min-width: 8px;
 }
 
+/* change-markers vs the May 2025 essay */
+.delta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #c00;
+}
+.delta.new { color: #3B82F6; }
+.delta.same { color: #999; }
+
 @media (max-width: 600px) {
   .chart-row { grid-template-columns: 130px 1fr 110px; }
   .chart-label .title { font-size: 13px; }
@@ -404,9 +421,124 @@
   <h2>+ A few Reflections on Boundaries, Curves, and Molecular Exchange (2026 Update)</h2>
   <tiny>Claude (Anthropic), from a prompt by David Jhave Johnston. 10.06.2026 &nbsp;·&nbsp; sequel to <a href="https://glia.ca/2025/ccai/">Planetary Ecology: Carbon Emissions of #genAI in Context (05.05.2025)</a></tiny>
 
-  <h3><b>TLDR;</b> as of mid-2026, the 2025 conclusion has survived a year of vastly better data: <i>individual</i> use of generative AI remains a minor part of the human carbon and water footprint — far below crypto, aviation, personal transport, diet, pets, golf irrigation, and especially <b>military emissions</b>. What changed: providers published measured per-prompt figures (which came in <i>lower</i> than prior guesses), while the <i>aggregate</i> buildout became the fastest-growing industrial electricity load on Earth. Both facts are true at once. Holding both is not fence-sitting; it is what the numbers say.</h3>
+  <h3><b>TLDR;</b> This research is a sequel to the May 2025 research post <i><a href="https://glia.ca/2025/ccai/">Planetary Ecology: Carbon Emissions of #genAI in Context (05.05.2025)</a></i>; wherever necessary, values have been updated to reflect new info. The 2025 conclusion has survived a year of vastly better data: <i>individual</i> use of generative AI remains a minor part of the human carbon and water footprint — far below crypto, aviation, personal transport, diet, pets, golf irrigation, and especially <b>military emissions</b>. What changed: providers published measured per-prompt figures (which came in <i>lower</i> than prior guesses), while the <i>aggregate</i> buildout became the fastest-growing industrial electricity load on Earth. Both facts are true at once. Holding both is not fence-sitting; it is what the numbers say.</h3>
 
   <h4><b>Disclaimer</b>: Most public disagreement about AI's footprint is not disagreement about physics; it is disagreement about <i>boundaries</i>, usually undeclared — marginal vs. amortized, on-site vs. full-chain, water withdrawal vs. consumption, median vs. mean, market-based vs. location-based emissions. Proprietary secrecy persists (OpenAI and Anthropic still publish no standalone audited footprint), reasoning models have fattened the per-query tail, and agentic workloads multiply queries invisibly. Everything below remains (≈) approximate — but considerably less approximate than it was in May 2025.</h4>
+
+<div class="divider">~</div>
+
+  <h3>Figure 0: Why Do Credible Estimates Differ by ~40× (carbon) and ~350× (water)?</h3>
+
+  <p>Before any comparison, the disparity itself needs explaining — because every camp in the AI-environment debate selects the estimate that flatters its thesis, and <i>all of these numbers are, within their own boundaries, correct</i>.</p>
+
+<div class="emissions-chart">
+  <h3>Carbon per chatbot text response (g CO₂e) — four credible answers</h3>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Google Gemini</span>
+      <span class="subtitle">(measured <b>median</b> prompt; market-based grid; Aug 2025)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar ai" style="width: 1.4%;"></div>
+    </div>
+    <div class="chart-value">0.03 g</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">GPT-4o benchmark</span>
+      <span class="subtitle">(independent measurement, ~1 Wh × avg US grid; Jegham et al.)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 18%;"></div>
+    </div>
+    <div class="chart-value">≈ 0.4 g</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Mistral Large 2</span>
+      <span class="subtitle">(<b>full lifecycle</b> LCA incl. training &amp; hardware, ADEME-audited; per 400-token response)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 52%;"></div>
+    </div>
+    <div class="chart-value">1.14 g</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">2025 essay's estimate</span>
+      <span class="subtitle">(ChatGPT, training-amortised heuristic; Tomlinson et al. 2024)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 100%;"></div>
+    </div>
+    <div class="chart-value">2.2 g</div>
+  </div>
+
+  <h3>Water per chatbot text response (mL) — five credible answers</h3>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">xAI Colossus 2</span>
+      <span class="subtitle">(on-site + amortized chip mfg; SemiAnalysis model, Mar 2026)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar ai" style="width: 0.3%;"></div>
+    </div>
+    <div class="chart-value">≈ 0.13 mL</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Google Gemini</span>
+      <span class="subtitle">(measured median; <b>on-site cooling only</b>)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar ai" style="width: 0.5%;"></div>
+    </div>
+    <div class="chart-value">0.26 mL</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">GPT-4o benchmark</span>
+      <span class="subtitle">(short query, <b>incl. off-site</b> electricity water; Jegham et al.)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 2.4%;"></div>
+    </div>
+    <div class="chart-value">≈ 1.2 mL</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">GPT-3-era response</span>
+      <span class="subtitle">(on-site + electricity-embedded, 2020-era infrastructure; Ren et al.)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 100%;"></div>
+    </div>
+    <div class="chart-value">≈ 10 – 50 mL</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Mistral Large 2</span>
+      <span class="subtitle">(<b>full lifecycle</b> incl. upstream agriculture-grade accounting; per 400-token response)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 90%;"></div>
+    </div>
+    <div class="chart-value">45 mL</div>
+  </div>
+</div>
+
+<div class="chart-notes">
+<p><b>Why the disparity?</b> Five reasons, in roughly descending order of effect. <b>(1) Boundary scope:</b> Google counts the on-site footprint of serving one prompt; Mistral counts a share of training, hardware manufacture, idle capacity, and upstream water — full-chain accounting is 10–100× wider by construction. <b>(2) Median vs. mean:</b> Google reports the median prompt; means are dragged upward by a heavy tail of long-context and reasoning queries (10–65× costlier). <b>(3) Grid accounting:</b> market-based figures credit purchased clean energy (Google's 0.03 g); location-based figures use the physical local grid (≈ 0.4 g for the same watt-hours on average US power). <b>(4) Model size &amp; tokens:</b> a 400-token response from a large model is simply more computation than a median short reply from an efficiency-routed one. <b>(5) Vintage:</b> per-prompt energy fell ~33× in the twelve months to August 2025 — estimates dated eighteen months apart describe different machines. The honest takeaway: <i>always ask which boundary, which statistic, which grid, which model, which year.</i> This essay states all five for every figure it uses.</p>
+</div>
 
 <div class="divider">~</div>
 
@@ -421,10 +553,10 @@
   <div class="divider">~</div>
 
   <h2>Annual Carbon Emissions by Activity (kg CO₂e)</h2>
-  <p>Linear scale comparison of carbon footprints [<b>estimates</b>] across human activities. Dedicated AI is colored <span style="color:#3B82F6;font-weight:bold">blue</span>.</p>
+  <p>Linear scale comparison of carbon footprints [<b>estimates</b>] across human activities. Dedicated AI is colored <span style="color:#3B82F6;font-weight:bold">blue</span>. Rows whose values changed since the May 2025 essay are marked <span class="delta">UPDATED ▼/▲</span>; rows added this year are marked <span class="delta new">NEW</span>; unmarked rows are unchanged.</p>
 
 <div class="emissions-chart">
-  <h2>Estimated CO₂ Emissions by Activity (June 2026)</h2>
+  <h2>Estimated CO₂ Emissions by Activity (UPDATED: June 10, 2026)</h2>
 
   <!-- Military -->
   <div class="chart-row">
@@ -438,11 +570,23 @@
     <div class="chart-value">≈ 25 – 40,000 kg/yr</div>
   </div>
 
+  <!-- Golf course -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Golf course, net</span>
+      <span class="subtitle">(one 18-hole facility / yr, after soil sequestration) <span class="delta new">NEW</span></span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 51.5%;"></div>
+    </div>
+    <div class="chart-value">≈ 20,600 kg/yr</div>
+  </div>
+
   <!-- Bitcoin mining -->
   <div class="chart-row">
     <div class="chart-label">
       <span class="title">Bitcoin mining rig</span>
-      <span class="subtitle">(one ASIC, annual)</span>
+      <span class="subtitle">(one ASIC, annual; network total revised ▼ to 39.8 Mt) <span class="delta">UPDATED ▼</span></span>
     </div>
     <div class="chart-bar-container">
       <div class="chart-bar" style="width: 22.5%;"></div>
@@ -490,7 +634,7 @@
   <div class="chart-row">
     <div class="chart-label">
       <span class="title">Typical US beef habit</span>
-      <span class="subtitle">(~26 kg beef / yr)</span>
+      <span class="subtitle">(~26 kg beef / yr) <span class="delta new">NEW</span></span>
     </div>
     <div class="chart-bar-container">
       <div class="chart-bar" style="width: 3.9%;"></div>
@@ -498,23 +642,35 @@
     <div class="chart-value">≈ 1,560 kg/yr</div>
   </div>
 
-  <!-- Generative AI heavy -->
+  <!-- Generative AI images extreme -->
   <div class="chart-row">
     <div class="chart-label">
-      <span class="title">Generative AI: extreme</span>
-      <span class="subtitle">(1,000 images/day or heavy reasoning agents, annual)</span>
+      <span class="title">Generative AI: images, extreme</span>
+      <span class="subtitle">(1,000 images/day, annual; 2025 top-end was 1,100) <span class="delta">UPDATED ▼</span></span>
     </div>
     <div class="chart-bar-container">
-      <div class="chart-bar ai" style="width: 1.0%;"></div>
+      <div class="chart-bar ai" style="width: 1.1%;"></div>
     </div>
-    <div class="chart-value">≈ 200 – 430 kg/yr</div>
+    <div class="chart-value">≈ 40 – 430 kg/yr</div>
+  </div>
+
+  <!-- Agentic coding extreme -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Agentic coding, extreme</span>
+      <span class="subtitle">(daily multi-agent workdays, ≈80% of a Max-plan budget) <span class="delta new">NEW</span></span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 0.75%;"></div>
+    </div>
+    <div class="chart-value">≈ 100 – 300 kg/yr</div>
   </div>
 
   <!-- Video streaming -->
   <div class="chart-row">
     <div class="chart-label">
       <span class="title">Video streaming</span>
-      <span class="subtitle">(2 hr/day, annual)</span>
+      <span class="subtitle">(2 hr/day, annual; IEA low-end added) <span class="delta">UPDATED ▼</span></span>
     </div>
     <div class="chart-bar-container tiny">
       <div class="chart-bar" style="width: 0.1%;"></div>
@@ -526,7 +682,7 @@
   <div class="chart-row">
     <div class="chart-label">
       <span class="title">Chatbot use</span>
-      <span class="subtitle">(50 queries / day, measured 2025–26)</span>
+      <span class="subtitle">(50 queries / day; 2025 estimate was ≈40 kg) <span class="delta">UPDATED ▼</span></span>
     </div>
     <div class="chart-bar-container tiny">
       <div class="chart-bar ai" style="width: 0.02%;"></div>
@@ -536,7 +692,8 @@
 </div>
 
 <div class="chart-notes">
-<p>The most consequential revision since May 2025 is the <b>chatbot row</b>: what was then estimated at ≈ 40 kg/yr (50 queries/day, 2.2 g/query) now computes to ≈ 0.5–7 kg/yr under measured per-prompt disclosures and independent benchmarks. The per-unit estimates moved <i>down</i> by roughly an order of magnitude as data replaced inference. The new <b>"extreme" row</b> is honest about the other direction: reasoning models consume 10–65× more energy per query than standard chat (DeepSeek-R1-class models ≈ 29 Wh on long prompts vs. ≈ 0.3 Wh for a median chat prompt), and agentic workflows issue hundreds of queries autonomously. The median fell; the tail grew.</p>
+<p><b>How to read the bars.</b> Bars are drawn at the <i>top</i> of each range (so "Generative AI: images, extreme" is drawn at 430 kg = 1.1% of the 40,000 kg military bar — proportionally correct, though visually slight). Bars under ~0.3% are floored at 8px minimum visibility, which is why streaming and chatbot bars look similar despite a ~6× difference; trust the printed values, not the pixels.</p>
+<p><b>What changed since May 2025.</b> The <b>chatbot row</b> fell from ≈40 kg/yr to ≈0.5–7 kg/yr as measured disclosures and independent benchmarks replaced the training-amortised heuristic. The <b>image-extreme top end</b> fell from 1,100 to ≈430 kg/yr: the 2025 figure extrapolated a 3 g/image cost for SD-3.5-Large via an N<sup>1.4</sup> scaling guess; measured FAccT data (≤2.9 Wh ≈ 1.2 g/image on average grids) replaced the guess. The <b>Bitcoin network total</b> was revised down by Cambridge (91.4 → 39.8 Mt); the per-rig heuristic stands. Two rows are <b>new</b>: agentic coding (the genuinely new heavy tail of 2025–26) and golf (carbon-modest, water-extreme — see the water chart below). Car, flight, dog, soldier: unchanged.</p>
 </div>
 
 <h3>Emissions Comparison Table (Math + Sources)</h3>
@@ -554,7 +711,7 @@
       <th>Activity</th>
       <th>Emission Estimate</th>
       <th>Source (APA + link)</th>
-      <th>Data Location · Math Synopsis</th>
+      <th>Data Location · Math Synopsis · Δ vs 2025</th>
     </tr>
   </thead>
   <tbody>
@@ -569,7 +726,24 @@
         <a href="https://watson.brown.edu/costsofwar/papers/ClimateChangeandCostofWar" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> SGR/CEOBS: scaled per-capita military energy use + supply chains ⇒ ~5.5% of global emissions — more than civil aviation and shipping combined. If the world's militaries were a nation, they would rank fourth. DoD self-reports ~51 Mt CO₂e FY2021 (≈ Sweden). Per-soldier: ~25 t (direct operational) to ~51 t (total ÷ active-duty count).
+        <b>Math.</b> SGR/CEOBS: scaled per-capita military energy use + supply chains ⇒ ~5.5% of global emissions — more than civil aviation and shipping combined. If the world's militaries were a nation, they would rank fourth. DoD self-reports ~51 Mt CO₂e FY2021 (≈ Sweden). Per-soldier: ~25 t (direct operational) to ~51 t (total ÷ active-duty count).<br>
+        <b>Δ 2025:</b> per-soldier figure unchanged; global total (2,750 Mt) added for scale.
+      </td>
+    </tr>
+
+    <!-- GOLF -->
+    <tr>
+      <td>Golf course (18-hole)</td>
+      <td>~20.6 t CO₂e yr⁻¹ <i>net</i> per course;<br>~60 – 96 t gross before sequestration;<br>~0.7 kg per round played</td>
+      <td>
+        Staples, A. (2023). <i>CarbonSave® Calculator</i> (GCSAA 2015 land-use medians), via Driving the Green.
+        <a href="https://www.drivingthegreen.golf/dtg-blog/can-golf-courses-achieve-a-real-zero-carbon-footprint" target="_blank">Link</a><br>
+        Tidåker, P., et al. (2017). "Energy use and greenhouse gas emissions from turf management of two Swedish golf courses." <i>Urban Forestry &amp; Urban Greening</i>.
+        <a href="https://www.sciencedirect.com/science/article/pii/S1618866716302692" target="_blank">Link</a>
+      </td>
+      <td>
+        <b>Math.</b> Industry calculator: typical course sequesters ~50 t yr⁻¹ in turf/soil yet still nets ~20.6 t. Peer-reviewed Swedish LCA: 1.0–1.6 t CO₂e ha⁻¹ yr⁻¹ gross × ~60 ha typical ⇒ 60–96 t gross. Per golfer: 20,600 kg ÷ ~30,000 rounds yr⁻¹ ≈ 0.7 kg per round.<br>
+        <b>Δ 2025:</b> new row. The nuance: golf is carbon-<i>modest</i> (one course ≈ 4–5 cars) but water-<i>extreme</i> (one course irrigates ≈ 431 million L yr⁻¹ — see water chart). Carbon and water rankings of the same activity can invert.
       </td>
     </tr>
 
@@ -583,8 +757,8 @@
         <a href="https://www.jbs.cam.ac.uk/2025/cambridge-study-sustainable-energy-rising-in-bitcoin-mining/" target="_blank">Summary</a>
       </td>
       <td>
-        <b>Math.</b> 2025 survey-based estimate: 138 TWh yr⁻¹ (~0.5% of global electricity, ≈ Poland), 39.8 Mt CO₂e, 52.4% sustainable energy mix.<br><br>
-        <b>Correction note.</b> The May 2025 essay cited 91.4 Mt CO₂e from the prior CBNSI model. Cambridge's 2025 measured-mix revision cut this by more than half. Estimates change; this essay changes with them.
+        <b>Math.</b> 2025 survey-based estimate: 138 TWh yr⁻¹ (~0.5% of global electricity, ≈ Poland), 39.8 Mt CO₂e, 52.4% sustainable energy mix.<br>
+        <b>Δ 2025:</b> the May 2025 essay cited 91.4 Mt CO₂e from the prior CBNSI model; Cambridge's measured-mix revision cut this by more than half. Estimates change; this essay changes with them.
       </td>
     </tr>
 
@@ -597,7 +771,8 @@
         <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> EPA average 4.6 t yr⁻¹ for 11,500 mi. Unchanged from 2025; the baseline holds.
+        <b>Math.</b> EPA average 4.6 t yr⁻¹ for 11,500 mi.<br>
+        <b>Δ 2025:</b> unchanged; the baseline holds.
       </td>
     </tr>
 
@@ -612,7 +787,8 @@
         <a href="https://iopscience.iop.org/article/10.1088/1748-9326/aa7541" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> CO₂ only ≈ 1.45 t (LHR–JFK RT); atmosfair radiative-forcing factor 2 ⇒ 2.9 t. Wynes &amp; Nicholas's peer-reviewed per-roundtrip figure is 1.6 t. Both are shown; the chart uses 2.9 t for continuity with the 2025 essay.
+        <b>Math.</b> CO₂ only ≈ 1.45 t (LHR–JFK RT); atmosfair radiative-forcing factor 2 ⇒ 2.9 t. Wynes &amp; Nicholas's peer-reviewed per-roundtrip figure is 1.6 t. Both shown; chart uses 2.9 t for continuity with the 2025 essay.<br>
+        <b>Δ 2025:</b> unchanged.
       </td>
     </tr>
 
@@ -629,8 +805,8 @@
         <a href="https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> Provider boundary: 0.03 g × 50 × 365 ≈ <b>0.55 kg yr⁻¹</b>. Independent boundary: ~1 Wh query⁻¹ (GPT-4o measured range 0.42–1.79 Wh) × ~0.4 kg CO₂ kWh⁻¹ (US grid) ≈ 0.4 g query⁻¹ ⇒ <b>~7 kg yr⁻¹</b>.<br><br>
-        The 2025 essay's 2.2 g query⁻¹ (Tomlinson et al., training-amortised) now sits at the very top of the plausible range; Google's measured median is 73× lower. Altman's unverified 0.34 Wh claim (<a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank">The Gentle Singularity</a>, June 2025) falls mid-range but supplied no methodology.
+        <b>Math.</b> Provider boundary: 0.03 g × 50 × 365 ≈ <b>0.55 kg yr⁻¹</b>. Independent boundary: ~1 Wh query⁻¹ (GPT-4o measured range 0.42–1.79 Wh) × ~0.4 kg CO₂ kWh⁻¹ (US grid average) ≈ 0.4 g query⁻¹ ⇒ <b>~7 kg yr⁻¹</b>. Altman's unverified 0.34 Wh claim (<a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank">The Gentle Singularity</a>, June 2025) falls mid-range but supplied no methodology.<br>
+        <b>Δ 2025:</b> was 2.2 g query⁻¹ / ≈40 kg yr⁻¹ (training-amortised heuristic). Measured data cut the central estimate ~10×; the old figure now sits at the very top of the plausible range.
       </td>
     </tr>
 
@@ -643,8 +819,24 @@
         <a href="https://arxiv.org/abs/2505.09598" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> Benchmarked: DeepSeek-R1 ≈ 29 Wh on long prompts vs. ≈ 2 Wh for DeepSeek-V3; reasoning tiers run 10–65× standard chat. 29 Wh × 0.4 kg kWh⁻¹ ≈ 11.6 g query⁻¹.<br><br>
-        This is the genuinely new term since 2025: inference-time scaling means the <i>same question</i> can cost 100× more depending on how long the model "thinks." Medians hide this tail.
+        <b>Math.</b> Benchmarked: DeepSeek-R1 ≈ 29 Wh on long prompts vs. ≈ 2 Wh for DeepSeek-V3; reasoning tiers run 10–65× standard chat. 29 Wh × 0.4 kg kWh⁻¹ ≈ 11.6 g query⁻¹.<br>
+        <b>Δ 2025:</b> new row — inference-time scaling barely existed when the 2025 essay was drafted. The <i>same question</i> can now cost 100× more depending on how long the model "thinks." Medians hide this tail.
+      </td>
+    </tr>
+
+    <!-- AGENTIC CODING -->
+    <tr>
+      <td>Agentic coding, extreme<br>(≈80% of a Max-plan budget)</td>
+      <td>~41 Wh per median agent session;<br>~1.3 kWh per heavy multi-agent workday;<br>≈ 100 – 300 kg CO₂e yr⁻¹</td>
+      <td>
+        Couch, S. (2026, January 20). <i>Electricity use of AI coding agents</i>.
+        <a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/" target="_blank">Link</a><br>
+        Anthropic. (2025–26). <i>How do usage and length limits work?</i> Claude Help Center.
+        <a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" target="_blank">Link</a>
+      </td>
+      <td>
+        <b>Math.</b> Couch's measurement-based scaling: a median coding-agent session ≈ 41 Wh (≈138× a typical chat query); a workday of parallel agents ≈ 1.3 kWh — "about one dishwasher run." Annualized: 1.3 kWh × 250–365 days ≈ 325–475 kWh yr⁻¹ × 0.37–0.4 kg kWh⁻¹ ≈ <b>120–190 kg</b>; sustained near a Max-20× weekly ceiling (≈80% utilization — on the order of 1+ billion tokens/month, a documented heavy-user scale) plausibly reaches <b>~300 kg yr⁻¹</b>.<br>
+        <b>Δ 2025:</b> new row, and the most important one for honest self-accounting: an extreme agentic-coding year (~upper bound 300 kg) ≈ 6.5% of a car, ≈ 10% of a transatlantic round trip, ≈ 475 kWh ≈ 4.5% of average US household electricity (~10,500 kWh yr⁻¹).
       </td>
     </tr>
 
@@ -657,8 +849,8 @@
         <a href="https://dl.acm.org/doi/10.1145/3630106.3658542" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> Measured inference: 0.1 g image⁻¹ (tiny models) to ~1.2 g (SD-XL-class at 2.9 Wh image⁻¹ × 0.4 kg kWh⁻¹). At 1,000 images day⁻¹ × 365: ≈ 40 – 430 kg yr⁻¹.<br><br>
-        The 2025 claim survives, strengthened: a year of generating 1,000 images <i>every day</i> still emits less than feeding a large dog for that year, and far less than one transatlantic round trip. (Video generation is orders of magnitude costlier per output and remains undisclosed by providers.)
+        <b>Math.</b> Measured inference: 0.1 g image⁻¹ (tiny models) to ~1.2 g (SD-XL-class at 2.9 Wh image⁻¹ × 0.4 kg kWh⁻¹). At 1,000 images day⁻¹ × 365: ≈ 40 – 430 kg yr⁻¹ (coal-heavy grids push toward ~600).<br>
+        <b>Δ 2025:</b> range top reduced from 1,100 kg: the old top extrapolated 3 g image⁻¹ for SD-3.5-Large via an N<sup>1.4</sup> scaling guess; measured data replaced it. The 2025 claim survives, strengthened: a year of 1,000 images <i>every day</i> still emits less than feeding a large dog, and far less than one transatlantic round trip. (Video generation is orders of magnitude costlier per output and remains undisclosed by providers.)
       </td>
     </tr>
 
@@ -673,8 +865,8 @@
         <a href="https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools/carbon-impact-of-video-streaming" target="_blank">Link</a>
       </td>
       <td>
-        <b>Math.</b> IEA central estimate 36 g h⁻¹; Carbon Trust European average 55 g h⁻¹. × 2 h day⁻¹ × 365 = 26 – 40 kg yr⁻¹.<br><br>
-        For calibration: a 50-query chatbot day costs about the same as <b>2–20 minutes</b> of streaming.
+        <b>Math.</b> IEA central estimate 36 g h⁻¹; Carbon Trust European average 55 g h⁻¹. × 2 h day⁻¹ × 365 = 26 – 40 kg yr⁻¹.<br>
+        <b>Δ 2025:</b> the 2025 essay used the 55 g figure only; the IEA's lower fact-checked central estimate widens the range downward. For calibration: a 50-query chatbot day costs about the same as <b>2–20 minutes</b> of streaming.
       </td>
     </tr>
 
@@ -688,7 +880,8 @@
         <a href="https://ourworldindata.org/food-choice-vs-eating-local" target="_blank">OWID summary</a>
       </td>
       <td>
-        <b>Math.</b> Global-average beef-herd intensity ≈ 60 kg CO₂e kg⁻¹ × ~26 kg per-capita US consumption ≈ 1.56 t yr⁻¹. One beef habit ≈ 200–3,000 years of measured chatbot use.
+        <b>Math.</b> Global-average beef-herd intensity ≈ 60 kg CO₂e kg⁻¹ × ~26 kg per-capita US consumption ≈ 1.56 t yr⁻¹. One beef habit ≈ 200–3,000 years of measured chatbot use.<br>
+        <b>Δ 2025:</b> new row (the 2025 essay treated diet as meat-rich vs. vegan totals: 2,620 vs. 1,055 kg — both still valid; this row isolates the beef component).
       </td>
     </tr>
   </tbody>
@@ -697,89 +890,123 @@
 
  <div class="divider">~</div>
 
- <p><b>Note</b>: All these are estimates. Provider per-prompt figures exclude <i>embodied emissions</i> — chip fabrication, data-centre concrete and steel, the <i>cradle-to-grave</i> pathways — which remain the largest disclosure gap (Mistral's audited LCA suggests hardware adds meaningful but not dominant share; the embodied-carbon literature is still thin). Little is quantitatively exact in such sprawling planetary systems. But pause to consider: the claim that anchored the 2025 essay — an AI user generating 1,000 images per day <i>for an entire year</i> cumulatively generates <i>less than</i> the climate impact of feeding a large pet dog, or one passenger seat on a transatlantic flight — has now been <b>confirmed and strengthened</b> by measured disclosure data.</p>
+ <p><b>Note</b>: All these are estimates. Provider per-prompt figures exclude <i>embodied emissions</i> — chip fabrication, data-centre concrete and steel, the <i>cradle-to-grave</i> pathways — which remain the largest disclosure gap (Mistral's audited LCA suggests hardware adds a meaningful but not dominant share). Little is quantitatively exact in such sprawling planetary systems. But pause to consider: the claim that anchored the 2025 essay — an AI user generating 1,000 images per day <i>for an entire year</i> cumulatively generates <i>less than</i> the climate impact of feeding a large pet dog, or one passenger seat on a transatlantic flight — has now been <b>confirmed and strengthened</b> by measured disclosure data. And its new agentic corollary: a programmer running coding agents all day, every day, at ~80% of a Max-plan budget, still emits less per year than <b>one-tenth of one transatlantic round trip</b>.</p>
 
  <div class="divider">~</div>
 
  <h2>Water: The Argument That Changed the Most</h2>
 
- <p>In 2025, water was the sharpest front of the AI-environment debate, argued largely from a single (excellent) paper. In 2026 there is data. The peer-reviewed anchor remains Li, Yang, Islam &amp; Ren's <i>Making AI Less "Thirsty"</i> (arXiv 2023; <i>Communications of the ACM</i>, 2025): training GPT-3 consumed ~700,000 L of on-site water (~5.4 million L including off-site); GPT-3-era inference "drank" a 500 mL bottle per 10–50 medium responses; global AI demand could withdraw 4.2–6.6 billion m³ in 2027 — half a United Kingdom (<a href="https://arxiv.org/abs/2304.03271">Ren et al.</a>). Google's measured median — <b>0.26 mL per prompt</b> — is three orders of magnitude below the "bottle of water per conversation" meme. Both are defensible. They measure different boundaries: Google counts on-site cooling evaporation for a median prompt on current infrastructure; Ren et al. count on-site <i>plus</i> the water evaporated generating the electricity, for a 2020-era model — and Ren has publicly criticized Google's figure for omitting exactly that indirect share.</p>
+ <p>In 2025, water was the sharpest front of the AI-environment debate, argued largely from a single (excellent) paper. In 2026 there is data. The peer-reviewed anchor remains Li, Yang, Islam &amp; Ren's <i>Making AI Less "Thirsty"</i> (arXiv 2023; <i>Communications of the ACM</i>, 2025): training GPT-3 consumed ~700,000 L of on-site water (~5.4 million L including off-site); GPT-3-era inference "drank" a 500 mL bottle per 10–50 medium responses; global AI demand could withdraw 4.2–6.6 billion m³ in 2027 — half a United Kingdom (<a href="https://arxiv.org/abs/2304.03271">Ren et al.</a>). Google's measured median — <b>0.26 mL per prompt</b> — is three orders of magnitude below the "bottle of water per conversation" meme. Both are defensible; as Figure 0 showed, they measure different boundaries — and Ren has publicly criticized Google's figure for omitting exactly the indirect, electricity-embedded share. Independent benchmarking now sits between them: a short GPT-4o query ≈ 1.2 mL including off-site water; the most efficient small models &lt; 2 mL even on long prompts; DeepSeek-R1-class reasoning on long prompts &gt; 200 mL (<a href="https://arxiv.org/abs/2505.09598">Jegham et al.</a>).</p>
+
+<p>The data-dense independent treatment is SemiAnalysis's <i>From Tokens to Burgers — A Water Footprint Face-Off</i> (March 2026): a bottom-up model of xAI's 400 MW Colossus 2 facility in Memphis — ~267 million gallons evaporated annually for cooling, ~66 million withdrawn-but-returned for adiabatic flushing, ~13 million gallons/year of amortized chip-manufacturing water; ~346 million gallons/year total; water-use effectiveness 0.51 L/kWh. Their comparisons are deliberately vertiginous: <b>one hamburger (245 gallons ≈ 927 L embedded, ~95% in beef) equals the water footprint of using Grok thirty times a day for 668 years</b>; the entire Colossus 2 campus consumes only ~2.4× the water of the burgers sold by a single In-N-Out restaurant (<a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis</a>).</p>
+
+<h2>Estimated Water Footprint by Activity (June 2026)</h2>
+<p>Annual, personal-scale comparison, in litres per year, <b>with ambiguity ranges</b> — the AI rows span the full boundary disagreement (on-site-only at the low end; full-chain at the high end). Dedicated AI is colored <span style="color:#3B82F6;font-weight:bold">blue</span>.</p>
 
 <div class="emissions-chart">
-  <h2>Water per AI Text Response: Same Question, Five Boundaries (mL)</h2>
+  <h2>Estimated Water Footprint by Activity (June 2026)</h2>
 
+  <!-- Golf course -->
   <div class="chart-row">
     <div class="chart-label">
-      <span class="title">xAI Colossus 2</span>
-      <span class="subtitle">(incl. amortized chip mfg; SemiAnalysis model)</span>
-    </div>
-    <div class="chart-bar-container tiny">
-      <div class="chart-bar ai" style="width: 0.3%;"></div>
-    </div>
-    <div class="chart-value">≈ 0.13 mL</div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-label">
-      <span class="title">Gemini median prompt</span>
-      <span class="subtitle">(on-site only; Google, measured)</span>
-    </div>
-    <div class="chart-bar-container tiny">
-      <div class="chart-bar ai" style="width: 0.6%;"></div>
-    </div>
-    <div class="chart-value">0.26 mL</div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-label">
-      <span class="title">ChatGPT average</span>
-      <span class="subtitle">(OpenAI claim, boundary unstated)</span>
-    </div>
-    <div class="chart-bar-container tiny">
-      <div class="chart-bar ai" style="width: 0.7%;"></div>
-    </div>
-    <div class="chart-value">≈ 0.32 mL</div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-label">
-      <span class="title">GPT-3-era response</span>
-      <span class="subtitle">(on-site + electricity-embedded; Ren et al.)</span>
-    </div>
-    <div class="chart-bar-container">
-      <div class="chart-bar ai" style="width: 55%;"></div>
-    </div>
-    <div class="chart-value">≈ 10 – 50 mL</div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-label">
-      <span class="title">Mistral Large 2</span>
-      <span class="subtitle">(400-token response, full lifecycle, ADEME-audited)</span>
-    </div>
-    <div class="chart-bar-container">
-      <div class="chart-bar ai" style="width: 100%;"></div>
-    </div>
-    <div class="chart-value">45 mL</div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-label">
-      <span class="title">One hamburger</span>
-      <span class="subtitle">(embedded water, ~95% in beef; reference)</span>
+      <span class="title">Golf course irrigation</span>
+      <span class="subtitle">(one 18-hole US course / yr — <b>~1,000× this chart's scale</b>)</span>
     </div>
     <div class="chart-bar-container">
       <div class="chart-bar" style="width: 100%;"></div>
     </div>
-    <div class="chart-value">≈ 927,000 mL (≈ 20,600× chart max)</div>
+    <div class="chart-value">≈ 431,000,000 L/yr</div>
+  </div>
+
+  <!-- Beef habit -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Typical US beef habit</span>
+      <span class="subtitle">(~26 kg beef / yr × 15,400 L/kg, global avg)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 100%;"></div>
+    </div>
+    <div class="chart-value">≈ 400,000 L/yr</div>
+  </div>
+
+  <!-- Coffee -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Daily coffee habit</span>
+      <span class="subtitle">(1 cup/day × ~140 L embedded per cup)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 12.8%;"></div>
+    </div>
+    <div class="chart-value">≈ 51,000 L/yr</div>
+  </div>
+
+  <!-- Shower -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Daily 8-minute shower</span>
+      <span class="subtitle">(2.1 gal/min WaterSense head; direct use)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 5.8%;"></div>
+    </div>
+    <div class="chart-value">≈ 23,000 L/yr</div>
+  </div>
+
+  <!-- Reasoning-heavy chat -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Reasoning-heavy AI use</span>
+      <span class="subtitle">(50 long reasoning queries/day; efficient models → R1-class)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 0.93%;"></div>
+    </div>
+    <div class="chart-value">≈ 70 – 3,700 L/yr</div>
+  </div>
+
+  <!-- Agentic coding -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Agentic coding, extreme</span>
+      <span class="subtitle">(≈80% Max-plan budget; on-site WUE → full-chain)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 0.6%;"></div>
+    </div>
+    <div class="chart-value">≈ 240 – 2,400 L/yr</div>
+  </div>
+
+  <!-- One hamburger -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">ONE hamburger</span>
+      <span class="subtitle">(single burger, embedded water, ~95% in beef)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 0.23%;"></div>
+    </div>
+    <div class="chart-value">≈ 927 L <i>each</i></div>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Chatbot use</span>
+      <span class="subtitle">(50 queries/day; on-site median → full lifecycle)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar ai" style="width: 0.2%;"></div>
+    </div>
+    <div class="chart-value">≈ 5 – 820 L/yr</div>
   </div>
 </div>
 
 <div class="chart-notes">
-<p>The ~350× spread between the smallest and largest per-response water figures is almost entirely a function of <b>what is counted</b>, not disagreement about physics. The burger bar is rendered at chart width for legibility; at true scale it would extend roughly twenty thousand chart-widths.</p>
+<p><b>Math &amp; sources.</b> Chatbot: 50 q/day × 365 = 18,250 q/yr; × 0.26 mL (Google, on-site) ≈ 5 L; × 1.2 mL (Jegham, incl. off-site) ≈ 22 L; × 45 mL (Mistral, full lifecycle) ≈ 820 L. Reasoning-heavy: × ~4 mL (efficient) to ~200 mL (R1-class long prompts) ⇒ 70–3,700 L. Agentic coding: ~475 kWh/yr × 0.5 L/kWh on-site WUE ≈ 240 L; × ~4–5 L/kWh including electricity-embedded water (Ren et al. US averages) ≈ 2,400 L. Burger: SemiAnalysis, 245 gal. Beef: Mekonnen &amp; Hoekstra (2012), ~15,400 L/kg. Coffee: Water Footprint Network, ~140 L/cup (mostly rain-fed "green" water — a real but categorically gentler draw than datacenter evaporation in a stressed basin). Shower: EPA WaterSense 2.1 gal/min × 8 min × 365. Golf: USGA average ~312,000 gal/day per 18-hole course × 365 ≈ 431 million L (bar truncated at chart width; at true scale it would be ~1,000 chart-widths).</p>
+<p><b>Reading the ranges.</b> The AI bars are drawn at the top of their ranges and still barely register against food and turf. Even the most damning boundary (full-lifecycle, reasoning-heavy, 3,700 L/yr) equals four burgers, two months of one person's showers, or <b>0.0009%</b> of one golf course's irrigation. And the caveats cut both ways: green-vs-blue water matters (coffee's 140 L is mostly rainfall on plantations; a datacenter's 0.26 mL is evaporated potable water in a specific basin), so cross-category comparisons orient but do not absolve. The local siting problem below is where the genuine water issue lives.</p>
 </div>
-
-<p>The data-dense independent treatment is SemiAnalysis's <i>From Tokens to Burgers — A Water Footprint Face-Off</i> (March 2026): a bottom-up model of xAI's 400 MW Colossus 2 facility in Memphis — ~267 million gallons evaporated annually for cooling, ~66 million withdrawn-but-returned for adiabatic flushing, ~13 million gallons/year of amortized chip-manufacturing water; ~346 million gallons/year total; water-use effectiveness 0.51 L/kWh. Their comparisons are deliberately vertiginous: <b>one hamburger (245 gallons embedded) equals the water footprint of using Grok thirty times a day for 668 years</b>; the entire Colossus 2 campus consumes only ~2.4× the water of the burgers sold by a single In-N-Out restaurant (<a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis</a>).</p>
 
 <div class="emissions-chart">
   <h2>Annual Water Consumption, United States (billions of gallons / yr)</h2>
@@ -812,7 +1039,7 @@
       <span class="subtitle">(projected direct, 2028)</span>
     </div>
     <div class="chart-bar-container">
-      <div class="chart-bar ai" style="width: 10%;"></div>
+      <div class="chart-bar ai" style="width: 13.3%;"></div>
     </div>
     <div class="chart-value">38 – 73</div>
   </div>
@@ -831,7 +1058,7 @@
   <div class="chart-row">
     <div class="chart-label">
       <span class="title">US golf course irrigation</span>
-      <span class="subtitle">(~1.5 billion gallons / day)</span>
+      <span class="subtitle">(~1.5 billion gallons / day, all ~16,000 courses)</span>
     </div>
     <div class="chart-bar-container">
       <div class="chart-bar" style="width: 100%;"></div>
@@ -963,21 +1190,39 @@ new Chart(
     </div>
 
     <div class="category-card">
-      <h4>Generative AI: the Reasoning &amp; Agentic Tail</h4>
-      <p class="emissions-value">~18 – 40 Wh per long reasoning query; 10 – 65× standard chat</p>
-      <p class="usage-metric">Chain-of-thought models (o3 / DeepSeek-R1 class) on long prompts; agentic coding sessions issuing hundreds of autonomous queries</p>
-      <p>Inference-time scaling — the technique behind 2025–26's reasoning gains — spends compute at answer time. The same question can cost 100× more depending on how long the model deliberates. Agentic workflows compound this: a single "task" may fan out into hundreds of model calls. Early empirical measurement of AI coding agents confirms session totals in the tens-to-hundreds of watt-hours — the energy of minutes of microwave use, but per task rather than per query, and invisible to the user who typed one sentence.</p>
-      <p class="methodological-note">Note: this is the genuinely new uncertainty since the 2025 essay. Median-prompt disclosures do not cover it; no provider has yet published reasoning-mode or video-generation footprints.</p>
-      <p><a href="https://arxiv.org/abs/2505.09598" target="_blank">Jegham et al. (2025). "How Hungry is AI?"</a> &amp; <a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/" target="_blank">Couch (2026). "Electricity use of AI coding agents."</a></p>
+      <h4>Generative AI: the Reasoning Tail</h4>
+      <p class="emissions-value">~18 – 40 Wh per long reasoning query; 10 – 65× standard chat; &gt;200 mL water per long R1-class query</p>
+      <p class="usage-metric">Chain-of-thought models (o3 / DeepSeek-R1 class) on long prompts</p>
+      <p>Inference-time scaling — the technique behind 2025–26's reasoning gains — spends compute at answer time. The same question can cost 100× more depending on how long the model deliberates, and the water follows the watts: the most efficient models stay under 2–4 mL per query while R1-class deployments exceed 200 mL on long prompts. Median-prompt disclosures do not cover this tail; no provider has yet published reasoning-mode or video-generation footprints.</p>
+      <p class="methodological-note">Note: this is the genuinely new uncertainty since the 2025 essay, and the strongest argument against complacency about per-query trivia: the tail is fat, growing, and undisclosed.</p>
+      <p><a href="https://arxiv.org/abs/2505.09598" target="_blank">Jegham et al. (2025). "How Hungry is AI?"</a></p>
+    </div>
+
+    <div class="category-card">
+      <h4>Generative AI: Agentic Coding — the New Heavy Tail <span class="delta new">NEW</span></h4>
+      <p class="emissions-value">≈ 41 Wh per median agent session · ≈ 1.3 kWh per heavy multi-agent workday · ≈ 100–300 kg CO₂e and 240–2,400 L water per extreme year</p>
+      <p class="usage-metric">Daily parallel coding agents at ~80% of a Claude-Max-class plan budget (order of 1+ billion tokens/month)</p>
+      <p>The first careful measurement-based estimate of agentic coding (Couch, January 2026) scales token-level energy figures to real Claude Code sessions: a median session ≈ 41 Wh — about 138 typical chat queries — and a workday of parallel agents ≈ 1.3 kWh, "about one dishwasher run" or a refrigerator-day. Annualized at extreme intensity this is ~325–475 kWh: real enough to deserve a row on the chart, small enough that a full year of it emits less than one-tenth of a single transatlantic round trip and ~5% of average US household electricity.</p>
+      <p class="methodological-note">Note: agentic workloads multiply queries invisibly — the user types one sentence; the agent issues hundreds of calls. This is where individual AI footprints will actually grow, and where per-"query" accounting quietly becomes obsolete. Water range spans on-site WUE (0.5 L/kWh) to full-chain (~4–5 L/kWh) boundaries.</p>
+      <p><a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/" target="_blank">Couch (2026). "Electricity use of AI coding agents."</a> &amp; <a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" target="_blank">Anthropic Help Center: usage limits</a></p>
     </div>
 
     <div class="category-card">
       <h4>Water: Boundaries &amp; Basins</h4>
       <p class="emissions-value">0.13 – 45 mL per response (boundary-dependent); US data centres 17.4 B gal direct / 211 B gal indirect (2023)</p>
       <p class="usage-metric">Per-response figures span on-site-only to full-lifecycle accounting; aggregate figures from the Congressionally-mandated LBNL assessment</p>
-      <p>Globally and nationally, AI's water draw is small: all US data centres directly consume ~3% of what US golf courses irrigate, and one hamburger embeds more water than centuries of daily chatbot use. Locally, the picture inverts: two-thirds of new US data centres since 2022 sit in high water-stress regions, and a gigawatt campus negotiates with a specific aquifer, not a national average. Closed-loop and dry-cooling designs (rising WUE transparency, Microsoft's zero-water designs, hybrid dry/adiabatic systems at Colossus 2) are the engineering response; siting policy is the political one.</p>
-      <p class="methodological-note">Note: always ask of any water figure — withdrawal or consumption? on-site or electricity-embedded? potable or reclaimed? The 350× spread in per-prompt estimates is boundary arithmetic, not controversy about physics.</p>
+      <p>Globally and nationally, AI's water draw is small: all US data centres directly consume ~3% of what US golf courses irrigate; a year of standard chatbot use (5–820 L, boundary-dependent) embeds less water than a single hamburger (927 L); even an extreme reasoning-heavy year (~3,700 L) equals four burgers or two months of showers. Locally, the picture inverts: two-thirds of new US data centres since 2022 sit in high water-stress regions, and a gigawatt campus negotiates with a specific aquifer, not a national average. Closed-loop and dry-cooling designs (rising WUE transparency, hybrid dry/adiabatic systems at Colossus 2) are the engineering response; siting policy is the political one.</p>
+      <p class="methodological-note">Note: always ask of any water figure — withdrawal or consumption? on-site or electricity-embedded? potable, reclaimed, or rain-fed "green" water? The 350× spread in per-prompt estimates is boundary arithmetic, not controversy about physics.</p>
       <p><a href="https://cacm.acm.org/sustainability-and-computing/making-ai-less-thirsty/" target="_blank">Li, Yang, Islam &amp; Ren (2025), CACM</a> &amp; <a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint" target="_blank">SemiAnalysis (2026)</a> &amp; <a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/" target="_blank">Bloomberg (2025)</a> &amp; <a href="https://spectrum.ieee.org/ai-water-usage" target="_blank">IEEE Spectrum</a></p>
+    </div>
+
+    <div class="category-card">
+      <h4>Golf: Carbon-Light, Water-Heavy <span class="delta new">NEW</span></h4>
+      <p class="emissions-value">≈ 20.6 t CO₂e net per course per year · ≈ 431 million L irrigation per course per year</p>
+      <p class="usage-metric">One typical 18-hole US facility; ~16,000 US courses ⇒ ~548 billion gallons/yr nationally</p>
+      <p>Golf earns its place in this analysis precisely because its two footprints invert: in carbon terms a course is modest (net ~20.6 t/yr after turf-soil sequestration — roughly four cars; ~0.7 kg per round played), but in water terms a single course irrigates more in a year than three hundred thousand years of heavy chatbot use, and the national fleet of courses out-consumes the entire US data-centre industry's direct draw thirty-fold. Any framework that ranks activities on one molecule only will misjudge activities like this — and like AI, whose carbon-vs-water profile also depends entirely on which boundary is queried.</p>
+      <p class="methodological-note">Note: golf carbon data is industry-calculator grade (flagged accordingly); the Swedish peer-reviewed LCA (1.0–1.6 t CO₂e/ha/yr gross) brackets it. Golf water data (USGA/GCSAA surveys) is robust. Many courses increasingly irrigate with recycled non-potable water — the same siting-and-sourcing nuance that applies to data centres.</p>
+      <p><a href="https://www.drivingthegreen.golf/dtg-blog/can-golf-courses-achieve-a-real-zero-carbon-footprint" target="_blank">Driving the Green / CarbonSave (GCSAA data)</a> &amp; <a href="https://www.sciencedirect.com/science/article/pii/S1618866716302692" target="_blank">Tidåker et al. (2017)</a> &amp; <a href="https://www.usga.org/content/dam/usga/pdf/Water%20Resource%20Center/how-much-water-does-golf-use.pdf" target="_blank">USGA water survey</a></p>
     </div>
 
     <div class="category-card">
@@ -1042,6 +1287,8 @@ new Chart(
 
 <p class="reference-item">Altman, Sam. 2025. "The Gentle Singularity." Personal blog, June 2025. <a href="https://blog.samaltman.com/the-gentle-singularity">https://blog.samaltman.com/the-gentle-singularity</a>. (0.34 Wh and 0.000085 gal per average ChatGPT query; no methodology provided. Reported with caveats by <a href="https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/">Data Center Dynamics</a>.)</p>
 
+<p class="reference-item">Anthropic. 2025–26. "How Do Usage and Length Limits Work?" Claude Help Center. <a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work">https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work</a>.</p>
+
 <p class="reference-item">atmosfair. n.d. "Flight CO₂ Calculator &amp; Climate Impact Methodology." Accessed June 2026. <a href="https://www.atmosfair.de/en/offset/flight/">https://www.atmosfair.de/en/offset/flight/</a>.</p>
 
 <p class="reference-item">Bloomberg News. 2025. "The AI Boom Is Draining Water From the Areas That Need It Most." <a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/</a>.</p>
@@ -1052,7 +1299,7 @@ new Chart(
 
 <p class="reference-item">Carbon Trust. 2021. "Carbon Impact of Video Streaming." <a href="https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools/carbon-impact-of-video-streaming">https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools/carbon-impact-of-video-streaming</a>.</p>
 
-<p class="reference-item">Couch, Simon P. 2026. "Electricity Use of AI Coding Agents." January 20, 2026. <a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/">https://simonpcouch.com/blog/2026-01-20-cc-impact/</a>.</p>
+<p class="reference-item">Couch, Simon P. 2026. "Electricity Use of AI Coding Agents." January 20, 2026. <a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/">https://simonpcouch.com/blog/2026-01-20-cc-impact/</a>. (Median coding-agent session ≈ 41 Wh ≈ 138 typical chat queries; heavy multi-agent workday ≈ 1.3 kWh ≈ one dishwasher run.)</p>
 
 <p class="reference-item">Crawford, Neta. 2019. "Pentagon Fuel Use, Climate Change, and the Costs of War." Watson Institute for International and Public Affairs, Brown University. <a href="https://watson.brown.edu/costsofwar/papers/ClimateChangeandCostofWar">https://watson.brown.edu/costsofwar/papers/ClimateChangeandCostofWar</a>.</p>
 
@@ -1060,7 +1307,7 @@ new Chart(
 
 <p class="reference-item">de Vries-Gao, Alex. 2025. "The Carbon and Water Footprints of Data Centers and What This Could Mean for Artificial Intelligence." <i>Patterns</i>, December 17, 2025. <a href="https://www.cell.com/patterns/fulltext/S2666-3899(25)00278-8">https://www.cell.com/patterns/fulltext/S2666-3899(25)00278-8</a>.</p>
 
-<p class="reference-item">EPA (Environmental Protection Agency). 2024. "Greenhouse Gas Emissions from a Typical Passenger Vehicle." Accessed June 2026. <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</a>.</p>
+<p class="reference-item">EPA (Environmental Protection Agency). 2024. "Greenhouse Gas Emissions from a Typical Passenger Vehicle." Accessed June 2026. <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</a>. See also EPA WaterSense, "Showerheads." <a href="https://www.epa.gov/watersense/showerheads">https://www.epa.gov/watersense/showerheads</a>.</p>
 
 <p class="reference-item">Google. 2025. "Measuring the Environmental Impact of AI Inference." Google Cloud Blog, August 2025. <a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/</a>. (Covered critically by <a href="https://www.technologyreview.com/2025/08/21/1122288/google-gemini-ai-energy/">MIT Technology Review</a> and <a href="https://towardsdatascience.com/is-googles-reveal-of-geminis-impact-progress-or-greenwashing/">Towards Data Science</a>.)</p>
 
@@ -1084,6 +1331,8 @@ new Chart(
 
 <p class="reference-item">Masanet, Eric, Arman Shehabi, Nuoa Lei, Sarah Smith, and Jonathan Koomey. 2020. "Recalibrating Global Data Center Energy-Use Estimates." <i>Science</i> 367 (6481): 984–86. <a href="https://www.science.org/doi/10.1126/science.aba3758">https://www.science.org/doi/10.1126/science.aba3758</a>.</p>
 
+<p class="reference-item">Mekonnen, Mesfin M., and Arjen Y. Hoekstra. 2012. "A Global Assessment of the Water Footprint of Farm Animal Products." <i>Ecosystems</i> 15: 401–415. <a href="https://doi.org/10.1007/s10021-011-9517-8">https://doi.org/10.1007/s10021-011-9517-8</a>. See also Water Footprint Network, <a href="https://www.waterfootprint.org/resources/interactive-tools/product-gallery/">Product Gallery</a> (coffee ≈ 140 L/cup).</p>
+
 <p class="reference-item">Microsoft. 2025. <i>2025 Environmental Sustainability Report</i>. May 29, 2025. <a href="https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/">https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/</a>.</p>
 
 <p class="reference-item">Mistral AI. 2025. "Our Contribution to a Global Environmental Standard for AI." July 2025. <a href="https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/">https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/</a>. (ADEME/Carbone 4-audited LCA of Mistral Large 2: 20.4 ktCO₂e and 281,000 m³ water over training + 18 months of use; 1.14 g CO₂e and 45 mL water per 400-token response.)</p>
@@ -1101,6 +1350,10 @@ new Chart(
 <p class="reference-item">SemiAnalysis. 2026. "From Tokens to Burgers — A Water Footprint Face-Off." March 2026. <a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint</a>.</p>
 
 <p class="reference-item">Shehabi, Arman, et al. 2024. <i>2024 United States Data Center Energy Usage Report</i>. Lawrence Berkeley National Laboratory, December 2024. <a href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf">https://eta-publications.lbl.gov</a>.</p>
+
+<p class="reference-item">Staples, Andy / Driving the Green. 2023. "Can Golf Courses Achieve a 'Real Zero' Carbon Footprint?" (CarbonSave® Calculator, GCSAA 2015 medians.) <a href="https://www.drivingthegreen.golf/dtg-blog/can-golf-courses-achieve-a-real-zero-carbon-footprint">https://www.drivingthegreen.golf/dtg-blog/can-golf-courses-achieve-a-real-zero-carbon-footprint</a>.</p>
+
+<p class="reference-item">Tidåker, Pernilla, et al. 2017. "Energy Use and Greenhouse Gas Emissions from Turf Management of Two Swedish Golf Courses." <i>Urban Forestry &amp; Urban Greening</i>. <a href="https://www.sciencedirect.com/science/article/pii/S1618866716302692">https://www.sciencedirect.com/science/article/pii/S1618866716302692</a>.</p>
 
 <p class="reference-item">US Department of Defense. 2023. <i>Plan to Reduce Greenhouse Gas Emissions</i>. <a href="https://media.defense.gov/2023/Jun/16/2003243454/-1/-1/1/2023-DOD-PLAN-TO-REDUCE-GREENHOUSE-GAS-EMISSIONS.PDF">https://media.defense.gov</a>.</p>
 
@@ -1120,8 +1373,8 @@ new Chart(
 
   <h6 style="font-weight: lighter;">
     <b>Published</b>: June 10, 2026<br>
-    <b>Current status</b>: June 10, 2026, DATA verification complete (all links checked against live sources)<br>
-    <b>Author &amp; researcher</b>: Claude (Anthropic)<br>
+    <b>UPDATED</b>: June 10, 2026 (v2) — math re-checked; Figure 0 (estimate-disparity), water-by-activity chart, agentic-coding and golf rows added; change-markers vs. the May 2025 essay noted throughout<br>
+    <b>Author &amp; researcher</b>: Claude (Anthropic), extended-thinking mode<br>
     <b>From a prompt by</b>: Jhave @ glia.ca<br>
     <b>Companion to</b>: <a href="https://glia.ca/2025/ccai/">Planetary Ecology: Carbon Emissions of #genAI in Context (May 2025)</a><br>
   </h6>
