@@ -467,7 +467,7 @@ details.fold > summary::-webkit-details-marker { display: none; }
   right: 14px;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 4px 12px;
   font-family: system-ui, sans-serif;
   font-size: 0.8rem;
@@ -480,28 +480,28 @@ details.fold > summary::-webkit-details-marker { display: none; }
 
 /* ----- footprint calculator ----- */
 .calc {
-  border: 1px solid #dde7f5;
-  border-radius: 6px;
+  border: 1px solid #eee;
+  border-radius: 4px;
   padding: 1.5rem;
   margin: 2rem 0;
-  background: #fafcff;
-  font-family: system-ui, sans-serif;
+  background: #f9f9f9;
 }
 .calc h3 { margin-top: 0; }
-.calc label { display: block; font-size: 0.9rem; margin: 0.8rem 0 0.1rem; color: #444; }
-.calc label output { font-weight: 700; color: #3B82F6; }
-.calc input[type=range] { width: 100%; }
+.calc label { display: block; font-size: 0.9rem; margin: 0.8rem 0 0.1rem; color: #444; font-family: system-ui, sans-serif; }
+.calc label output { font-weight: 700; color: #c00; }
+.calc input[type=range] { width: 100%; accent-color: #c00; }
 .calc .boundary-switch { display: flex; gap: 0.5rem; margin: 1.2rem 0 0.4rem; flex-wrap: wrap; }
 .calc .boundary-switch button {
-  flex: 1; padding: 0.6rem; border: 2px solid #3B82F6; background: #fff;
-  border-radius: 4px; font-weight: 600; cursor: pointer; color: #3B82F6; font-size: 0.9rem;
+  flex: 1; padding: 0.6rem; border: 1px solid #ccc; background: #fff;
+  border-radius: 4px; font-weight: 600; cursor: pointer; color: #555; font-size: 0.9rem;
+  font-family: system-ui, sans-serif;
 }
-.calc .boundary-switch button.active { background: #3B82F6; color: #fff; }
+.calc .boundary-switch button.active { background: #c00; border-color: #c00; color: #fff; }
 .calc .calc-out {
   font-size: 1rem; line-height: 1.8; background: #fff; border: 1px solid #eee;
   border-radius: 4px; padding: 1rem 1.25rem; margin-top: 1rem;
 }
-.calc .calc-out b { color: #3B82F6; }
+.calc .calc-out b { color: #c00; }
 
 @media (max-width: 600px) {
   .chart-row { grid-template-columns: 130px 1fr 110px; }
@@ -1429,13 +1429,20 @@ details.fold > summary::-webkit-details-marker { display: none; }
 <p>US golf courses irrigate roughly thirty times more water annually than every data centre in the country directly consumes (<a href="https://www.usga.org/content/dam/usga/pdf/Water%20Resource%20Center/how-much-water-does-golf-use.pdf">USGA</a>; <a href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf">LBNL</a>). US agricultural irrigation withdrawals (~118 billion gallons/<i>day</i>) would extend ~78 chart-widths. Caveats cut both ways: golf increasingly uses recycled non-potable water, and "withdrawal" ≠ "consumption" — see the boundary disclaimer above.</p>
 </div>
 
-<p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with similar or worse siting patterns in China, India, and the Gulf (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg, 2025</a>). The Dalles, Goodyear, Querétaro, and Memphis are real places with real aquifers. The correct synthesis is neither "AI barely uses water" (true globally, sometimes false locally) nor "AI is drinking the planet" (false at every scale). It is: <b>water impact is a siting and disclosure problem, not a per-prompt problem</b>. A prompt is a drop; a gigawatt campus in a desert is a policy choice.</p>
+<p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with similar or worse siting patterns in China, India, and the Gulf (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg, 2025</a>). The Dalles, Goodyear, Querétaro, and Memphis are real places with real aquifers. And the fence line compounds the inequity: in South Memphis, xAI's data centre runs dozens of methane gas turbines beside Boxtown, a historically Black neighbourhood already carrying a cancer risk four times the national average — now the subject of NAACP / Southern Environmental Law Center legal action (<a href="https://www.selc.org/press-release/elon-musks-xai-threatened-with-lawsuit-over-air-pollution-from-memphis-data-center/">SELC 2025</a>; <a href="https://earthjustice.org/press/2026/naacp-asks-court-for-emergency-action-to-stop-illegal-air-pollution-from-xais-data-center-power-plant">Earthjustice 2026</a>). Peer-reviewed modelling estimates US data centres' air-pollution public-health burden will exceed $20 billion/yr by 2028, with per-household costs in the most-affected, disproportionately disadvantaged counties up to 200× those elsewhere (<a href="https://arxiv.org/abs/2412.06288">Han, Ren et al. 2024</a>). These burdens are decided per facility — by turbines, permits, and zoning — which is precisely why this essay's asks are disclosure and siting standards rather than user guilt. The correct synthesis is neither "AI barely uses water" (true globally, sometimes false locally) nor "AI is drinking the planet" (false at every scale). It is: <b>water impact is a siting and disclosure problem, not a per-prompt problem</b>. A prompt is a drop; a gigawatt campus in a desert is a policy choice.</p>
 
- <!-- PSA №3 placeholder — uncomment when img/psa-w6-drop-campus.png is saved:
+ <!-- PSA №3 is a diptych: 3a (siting/water — image in img/, ready) + 3b (fence line / environmental justice — awaiting render).
+      Uncomment both together when img/psa-w7-fenceline.png is saved, so neither runs without its counterpart:
  <figure style="margin:2rem 0;">
-  <img src="img/psa-w6-drop-campus.png" alt="PSA poster: one enormous translucent water drop suspended over an aerial view of a vast desert data-centre campus. Slogan: A DROP ISN'T THE PROBLEM. A DESERT CAMPUS MIGHT BE." class="header-image">
+  <img src="img/psa-w6-drop-campus.png" alt="PSA poster: one enormous translucent water drop suspended in a cyan sky over an aerial view of a vast data-centre campus stamped into cracked desert earth. Slogan: A DROP ISN'T THE PROBLEM. A DESERT CAMPUS MIGHT BE." class="header-image">
   <figcaption class="chart-notes" style="font-style:normal;">
-  <p><b>PSA №3 — "A Drop Isn't the Problem. A Desert Campus Might Be."</b> A median prompt evaporates 0.26 mL on-site (<a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google 2025</a>) — but roughly two-thirds of new US data centres built or planned since 2022 sit in regions of high water stress (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg 2025</a>), and a 400 MW campus consumes ~346 million gallons/yr (<a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis 2026</a>). The water question is where, not whether. Every AI range spans on-site-only to full-chain accounting.</p>
+  <p><b>PSA №3a — "A Drop Isn't the Problem. A Desert Campus Might Be."</b> A median prompt evaporates 0.26 mL on-site (<a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google 2025</a>) — but roughly two-thirds of new US data centres built or planned since 2022 sit in regions of high water stress (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg 2025</a>), and a 400 MW campus consumes ~346 million gallons/yr (<a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis 2026</a>). The water question is where, not whether.</p>
+  </figcaption>
+ </figure>
+ <figure style="margin:2rem 0;">
+  <img src="img/psa-w7-fenceline.png" alt="PSA poster: a warm, dignified residential street at golden hour — porches, a kid's bicycle, a community garden — and looming directly behind the chain-link fence line, a data-centre power plant with rows of gas-turbine exhaust stacks and power lines crossing over the houses. Slogan: A DROP ISN'T THE PROBLEM. THE FENCE LINE MIGHT BE." class="header-image">
+  <figcaption class="chart-notes" style="font-style:normal;">
+  <p><b>PSA №3b — "The Fence Line Might Be."</b> The deserts are mostly metaphor; the neighbours are not. xAI's Memphis data centre runs dozens of methane gas turbines beside Boxtown, a historically Black community already carrying a cancer risk four times the national average — prompting an NAACP / Southern Environmental Law Center legal action (<a href="https://www.selc.org/press-release/elon-musks-xai-threatened-with-lawsuit-over-air-pollution-from-memphis-data-center/">SELC 2025</a>; <a href="https://earthjustice.org/press/2026/naacp-asks-court-for-emergency-action-to-stop-illegal-air-pollution-from-xais-data-center-power-plant">Earthjustice 2026</a>). Peer-reviewed modelling puts US data centres' public-health burden above $20 billion/yr by 2028, with per-household costs in the most-affected, disproportionately disadvantaged counties up to 200× those elsewhere (<a href="https://arxiv.org/abs/2412.06288">Han, Ren et al., "The Unpaid Toll"</a>). Per-prompt arithmetic is the wrong lens here: turbines, permits, and fence lines are decided per facility — which is exactly why disclosure and siting standards, not user guilt, are this essay's asks.</p>
   </figcaption>
  </figure>
  -->
@@ -1733,6 +1740,8 @@ new Chart(
 
 <p class="reference-item">Google. 2025. <i>Environmental Report 2025</i>. <a href="https://sustainability.google/google-2025-environmental-report/">https://sustainability.google/google-2025-environmental-report/</a>.</p>
 
+<p class="reference-item">Han, Yuelin, et al. (UC Riverside / Caltech; Shaolei Ren group). 2024. "The Unpaid Toll: Quantifying the Public Health Impact of AI." arXiv:2412.06288. <a href="https://arxiv.org/abs/2412.06288">https://arxiv.org/abs/2412.06288</a>. (US data-centre public-health burden &gt;$20 B/yr by 2028; per-household costs up to 200× higher in the most-affected, disproportionately disadvantaged counties.)</p>
+
 <p class="reference-item">International Energy Agency. 2025. <i>Energy and AI</i> (World Energy Outlook Special Report). April 2025. <a href="https://www.iea.org/reports/energy-and-ai">https://www.iea.org/reports/energy-and-ai</a>.</p>
 
 <p class="reference-item">International Energy Agency. 2025–26. <i>Key Questions on Energy and AI</i> &amp; "Data Centre Electricity Use Surged in 2025." <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary</a> · <a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions">news release</a>.</p>
@@ -1774,6 +1783,8 @@ new Chart(
 <p class="reference-item">Ritchie, Hannah. 2024–25. "What Share of Global CO₂ Emissions Come from Aviation?" Our World in Data. <a href="https://ourworldindata.org/global-aviation-emissions">https://ourworldindata.org/global-aviation-emissions</a>. And "What's the Carbon Footprint of Using ChatGPT or Gemini? [August 2025 Update]." <a href="https://hannahritchie.substack.com/p/ai-footprint-august-2025">https://hannahritchie.substack.com/p/ai-footprint-august-2025</a>.</p>
 
 <p class="reference-item">SemiAnalysis. 2026. "From Tokens to Burgers — A Water Footprint Face-Off." March 2026. <a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint</a>.</p>
+
+<p class="reference-item">Southern Environmental Law Center / NAACP / Earthjustice. 2025–26. "Elon Musk's xAI Threatened with Lawsuit over Air Pollution from Memphis Data Center" and "NAACP Asks Court for Emergency Action to Stop Illegal Air Pollution from xAI's Data Center Power Plant." <a href="https://www.selc.org/press-release/elon-musks-xai-threatened-with-lawsuit-over-air-pollution-from-memphis-data-center/">selc.org</a> · <a href="https://earthjustice.org/press/2026/naacp-asks-court-for-emergency-action-to-stop-illegal-air-pollution-from-xais-data-center-power-plant">earthjustice.org</a>.</p>
 
 <p class="reference-item">Shehabi, Arman, et al. 2024. <i>2024 United States Data Center Energy Usage Report</i>. Lawrence Berkeley National Laboratory, December 2024. <a href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf">https://eta-publications.lbl.gov</a>.</p>
 

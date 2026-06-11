@@ -151,6 +151,19 @@ Working alt titles: **BOUNDARY ISSUES** · **MOLECULAR CONTEXT** · **ALL VALUES
 
 ---
 
+### W7 — "THE FENCE LINE" (environmental justice · pairs with W6 as a diptych)
+
+**Design rationale:** W6's desert is metaphorically clean but humanly empty — it implies nobody is harmed. The documented reality is fence-line communities: South Memphis's Boxtown (cancer risk 4× national average, NAACP/SELC/Earthjustice action over xAI's gas turbines), and the peer-reviewed finding that per-household health burdens in the most-affected, disproportionately disadvantaged counties run up to 200× those elsewhere (Han, Ren et al. 2024). The neighbourhood must be rendered with warmth and dignity — porch lights, a garden, a kid's bike — never as misery imagery; the looming infrastructure carries all the menace. No identifiable real people.
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, matching an existing series: big jagged hand-drawn cartoon lettering in white with dark outline, true-to-data scale, generous negative space, 70s ecology-poster energy. Golden-hour scene with a faint smog haze. Foreground: a warm, dignified residential street — modest brick houses with lit porches, a community garden, a child's bicycle leaning on a fence, a bus stop — rendered with care and humanity, no people's faces visible. Directly behind the houses, separated only by a chain-link FENCE LINE running diagonally across the image: an enormous data-centre power yard with rows of gas-turbine exhaust stacks releasing shimmer and thin plumes, high-voltage lines crossing over the rooftops. Small label near the stacks: "DOZENS OF METHANE TURBINES — CANCER RISK NEXT DOOR: 4× NATIONAL AVG". Small label near the porches: "THE HEALTH BURDEN FALLS UP TO 200× HARDER HERE". Headline, jagged cartoon lettering, top: "A DROP ISN'T THE PROBLEM." Subline, smaller, restrained: "THE FENCE LINE MIGHT BE." Bottom-right fine print, small clean sans-serif: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "Boxtown, Memphis (SELC '25, Earthjustice '26) · health burden >$20B/yr by 2028 (Han, Ren et al. '24)". No other text.
+
+**Article caption (already slotted, commented, in index.html as PSA №3b):** The deserts are mostly metaphor; the neighbours are not. xAI's Memphis data centre runs dozens of methane gas turbines beside Boxtown, a historically Black community with a cancer risk 4× the national average (SELC 2025; Earthjustice 2026). US data centres' public-health burden is modelled to exceed $20 B/yr by 2028, falling up to 200× harder per household on the most-affected, disproportionately disadvantaged counties (Han, Ren et al. 2024). Turbines, permits, and fence lines are decided per facility — which is why the asks are disclosure and siting standards, not user guilt.
+
+**Pairing rule:** run W6 and W7 together (siting + justice), never W6 alone — the empty desert without the inhabited fence line repeats the erasure the poster exists to correct.
+
+---
+
 ### C6 — "WHAT WE CAN'T COMPARE, THEY HAVEN'T COUNTED" (disclosure · the demand both poles share)
 
 **PASTE-READY PROMPT:**
