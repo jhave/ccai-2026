@@ -194,3 +194,88 @@ Working alt titles: **BOUNDARY ISSUES** · **MOLECULAR CONTEXT** · **ALL VALUES
 2. The proportions are the argument: if the model beautifies the scale (enlarging the bucket, shrinking the piano), regenerate with "true scale, do not balance the composition" reinforced.
 3. Every caption above is article-ready with sources; image fine print is deliberately truncated and the caption carries the full citation — as specified.
 4. Honesty pairing rule: never run W1–W3/C3 (reassurance) in a feed without C4 or W4 (the counterweight) adjacent. The campaign's credibility *is* the nuance.
+
+---
+
+## 5. SERIES II — "THE MULTIPLIER" (the argument tier)
+
+**Editorial separation, stated up front:** Series I (burgers, bathtubs, fence lines) is the *measurement* tier — it lives inside the data essay. Series II is the *argument* tier: it moves from measurement to judgment, and therefore lives in talks, slides, and op-ed contexts, NOT embedded in the peer-review-grade essay. Keeping the tiers separate is what lets the essay stay unimpeachable while the argument stays sharp. Every number on a Series II poster is still verified; what changes is that the posters now take a position.
+
+**The condensing device:** AI is a multiplier, not an addend. A multiplier has no politics; its container does. This holds the entire complex — oligarchic concentration, militarization, climate denial, AND drug discovery, health, education — in one mathematical gesture, because all of it is literally in the verified data:
+
+| The multiplier fact | The number | Source |
+|---|---|---|
+| Same prompt, different grid | ~20–40× carbon difference (≈0.02 kg CO₂e/kWh hydro/nuclear-heavy grids vs ≈0.7–0.8 coal) | IEA/Ember grid intensities; Google '25 methodology |
+| Same efficiency, different demand | per-prompt ÷33 in one year; absolute emissions +51% since 2019 | Google '25; Google ER '25 |
+| Same compute, different application | AlphaFold: ~200M protein structures, 2M+ researchers, 2024 Nobel · global militaries: 2,750 Mt CO₂e ≈ 35–80× all AI | DeepMind/Nobel '24; SGR/CEOBS '22; de Vries-Gao '25 |
+| Same buildout, concentrated hands | top-5 hyperscaler capex ≈ $602B projected 2026 | CreditSights via IEA Key Questions '26 |
+| The container decides | IEA 2030 cone: 700–1,250 TWh; 15–27 GW new on-site gas vs AI-enabled savings that *could* exceed DC emissions ("potential, not promise") | IEA Energy & AI '25 |
+
+---
+
+### M1 — "WHAT A WATT CAN BECOME" (the beauty, evidence-based)
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, matching an existing series but using restrained Helvetica Neue Bold instead of cartoon lettering (this is the quiet poster of the series). Gradient background from deep indigo at bottom to dawn-gold at top. At bottom center: one small, humble glowing filament or spark labeled "1 WATT-HOUR". Rising from it, branching upward like a tree of light: a ribboned protein structure, an open book, a vaccine vial, a weather-model globe, a classroom window — each rendered as delicate constellation-line drawings growing from the same root spark. Headline, top, white Helvetica: "WHAT A WATT CAN BECOME." Bottom-right fine print, small clean sans-serif: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "AlphaFold: ~200M protein structures, 2M+ researchers, Nobel '24 · same compute, chosen well". No other text.
+
+**Caption:** The generative case, held to the same evidentiary standard as the costs: AlphaFold's ~200 million predicted protein structures, used by over two million researchers and recognized with the 2024 Nobel Prize in Chemistry, ran on the same kind of compute this essay audits. The IEA estimates AI-enabled optimization could avoid more emissions than data centres produce — a potential, not a promise, claimable by no company without showing the arithmetic.
+
+---
+
+### M2 — "THE MULTIPLIER" (the thesis poster)
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, series style, jagged hand-drawn cartoon lettering in white with dark outline. Centered: one identical small AI chip drawn TWICE, each feeding into a huge multiplication sign "×". Top panel, cool dawn gradient: the chip × a landscape of wind turbines, solar fields, a courthouse, a classroom — its output arrow blooming into a green river delta and gardens. Bottom panel, smoke-rust gradient: the SAME chip × a landscape of smokestacks, missile silos, border walls, oil derricks — its output arrow burning into a scorched delta. The two chips must be visibly identical; small label between them: "SAME CHIP. SAME JOULES." Headline, top: "AI MULTIPLIES WHATEVER IT'S PLUGGED INTO." Bottom-right fine print: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "Same prompt: ~20–40× more carbon on a coal grid than hydro/nuclear (IEA/Ember) · ÷33 efficiency, +51% absolute (Google '25)". No other text.
+
+**Caption:** The same prompt emits roughly 20–40× more carbon depending on the grid that serves it; the same model family folds proteins or guides munitions; the same year's 33× efficiency gain was out-multiplied by demand into a 51% absolute rise. The technology is a multiplier. The multiplicand is a civilization.
+
+---
+
+### M3 — "A CURVE TAKES THE SHAPE OF ITS CONTAINER" (the scaling warning)
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, series style. One single exponential curve drawn as a living vine, rendered TWICE side by side at identical scale and steepness. Left: the vine grows up through an intact trellis with small tags "NET-ZERO GRID · DISCLOSURE · SITING STANDARDS · ADDITIONALITY" — and flowers at the top into leaves and blossoms. Right: the IDENTICAL vine grows through a broken trellis tagged "COAL EXTENSIONS · NO DISCLOSURE · DENIAL" — and at the top it is on fire. Same curve; only the trellis differs. Headline, jagged cartoon lettering: "A CURVE TAKES THE SHAPE OF ITS CONTAINER." Subline, small, restrained: "Efficiency can't outrun denial." Bottom-right fine print: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "IEA 2030 cone: 700–1,250 TWh · 15–27 GW new on-site gas · AI-enabled savings could exceed DC emissions — IF (IEA '25)". No other text.
+
+**Caption:** Super-exponential scaling inside a society converted to net zero is an industrial project; the identical curve inside a society devoted to fossil persistence is a devastation. The IEA's own scenario cone contains both endings. Efficiency improves the curve; only the container — grids, permits, treaties, ballots — decides its shape.
+
+---
+
+### M4 — "WORRY IN PROPORTION" (the war economy)
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, series style, somber slate-to-rust gradient. Foreground bottom: a modest, neat stack of server racks at true data scale, small, glowing faint blue, labeled "ALL AI ON EARTH: 33–80 Mt CO₂e/yr". Towering behind it, filling two-thirds of the frame, a mountain rendered from tanks, jets, warships and shell casings in dark silhouette, labeled "GLOBAL MILITARIES: ~2,750 Mt CO₂e/yr — exempt from mandatory reporting since Kyoto". Headline, jagged cartoon lettering: "WORRY IN PROPORTION." Subline, small: "The loudest argument about AI's footprint is happening inside a war economy 35–80× larger." Bottom-right fine print: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "SGR/CEOBS '22 · de Vries-Gao, Patterns '25 · UNFCCC reporting exemption". No other text.
+
+**Caption:** Every number sourced: AI systems ≈ 33–80 Mt CO₂e in 2025 (de Vries-Gao, *Patterns*); global military activities ≈ 2,750 Mt, ~5.5% of world emissions (SGR/CEOBS 2022), exempt from mandatory UNFCCC reporting since Kyoto. The social utility of war in a nuclear age is zero; its carbon multiplier is the largest unaudited line item on Earth.
+
+---
+
+### M5 (optional) — "FIVE BOARDROOMS" (concentration, by the numbers)
+
+**PASTE-READY PROMPT:**
+> Austere flat vector PSA poster, vertical 4:5, near-black with faint rust vignette. Five identical glass towers in a tight row, each with a blank nameplate (no logos), beneath them a vast grid of tiny houses and pylons stretching to the horizon. A single thin money-green line flows from the houses up into the towers, labeled "$600,000,000,000 / YR". Headline, restrained Helvetica Neue Bold, white: "THE INFRASTRUCTURE OF COGNITION, DECIDED IN FIVE BOARDROOMS." Subline, small: "Disclosure and additionality are not radical asks. They are the minimum." Bottom-right fine print: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "Top-5 hyperscaler capex ≈ $602B projected 2026 (CreditSights, via IEA) · 2 of ~10 frontier labs publish audited footprints (Luccioni '25)". No other text, NO real company logos.
+
+**Caption:** Concentration stated as arithmetic, not accusation: five companies' projected 2026 capital expenditure (~$602B) rivals the GDP of most nations, while two of roughly ten frontier labs publish audited environmental footprints. Infrastructure at this scale decided privately is precisely why mandatory disclosure, siting standards, and additionality are the floor, not the ceiling.
+
+---
+
+### SERIES II LANGUAGE BANK (the lyrical register, all data-anchored)
+
+- "AI multiplies whatever it's plugged into."
+- "A multiplier has no politics. Its container does."
+- "Efficiency is a denominator. Denial is a multiplier."
+- "A curve takes the shape of its container."
+- "Same chip. Same joules. Different civilization."
+- "The same river turns every mill."
+- "What a watt can become." / "What a watt becomes is a choice."
+- "Worry in proportion."
+- "The footprint of AI is decided at the grid, the permit office, and the ballot box — not at the prompt."
+
+---
+
+## 6. NEXT STEP (flagged, awaiting go-ahead): THE SLIDE DECK
+
+Working arc for the presentation ("moderation, clarity, evidence" — ~18 slides, plain HTML/CSS in the essay's own palette, arrow-key navigation, no frameworks):
+
+1. Common ground ("Everyone wants the Earth to flourish and survive") → 2. The two doors (concede to both poles first) → 3. Figure 0: why credible estimates differ 40–350× → 4. The measured prompt (the 0.24 Wh era) → 5. PSA №1 burger/bathtubs → 6. PSA №2 flight/coding → 7. Video changes the math → 8. The aggregate turn: +17% metered, capex, turbines → 9. Jevons: ÷33 vs +51% → 10. PSA №3a/3b diptych: desert + fence line → 11. Worry in proportion (M4) → 12. The multiplier thesis (M2) → 13. The container (M3) → 14. What a watt can become (M1) → 15. Falsifiability: what would change this analysis → 16. The four asks → 17. Dinner-table receipts → 18. "All values ≈ / Keep measuring."
+
+Each slide: ONE sentence visible; presenter notes carry the citations (the chevron principle, translated to the podium).
