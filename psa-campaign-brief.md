@@ -142,6 +142,24 @@ Working alt titles: **BOUNDARY ISSUES** · **MOLECULAR CONTEXT** · **ALL VALUES
 
 ---
 
+### W6 — "A DROP ISN'T THE PROBLEM" (water · siting — the refuser-validating poster)
+
+**PASTE-READY PROMPT:**
+> Flat vector PSA poster, vertical 4:5, matching an existing series: big jagged hand-drawn cartoon lettering in white with dark outline, true-to-data scale, generous negative space, 70s ecology-poster energy. Gradient background from bright cyan at top to parched desert-orange at bottom — the two halves of the image meeting at a sharp horizon. Upper half: one enormous, beautiful, translucent water drop suspended in the cyan sky, labeled very small at its center: "ONE PROMPT: 0.26 mL". Lower half: an aerial view of a vast geometric data-centre campus stamped into cracked desert earth, cooling plumes rising, labeled "ONE 400 MW CAMPUS: 346,000,000 GALLONS/YR". Headline, jagged cartoon lettering, top: "A DROP ISN'T THE PROBLEM." Subline beneath, smaller, restrained: "A DESERT CAMPUS MIGHT BE." Bottom-right fine print, small clean sans-serif: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "⅔ of new US datacenters in water-stressed counties (Bloomberg '25) · Google '25 · SemiAnalysis '26". No other text.
+
+**Article caption (already slotted, commented, in index.html as PSA №3):** A median prompt evaporates 0.26 mL on-site (Google 2025) — but ~⅔ of new US data centres since 2022 sit in high water-stress regions (Bloomberg 2025), and a 400 MW campus consumes ~346 M gal/yr (SemiAnalysis 2026). The water question is *where*, not *whether*.
+
+---
+
+### C6 — "WHAT WE CAN'T COMPARE, THEY HAVEN'T COUNTED" (disclosure · the demand both poles share)
+
+**PASTE-READY PROMPT:**
+> Austere flat vector PSA poster, vertical 4:5, near-black background with a faint deep-indigo gradient vignette. A row of five icons on shelf-like plinths: a film-clapper, a thought-bubble, a robot-arm cursor — each rendered only as a hollow dotted-outline question-mark silhouette — and then two small warmly LIT candles, labeled in tiny type "GOOGLE '25" and "MISTRAL '25". The three question-marks are labeled in tiny type: "VIDEO: undisclosed", "REASONING: undisclosed", "AGENTS: undisclosed". Restrained Helvetica Neue Bold, white, top: "WHAT WE CAN'T COMPARE, THEY HAVEN'T COUNTED." Bottom-right fine print: "Every AI range spans on-site-only to full-chain accounting. All values ≈." Bottom-left fine print: "2 of ~10 frontier labs publish audited footprints (Luccioni '25); fastest-growing modalities: zero disclosures". Somber, candle-lit, no other imagery.
+
+**Article caption (slotted, commented, as PSA №5):** Of the frontier AI labs, exactly two have published audited per-prompt footprints (Luccioni 2025); none disclose video, reasoning, or agentic workloads — the three fastest-growing modalities. Disclosure is the one demand both poles of this debate can share.
+
+---
+
 ## 3. SLOGAN BANK (extras, all data-safe)
 
 - "YOUR CHATBOT ISN'T THE THIRSTY ONE." (W)
