@@ -606,6 +606,29 @@
       color: #c00;
     }
 
+    .calc .slider-bar-track {
+      height: 9px;
+      background: #eee;
+      border-radius: 2px;
+      margin: 2px 0 0;
+      overflow: hidden;
+    }
+
+    .calc .slider-bar {
+      height: 9px;
+      width: 0%;
+      background: #3B82F6;
+      border-radius: 2px;
+      transition: width 0.15s ease;
+    }
+
+    .calc .slider-share {
+      font-size: 0.75rem;
+      color: #888;
+      font-family: system-ui, sans-serif;
+      margin: 1px 0 0.6rem;
+    }
+
     @media (max-width: 600px) {
       .chart-row {
         grid-template-columns: 130px 1fr 110px;
@@ -739,7 +762,7 @@
   <p><b>What changed since 2025?</b> Accuracy increased: providers published measured per-prompt figures
     (which came in <i>lower</i> than
     prior guesses), while ... the <i>aggregate</i> buildout became the fastest-growing industrial electricity load on
-    Earth. Efficiency increased AND the total amount of carbon and water AI by used increased.</p>
+    Earth. Efficiency increased AND the total amount of carbon and water used by AI increased.</p>
   <details class="fold">
     <summary>MIT Technology Review contextualizes the difficulty of finding certainty in measurements:</summary>
     <blockquote>
@@ -797,8 +820,8 @@
       video, reasoning, or agentic footprints. None of that is denied here; all of it is cited below.</p>
     <p><b>But you may not know:</b> the per-use numbers, now measured and audited rather than guessed, are
       far <i>lower</i> than the meme numbers <b>— a year of chatting costs less carbon than one tank of gas </b>(<a
-        href="#carbonchart">chart</a>), and less water than one hamburger (<a href="#water">see the water
-        section</a>)</b>. The
+        href="#carbonchart">chart</a>), <b>and less water than one hamburger</b> (<a href="#water">see the water
+        section</a>). The
       strongest version of your concern is not about anyone's prompts; it is about siting, gas turbines, and disclosure
       — and that version is <i>stronger</i>, because it's the one the data supports (<a href="#aggregate">aggregate
         section</a>, <a href="#extrapolation">extrapolation</a>).</p>
@@ -824,9 +847,9 @@
         water
         draw thirty-fold</b>. All cited below.</p>
     <p><b>The part you may not expect:</b> per-use triviality does not scale to aggregate innocence. Data-centre demand
-      grew 17% in 2025 on real meters; <b>gas-turbine orders are at a 25-year high</b>; hyperscaler emissions are rising
-      faster
-      than their efficiency gains</b>; and the exponentional growth of #genAI use (video: ~680 kWh per generated hour)
+      grew 17% in 2025 on real meters; <b>gas-turbine orders are at a 25-year high</b>; <b>hyperscaler emissions are
+        rising faster
+        than their efficiency gains</b>; and the exponential growth of #genAI use (video: ~680 kWh per generated hour)
       is the pattern we need to watch (<a href="#extrapolation">extrapolation section</a>). "Trivial per-use,
       consequential in aggregate" is how automobiles looked in 1926.</p>
     <details class="fold">
@@ -978,22 +1001,43 @@
     <h3>Your Footprint, Both Ways</h3>
     <p style="font-size:0.95rem; color:#555; margin-top:0;">Set your actual AI habits. Then flip the accounting boundary
       and watch the number change <i>without your behavior changing</i>. That flip is the entire methodology debate, in
-      one switch.</p>
+      one switch. The blue bar beneath each slider shows that activity's share of your annual total, summed in the box
+      below.</p>
 
     <label>Chat queries per day: <output id="o-chat">30</output></label>
     <input type="range" id="i-chat" min="0" max="200" value="30">
+    <div class="slider-bar-track">
+      <div class="slider-bar" id="bar-chat"></div>
+    </div>
+    <div class="slider-share" id="share-chat"></div>
 
     <label>Reasoning / chain-of-thought queries per day: <output id="o-reason">10</output></label>
     <input type="range" id="i-reason" min="0" max="100" value="10">
+    <div class="slider-bar-track">
+      <div class="slider-bar" id="bar-reason"></div>
+    </div>
+    <div class="slider-share" id="share-reason"></div>
 
     <label>Images generated per day: <output id="o-img">10</output></label>
     <input type="range" id="i-img" min="0" max="1000" value="10">
+    <div class="slider-bar-track">
+      <div class="slider-bar" id="bar-img"></div>
+    </div>
+    <div class="slider-share" id="share-img"></div>
 
     <label>AI video generated per week (minutes): <output id="o-video">0</output></label>
     <input type="range" id="i-video" min="0" max="60" value="0">
+    <div class="slider-bar-track">
+      <div class="slider-bar" id="bar-video"></div>
+    </div>
+    <div class="slider-share" id="share-video"></div>
 
     <label>Agentic coding per day (active hours): <output id="o-code">2</output></label>
     <input type="range" id="i-code" min="0" max="12" value="2">
+    <div class="slider-bar-track">
+      <div class="slider-bar" id="bar-code"></div>
+    </div>
+    <div class="slider-share" id="share-code"></div>
 
     <div class="boundary-switch">
       <button id="b-onsite" class="active" type="button">Provider-measured / on-site boundary</button>
@@ -1040,6 +1084,14 @@
         var videoKWh = val("i-video") * 52 * f.videoWhMin / 1000;
         var codeKWh = val("i-code") * f.codeWhHr * 365 / 1000;
         var kWh = chatKWh + reasonKWh + imgKWh + videoKWh + codeKWh;
+        var parts = { chat: chatKWh, reason: reasonKWh, img: imgKWh, video: videoKWh, code: codeKWh };
+        Object.keys(parts).forEach(function (k) {
+          var share = kWh > 0 ? 100 * parts[k] / kWh : 0;
+          document.getElementById("bar-" + k).style.width = (share > 0 ? Math.max(share, 0.75) : 0) + "%";
+          document.getElementById("share-" + k).textContent = parts[k] > 0
+            ? "≈ " + fmt(parts[k]) + " kWh/yr — " + fmt(share) + "% of your annual total"
+            : "0 kWh/yr — 0% of your annual total";
+        });
         var kg = kWh * f.kg;
         var waterL = (kWh - chatKWh) * f.l + val("i-chat") * 365 * f.chatMl / 1000;
         var out = "<b>" + fmt(kWh) + " kWh</b> per year under the <i>" + f.label + "</i> boundary ⇒ "
