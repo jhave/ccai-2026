@@ -751,8 +751,6 @@
   </figure>
 
 
-
-
   <h3><b>TLDR;</b> <i>individual</i> use of generative AI currently remains a minor part of the human carbon and water
     footprint —
     far below crypto, aviation, personal transport, diet, pets, golf irrigation, and especially <b>military
@@ -784,8 +782,6 @@
           the Math on AI’s Energy Footprint. Here’s the Story You Haven’t Heard.”</a> MIT Technology Review.</cite>
     </blockquote>
   </details>
-
-
 
   <h4><b>Disclaimer</b>: Most public disagreement about AI's footprint is not disagreement about physics; it is
     disagreement about <i>boundaries</i>, usually undeclared —
@@ -874,138 +870,6 @@
   </div>
 
   <div class="divider">~</div>
-
-  <h3 id="figure0">Figure 0: Why Do Credible Estimates Differ by ~40× (carbon) and ~350× (water)?</h3>
-
-  <p>Before any comparison, the disparity itself needs explaining — because every camp in the AI-environment debate
-    selects the estimate that flatters its thesis, and <i>all of these numbers are, within their own boundaries,
-      correct</i>.</p>
-
-  <div class="emissions-chart">
-    <h3>Carbon per chatbot text response (g CO₂e) — four credible answers</h3>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Google Gemini</span>
-        <span class="subtitle">(measured <b>median</b> prompt; market-based grid; Aug 2025)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 1.4%;"></div>
-      </div>
-      <div class="chart-value">0.03 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-4o benchmark</span>
-        <span class="subtitle">(independent measurement, ~1 Wh × avg US grid; Jegham et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 18%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.4 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Mistral Large 2</span>
-        <span class="subtitle">(<b>full lifecycle</b> LCA incl. training &amp; hardware, ADEME-audited; per 400-token
-          response)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 52%;"></div>
-      </div>
-      <div class="chart-value">1.14 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">2025 essay's estimate</span>
-        <span class="subtitle">(ChatGPT, training-amortised heuristic; Tomlinson et al. 2024)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">2.2 g</div>
-    </div>
-
-    <h3>Water per chatbot text response (mL) — five credible answers</h3>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">xAI Colossus 2</span>
-        <span class="subtitle">(on-site + amortized chip mfg; SemiAnalysis model, Mar 2026)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 0.3%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.13 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Google Gemini</span>
-        <span class="subtitle">(measured median; <b>on-site cooling only</b>)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 0.5%;"></div>
-      </div>
-      <div class="chart-value">0.26 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-4o benchmark</span>
-        <span class="subtitle">(short query, <b>incl. off-site</b> electricity water; Jegham et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 2.4%;"></div>
-      </div>
-      <div class="chart-value">≈ 1.2 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-3-era response</span>
-        <span class="subtitle">(on-site + electricity-embedded, 2020-era infrastructure; Ren et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">≈ 10 – 50 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Mistral Large 2</span>
-        <span class="subtitle">(<b>full lifecycle</b> incl. upstream agriculture-grade accounting; per 400-token
-          response)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 90%;"></div>
-      </div>
-      <div class="chart-value">45 mL</div>
-    </div>
-  </div>
-
-  <div class="chart-notes">
-    <p><b>All of these numbers are correct — inside their own boundaries.</b> The chart shows not a disagreement about
-      physics, but five different ways of answering the same questions.</p>
-    <details class="fold">
-      <summary>Why the disparity? The five reasons </summary>
-      <p>In roughly descending order of effect. <b>(1) Boundary scope:</b> Google counts the on-site footprint of
-        serving one prompt; Mistral counts a share of training, hardware manufacture, idle capacity, and upstream water
-        — full-chain accounting is 10–100× wider by construction. <b>(2) Median vs. mean:</b> Google reports the median
-        prompt; means are dragged upward by a heavy tail of long-context and reasoning queries (10–65× costlier). <b>(3)
-          Grid accounting:</b> market-based figures credit purchased clean energy (Google's 0.03 g); location-based
-        figures use the physical local grid (≈ 0.4 g for the same watt-hours on average US power). <b>(4) Model size
-          &amp; tokens:</b> a 400-token response from a large model is simply more computation than a median short reply
-        from an efficiency-routed one. <b>(5) Vintage:</b> per-prompt energy fell ~33× in the twelve months to August
-        2025 — estimates dated eighteen months apart describe different machines. The honest takeaway: <i>always ask
-          which boundary, which statistic, which grid, which model, which year.</i> This essay states all five for every
-        figure it uses.</p>
-    </details>
-  </div>
 
   <div class="calc" id="calc">
     <h3>Your Footprint, Both Ways</h3>
@@ -1179,6 +1043,140 @@
       calc();
     })();
   </script>
+
+  <div class="divider">~</div>
+
+  <h3 id="figure0">Figure 0: Why Do Credible Estimates Differ by ~40× (carbon) and ~350× (water)?</h3>
+
+  <p>Before any comparison, the disparity itself needs explaining — because every camp in the AI-environment debate
+    selects the estimate that flatters its thesis, and <i>all of these numbers are, within their own boundaries,
+      correct</i>.</p>
+
+  <div class="emissions-chart">
+    <h3>Carbon per chatbot text response (g CO₂e) — four credible answers</h3>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Google Gemini</span>
+        <span class="subtitle">(measured <b>median</b> prompt; market-based grid; Aug 2025)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 1.4%;"></div>
+      </div>
+      <div class="chart-value">0.03 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-4o benchmark</span>
+        <span class="subtitle">(independent measurement, ~1 Wh × avg US grid; Jegham et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 18%;"></div>
+      </div>
+      <div class="chart-value">≈ 0.4 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Mistral Large 2</span>
+        <span class="subtitle">(<b>full lifecycle</b> LCA incl. training &amp; hardware, ADEME-audited; per 400-token
+          response)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 52%;"></div>
+      </div>
+      <div class="chart-value">1.14 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">2025 essay's estimate</span>
+        <span class="subtitle">(ChatGPT, training-amortised heuristic; Tomlinson et al. 2024)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 100%;"></div>
+      </div>
+      <div class="chart-value">2.2 g</div>
+    </div>
+
+    <h3>Water per chatbot text response (mL) — five credible answers</h3>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">xAI Colossus 2</span>
+        <span class="subtitle">(on-site + amortized chip mfg; SemiAnalysis model, Mar 2026)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 0.3%;"></div>
+      </div>
+      <div class="chart-value">≈ 0.13 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Google Gemini</span>
+        <span class="subtitle">(measured median; <b>on-site cooling only</b>)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 0.5%;"></div>
+      </div>
+      <div class="chart-value">0.26 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-4o benchmark</span>
+        <span class="subtitle">(short query, <b>incl. off-site</b> electricity water; Jegham et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 2.4%;"></div>
+      </div>
+      <div class="chart-value">≈ 1.2 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-3-era response</span>
+        <span class="subtitle">(on-site + electricity-embedded, 2020-era infrastructure; Ren et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 100%;"></div>
+      </div>
+      <div class="chart-value">≈ 10 – 50 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Mistral Large 2</span>
+        <span class="subtitle">(<b>full lifecycle</b> incl. upstream agriculture-grade accounting; per 400-token
+          response)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 90%;"></div>
+      </div>
+      <div class="chart-value">45 mL</div>
+    </div>
+  </div>
+
+  <div class="chart-notes">
+    <p><b>All of these numbers are correct — inside their own boundaries.</b> The chart shows not a disagreement about
+      physics, but five different ways of answering the same questions.</p>
+    <details class="fold">
+      <summary>Why the disparity? The five reasons </summary>
+      <p>In roughly descending order of effect. <b>(1) Boundary scope:</b> Google counts the on-site footprint of
+        serving one prompt; Mistral counts a share of training, hardware manufacture, idle capacity, and upstream water
+        — full-chain accounting is 10–100× wider by construction. <b>(2) Median vs. mean:</b> Google reports the median
+        prompt; means are dragged upward by a heavy tail of long-context and reasoning queries (10–65× costlier). <b>(3)
+          Grid accounting:</b> market-based figures credit purchased clean energy (Google's 0.03 g); location-based
+        figures use the physical local grid (≈ 0.4 g for the same watt-hours on average US power). <b>(4) Model size
+          &amp; tokens:</b> a 400-token response from a large model is simply more computation than a median short reply
+        from an efficiency-routed one. <b>(5) Vintage:</b> per-prompt energy fell ~33× in the twelve months to August
+        2025 — estimates dated eighteen months apart describe different machines. The honest takeaway: <i>always ask
+          which boundary, which statistic, which grid, which model, which year.</i> This essay states all five for every
+        figure it uses.</p>
+    </details>
+  </div>
 
   <div class="divider">~</div>
 
