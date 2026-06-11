@@ -1008,6 +1008,138 @@
 <p><b>Reading the ranges.</b> The AI bars are drawn at the top of their ranges and still barely register against food and turf. Even the most damning boundary (full-lifecycle, reasoning-heavy, 3,700 L/yr) equals four burgers, two months of one person's showers, or <b>0.0009%</b> of one golf course's irrigation. And the caveats cut both ways: green-vs-blue water matters (coffee's 140 L is mostly rainfall on plantations; a datacenter's 0.26 mL is evaporated potable water in a specific basin), so cross-category comparisons orient but do not absolve. The local siting problem below is where the genuine water issue lives.</p>
 </div>
 
+<h2>Water Comparison: Single Events vs. Digital Habits (litres)</h2>
+<p>A deliberately mixed-duration chart — single physical events (one burger, one bath, one flush) against digital activities at their natural scales (a year of extreme AI use; a minute of video generation; an hour of screen time). Mixing durations is the point: it shows how many <i>years</i> of digital habit fit inside one lunch. Dedicated AI is colored <span style="color:#3B82F6;font-weight:bold">blue</span>; ranges span on-site-only to full-chain water accounting.</p>
+
+<div class="emissions-chart">
+  <h2>Estimated Water Footprint: Events &amp; Habits (June 2026)</h2>
+
+  <!-- Images, year -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">1,000 images/day, for a YEAR</span>
+      <span class="subtitle">(365,000 images; on-site WUE → full-chain)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 100%;"></div>
+    </div>
+    <div class="chart-value">≈ 500 – 5,000 L/yr</div>
+  </div>
+
+  <!-- Coding, year -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">Agentic coding every day, for a YEAR</span>
+      <span class="subtitle">(≈80% Max-plan budget; on-site → full-chain)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 48%;"></div>
+    </div>
+    <div class="chart-value">≈ 240 – 2,400 L/yr</div>
+  </div>
+
+  <!-- ONE beef burger -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">ONE beef burger</span>
+      <span class="subtitle">(US blue-water → global all-colors accounting)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 47%;"></div>
+    </div>
+    <div class="chart-value">≈ 927 – 2,350 L</div>
+  </div>
+
+  <!-- Bathtub -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">ONE full bathtub</span>
+      <span class="subtitle">(~70 gallons, EPA)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 5.3%;"></div>
+    </div>
+    <div class="chart-value">≈ 265 L</div>
+  </div>
+
+  <!-- Tofu burger -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">ONE tofu/soy burger</span>
+      <span class="subtitle">(150 g soy patty, all-colors accounting)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 3.2%;"></div>
+    </div>
+    <div class="chart-value">≈ 160 L</div>
+  </div>
+
+  <!-- Video generation, 1 minute -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">1 MINUTE of AI video generation</span>
+      <span class="subtitle">(12 × 5-sec clips, CogVideoX-class; on-site → full-chain)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 1.2%;"></div>
+    </div>
+    <div class="chart-value">≈ 6 – 60 L</div>
+  </div>
+
+  <!-- Toilet flush -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">ONE toilet flush</span>
+      <span class="subtitle">(WaterSense 4.8 L → pre-1992 fixtures up to 26 L)</span>
+    </div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 0.5%;"></div>
+    </div>
+    <div class="chart-value">≈ 5 – 26 L</div>
+  </div>
+
+  <!-- Gaming hour -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">1 hour of video gaming</span>
+      <span class="subtitle">(console → high-end gaming PC; electricity-embedded water)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar" style="width: 0.04%;"></div>
+    </div>
+    <div class="chart-value">≈ 0.2 – 2 L</div>
+  </div>
+
+  <!-- Streaming hour -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">1 hour of streaming video</span>
+      <span class="subtitle">(device + network + datacenter, IEA energy basis)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar" style="width: 0.008%;"></div>
+    </div>
+    <div class="chart-value">≈ 0.2 – 0.4 L</div>
+  </div>
+
+  <!-- Surfing hour -->
+  <div class="chart-row">
+    <div class="chart-label">
+      <span class="title">1 hour of web surfing</span>
+      <span class="subtitle">(laptop + network; electricity-embedded water)</span>
+    </div>
+    <div class="chart-bar-container tiny">
+      <div class="chart-bar" style="width: 0.006%;"></div>
+    </div>
+    <div class="chart-value">≈ 0.1 – 0.3 L</div>
+  </div>
+</div>
+
+<div class="chart-notes">
+<p><b>Math &amp; sources.</b> Conversion basis: device/datacenter electricity × water embedded in US electricity generation, ~2–4 L/kWh consumptive average (Macknick et al. 2012; Ren et al.); datacenter rows add on-site cooling at ~0.5 L/kWh WUE at the low end. <b>Images:</b> 2.9 Wh × 365,000 ≈ 1,060 kWh/yr ⇒ ~500 L (on-site WUE only) to ~5,000 L (full-chain). <b>Coding:</b> ~475 kWh/yr ⇒ 240–2,400 L (as above). <b>Beef burger:</b> 927 L (SemiAnalysis, US irrigation blue-water) to 2,350 L (Water Footprint Network 150 g patty, green+blue+grey). <b>Tofu/soy burger:</b> ~160 L for the same 150 g patty (WFN) — the same sandwich, six-to-fifteen-fold less water, and most of soy's footprint is rain-fed green water besides. <b>Video generation:</b> measured ~0.94 kWh per 5-second clip (CogVideoX-class, MIT Technology Review's 2025 measurements) ⇒ ~11.3 kWh per minute ⇒ ~6 L (on-site) to ~60 L (full-chain) — and ~4–5 kg CO₂e per minute on average grids, making one minute of generated video ≈ a full day of 1,000 generated images. This is the modality where per-output footprints stop being trivial. <b>Gaming:</b> 0.1–0.5 kWh/h (console → enthusiast PC, LBNL green-gaming estimates) ⇒ 0.2–2 L/h. <b>Streaming:</b> ~0.077 kWh/h (IEA) ⇒ ~0.2–0.4 L/h. <b>Surfing:</b> ~0.03–0.06 kWh/h ⇒ ~0.1–0.3 L/h (derived from device wattage; the least certain row and the least consequential).</p>
+<p><b>Readings.</b> One toilet flush embeds more water than a <i>month</i> of median-boundary chatbot prompting (4.8 L vs. 0.26 mL × 50/day × 30 ≈ 0.4 L). One bathtub outweighs a year of full-lifecycle daily chatbot use, twice over. One beef burger outweighs the top-of-range year of agentic coding — and swapping it for tofu saves more water than that entire coding year consumes at its low boundary. The inversion to watch: AI <i>video</i> generation is the first consumer modality whose per-minute footprint rivals physical-world events; its disclosure (none exists from any provider) matters more than another decimal place on chat prompts.</p>
+</div>
+
 <div class="emissions-chart">
   <h2>Annual Water Consumption, United States (billions of gallons / yr)</h2>
 
@@ -1307,7 +1439,7 @@ new Chart(
 
 <p class="reference-item">de Vries-Gao, Alex. 2025. "The Carbon and Water Footprints of Data Centers and What This Could Mean for Artificial Intelligence." <i>Patterns</i>, December 17, 2025. <a href="https://www.cell.com/patterns/fulltext/S2666-3899(25)00278-8">https://www.cell.com/patterns/fulltext/S2666-3899(25)00278-8</a>.</p>
 
-<p class="reference-item">EPA (Environmental Protection Agency). 2024. "Greenhouse Gas Emissions from a Typical Passenger Vehicle." Accessed June 2026. <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</a>. See also EPA WaterSense, "Showerheads." <a href="https://www.epa.gov/watersense/showerheads">https://www.epa.gov/watersense/showerheads</a>.</p>
+<p class="reference-item">EPA (Environmental Protection Agency). 2024. "Greenhouse Gas Emissions from a Typical Passenger Vehicle." Accessed June 2026. <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</a>. See also EPA WaterSense, "Showerheads" <a href="https://www.epa.gov/watersense/showerheads">https://www.epa.gov/watersense/showerheads</a> and "Residential Toilets" <a href="https://www.epa.gov/watersense/residential-toilets">https://www.epa.gov/watersense/residential-toilets</a> (WaterSense flush 1.28 gal ≈ 4.8 L; older fixtures to ~26 L; full bathtub ≈ 70 gal ≈ 265 L).</p>
 
 <p class="reference-item">Google. 2025. "Measuring the Environmental Impact of AI Inference." Google Cloud Blog, August 2025. <a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/</a>. (Covered critically by <a href="https://www.technologyreview.com/2025/08/21/1122288/google-gemini-ai-energy/">MIT Technology Review</a> and <a href="https://towardsdatascience.com/is-googles-reveal-of-geminis-impact-progress-or-greenwashing/">Towards Data Science</a>.)</p>
 
@@ -1329,9 +1461,15 @@ new Chart(
 
 <p class="reference-item">Luccioni, Sasha, et al. 2025. "Misinformation by Omission: The Need for More Environmental Transparency in AI." arXiv:2506.15572. <a href="https://arxiv.org/abs/2506.15572">https://arxiv.org/abs/2506.15572</a>. See also Luccioni's disclosure comparison: <a href="https://huggingface.co/blog/sasha/environmental-impact-disclosures">"What Kind of Environmental Impacts Are AI Companies Disclosing?"</a></p>
 
+<p class="reference-item">Macknick, Jordan, Robin Newmark, Garvin Heath, and K. C. Hallett. 2012. "Operational Water Consumption and Withdrawal Factors for Electricity Generating Technologies: A Review of Existing Literature." <i>Environmental Research Letters</i> 7 (4): 045802. <a href="https://iopscience.iop.org/article/10.1088/1748-9326/7/4/045802">https://iopscience.iop.org/article/10.1088/1748-9326/7/4/045802</a>.</p>
+
 <p class="reference-item">Masanet, Eric, Arman Shehabi, Nuoa Lei, Sarah Smith, and Jonathan Koomey. 2020. "Recalibrating Global Data Center Energy-Use Estimates." <i>Science</i> 367 (6481): 984–86. <a href="https://www.science.org/doi/10.1126/science.aba3758">https://www.science.org/doi/10.1126/science.aba3758</a>.</p>
 
-<p class="reference-item">Mekonnen, Mesfin M., and Arjen Y. Hoekstra. 2012. "A Global Assessment of the Water Footprint of Farm Animal Products." <i>Ecosystems</i> 15: 401–415. <a href="https://doi.org/10.1007/s10021-011-9517-8">https://doi.org/10.1007/s10021-011-9517-8</a>. See also Water Footprint Network, <a href="https://www.waterfootprint.org/resources/interactive-tools/product-gallery/">Product Gallery</a> (coffee ≈ 140 L/cup).</p>
+<p class="reference-item">Mekonnen, Mesfin M., and Arjen Y. Hoekstra. 2012. "A Global Assessment of the Water Footprint of Farm Animal Products." <i>Ecosystems</i> 15: 401–415. <a href="https://doi.org/10.1007/s10021-011-9517-8">https://doi.org/10.1007/s10021-011-9517-8</a>. See also Water Footprint Network, <a href="https://www.waterfootprint.org/resources/interactive-tools/product-gallery/">Product Gallery</a> (coffee ≈ 140 L/cup; 150 g beef burger ≈ 2,350 L; 150 g soy burger ≈ 160 L).</p>
+
+<p class="reference-item">Mills, Evan, et al. 2019. "Toward Greener Gaming: Estimating National Energy Use and Energy Efficiency Potential." <i>The Computer Games Journal</i> 8: 157–78. Lawrence Berkeley National Laboratory "Green Gaming" project. <a href="https://greengaming.lbl.gov">https://greengaming.lbl.gov</a>.</p>
+
+<p class="reference-item">O'Donnell, James, and Casey Crownhart. 2025. "We Did the Math on AI's Energy Footprint. Here's the Story You Haven't Heard." <i>MIT Technology Review</i>, May 20, 2025. <a href="https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/">https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/</a>. (Measured ≈ 0.94 kWh per 5-second CogVideoX-class video generation.)</p>
 
 <p class="reference-item">Microsoft. 2025. <i>2025 Environmental Sustainability Report</i>. May 29, 2025. <a href="https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/">https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/</a>.</p>
 
@@ -1373,7 +1511,7 @@ new Chart(
 
   <h6 style="font-weight: lighter;">
     <b>Published</b>: June 10, 2026<br>
-    <b>UPDATED</b>: June 10, 2026 (v2) — math re-checked; Figure 0 (estimate-disparity), water-by-activity chart, agentic-coding and golf rows added; change-markers vs. the May 2025 essay noted throughout<br>
+    <b>UPDATED</b>: June 10, 2026 (v3) — math re-checked; Figure 0 (estimate-disparity), water-by-activity chart, agentic-coding and golf rows, change-markers vs. the May 2025 essay throughout; events-vs-habits water chart added (burgers beef &amp; tofu, bathtub, toilet flush, video generation, gaming, streaming, surfing)<br>
     <b>Author &amp; researcher</b>: Claude (Anthropic), extended-thinking mode<br>
     <b>From a prompt by</b>: Jhave @ glia.ca<br>
     <b>Companion to</b>: <a href="https://glia.ca/2025/ccai/">Planetary Ecology: Carbon Emissions of #genAI in Context (May 2025)</a><br>
