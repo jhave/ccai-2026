@@ -904,60 +904,53 @@
     <div id="c-wbars"><div class="slider-bar-track"><div class="slider-bar" style="width:0%"></div></div></div>
     <div class="slider-share" id="c-wscale"></div>
 
-    <div class="boundary-switch">
-      <button id="b-onsite" class="active" type="button">Provider-measured / on-site boundary (AI factors)</button>
-      <button id="b-full" type="button">Independent / full-chain boundary (AI factors)</button>
-    </div>
-
     <div class="calc-out" id="calc-out"></div>
 
     <details class="fold">
       <summary>The factors behind this comparator (field terminology &amp; sources)</summary>
-      <p style="font-size:0.85rem;"><b>AI categories, per-unit energy — on-site→full-chain:</b> chat 0.24→1.2 Wh
-        (Google '25 median → Jegham '25 benchmark); reasoning 10→30 Wh (Jegham '25); image 1→3 Wh (Luccioni FAccT '24);
-        video 678 kWh/hour both boundaries (MIT TR '25, measured at 0.94 kWh per 5-second clip); coding 130→1,000 Wh
-        per active hour (Couch '26 measured → autonomous-harness outlier). Conversions: carbon 0.125→0.4 kg CO₂e/kWh
-        (market-based portfolio → US location-based grid, EPA eGRID); water 0.5→5 L/kWh (on-site WUE, SemiAnalysis '26
-        → incl. electricity-embedded water, Macknick '12 / Ren '25); chat water uses published per-query constants
-        (0.26 mL Google → 45 mL Mistral full-LCA).<br><br>
-        <b>Non-AI categories, boundary-independent:</b> transatlantic round trip 2,900 kg CO₂e incl. RF×2 (atmosfair;
-        water not quantified here); hamburger ≈7 kg CO₂e (Poore &amp; Nemecek '18) and 927 L water (SemiAnalysis '26);
-        bath ≈265 L, 8-minute shower ≈64 L, WaterSense toilet flush ≈4.8 L (EPA — carbon not quantified for these:
-        water-heating energy varies too widely by home); driving 0.4 kg CO₂e/mile (EPA; water not quantified); golf
-        round ≈0.7 kg CO₂e and ≈14,400 L irrigation (CarbonSave/GCSAA, USGA, ÷ ~30,000 rounds per course-year);
-        soldier person-year ≈33,000 kg CO₂e (Crawford '19 / SGR-CEOBS '22; water not quantified). <b>Bar scales
-        (fixed):</b> carbon bar = one car-year (4,600 kg, EPA); water bar = 100,000 L (≈ 108 burgers ≈ 377 bathtubs);
-        bars overflowing their scale show a ×N multiplier instead of growing. All values ≈.</p>
+      <p style="font-size:0.85rem;"><b>AI categories — full-chain accounting, deliberately the HIGH end:</b> every AI
+        number in this comparator uses the most conservative independent full-chain reading: chat 1.2 Wh and 45 mL per
+        query (Jegham '25 benchmark; Mistral ADEME-audited full lifecycle); reasoning 30 Wh; image 3 Wh (Luccioni
+        FAccT '24); video 678 kWh/hour (MIT TR '25, measured at 0.94 kWh per 5-second clip); coding 1,000 Wh per
+        active hour (autonomous-harness outlier, Couch '26); carbon 0.4 kg CO₂e/kWh (US location-based grid, EPA
+        eGRID); water 5 L/kWh including electricity-embedded water (Macknick '12 / Ren '25). <b>Provider-measured
+        on-site values are a small fraction of these</b> — chat 0.24 Wh and 0.26 mL (Google '25 median), coding 130
+        Wh/hr measured, carbon 0.125 kg/kWh, water 0.5 L/kWh — so the AI figures shown here are the ceiling; the
+        measured floor runs roughly 5–100× lower depending on category (see <a href="#figure0">Figure 0</a>).<br><br>
+        <b>Non-AI categories:</b> transatlantic round trip (one person) 2,900 kg CO₂e incl. RF×2 (atmosfair; water not
+        quantified here); hamburger ≈7 kg CO₂e (Poore &amp; Nemecek '18) and 927 L water (SemiAnalysis '26); bath ≈265
+        L, 8-minute shower ≈64 L, WaterSense toilet flush ≈4.8 L (EPA — carbon not quantified: water-heating energy
+        varies too widely by home); driving 0.4 kg CO₂e/mile (EPA; water not quantified); golf round ≈0.7 kg CO₂e and
+        ≈14,400 L irrigation (CarbonSave/GCSAA, USGA, ÷ ~30,000 rounds per course-year); soldier person-year ≈33,000
+        kg CO₂e (Crawford '19 / SGR-CEOBS '22; water not quantified). <b>Bar scales (fixed):</b> each carbon bar = one
+        car-year (4,600 kg, EPA); each water bar = 100,000 L (≈ 108 burgers ≈ 377 bathtubs); big values stack
+        additional bars. All values ≈.</p>
     </details>
   </div>
 
   <script>
     (function () {
-      var F = {
-        onsite: { chatWh: 0.24, reasonWh: 10, imgWh: 1.0, videoWhHr: 678000, codeWhHr: 130, kg: 0.125, l: 0.5, chatMl: 0.26, label: "provider-measured / on-site" },
-        fullchain: { chatWh: 1.2, reasonWh: 30, imgWh: 3.0, videoWhHr: 678000, codeWhHr: 1000, kg: 0.4, l: 5.0, chatMl: 45, label: "independent / full-chain" }
-      };
+      var F = { chatWh: 1.2, reasonWh: 30, imgWh: 3.0, videoWhHr: 678000, codeWhHr: 1000, kg: 0.4, l: 5.0, chatMl: 45 };
       var CATS = {
         chat: { unit: "queries", eq: "AI chat queries", max: 36500, step: 100, def: 10950, ai: "chat" },
         reason: { unit: "queries", eq: "AI reasoning queries", max: 18250, step: 50, def: 3650, ai: "reason" },
         img: { unit: "images", eq: "AI images", max: 365000, step: 500, def: 3650, ai: "img" },
         video: { unit: "hours", eq: "hours of AI video", max: 50, step: 1, def: 1, ai: "video" },
         code: { unit: "hours", eq: "hours of AI agentic coding", max: 4000, step: 10, def: 730, ai: "code" },
-        flight: { unit: "flights (one person, round-trip)", eq: "one-person transatlantic round trips", max: 3, step: 1, def: 2, kg: 2900, l: 0, nqW: true },
+        flight: { unit: "flights (one person, round-trip)", eq: "one-person transatlantic round trips", max: 5, step: 1, def: 2, kg: 2900, l: 0, nqW: true },
         burger: { unit: "burgers", eq: "hamburgers", max: 100, step: 1, def: 52, kg: 7, l: 927 },
         bath: { unit: "baths", eq: "baths (full tub)", max: 365, step: 5, def: 52, kg: 0, l: 265, nqC: true },
         shower: { unit: "showers", eq: "8-minute showers", max: 730, step: 5, def: 365, kg: 0, l: 64, nqC: true },
         flush: { unit: "flushes", eq: "toilet flushes", max: 3650, step: 10, def: 1825, kg: 0, l: 4.8, nqC: true },
         drive: { unit: "miles", eq: "miles of car driving", max: 24000, step: 100, def: 12000, kg: 0.4, l: 0, nqW: true },
-        golf: { unit: "rounds", eq: "golf rounds", max: 100, step: 1, def: 20, kg: 0.7, l: 14400 },
+        golf: { unit: "rounds", eq: "golf rounds", max: 52, step: 1, def: 20, kg: 0.7, l: 14400 },
         soldier: { unit: "person-years", eq: "soldier person-years", max: 2, step: 1, def: 1, kg: 33000, l: 0, nqW: true }
       };
       var CARBON_SCALE = 4600;   // one car-year, kg CO2e
       var WATER_SCALE = 100000;  // litres
-      var mode = "onsite";
       function el(id) { return document.getElementById(id); }
       function perUnit(key) {
-        var c = CATS[key], f = F[mode];
+        var c = CATS[key], f = F;
         if (!c.ai) return { kg: c.kg, l: c.l, nqW: !!c.nqW, nqC: !!c.nqC };
         var wh = { chat: f.chatWh, reason: f.reasonWh, img: f.imgWh, video: f.videoWhHr, code: f.codeWhHr }[c.ai];
         var l = (c.ai === "chat") ? f.chatMl / 1000 : (wh / 1000) * f.l;
@@ -972,19 +965,16 @@
         return x.toFixed(2);
       }
       function renderBars(wrapId, scaleId, value, scale, scaleWord, cls) {
-        var MAXB = 4;
+        var MAXB = 30; // safety cap; never reached with current category maxima
         var pct = scale > 0 ? 100 * value / scale : 0;
-        var full = Math.floor(pct / 100), rem = pct - full * 100;
+        var full = Math.min(Math.floor(pct / 100), MAXB), rem = pct - Math.floor(pct / 100) * 100;
         function track(w) { return '<div class="slider-bar-track"><div class="slider-bar ' + cls + '" style="width:' + w + '%"></div></div>'; }
         var html = "";
         if (pct <= 0) html = track(0);
-        else if (full >= MAXB) { for (var i = 0; i < MAXB; i++) html += track(100); }
-        else { for (var j = 0; j < full; j++) html += track(100); if (rem > 0) html += track(Math.max(rem, 0.5)); }
+        else { for (var j = 0; j < full; j++) html += track(100); if (rem > 0 && full < MAXB) html += track(Math.max(rem, 0.5)); }
         el(wrapId).innerHTML = html;
-        var tracks = full >= MAXB ? MAXB : full + (rem > 0 ? 1 : 0);
-        el(scaleId).textContent = full >= MAXB
-          ? "bar scale: " + scaleWord + " each — this is " + fmtBig(pct / 100) + "× the full bar"
-          : "bar scale: " + scaleWord + (tracks > 1 ? " each" : "");
+        var tracks = full + (rem > 0 ? 1 : 0);
+        el(scaleId).textContent = "bar scale: " + scaleWord + (tracks > 1 ? " each (" + fmtBig(pct / 100) + " bars)" : "");
       }
       function equivList(kind, amount) {
         var sel = el("c-cat").value, p = perUnit(sel);
@@ -1015,8 +1005,7 @@
           + (p.nqC ? "— (carbon not quantified for this category)" : (kg > 0 ? equivList("kg", n) : "—")) + "<br><br>"
           + "<span style='color:#3B82F6;font-weight:700;'>Same WATER as:</span><br>"
           + (p.nqW ? "— (water not quantified for this category)" : (l > 0 ? equivList("l", n) : "—"))
-          + "<br><br><span style='font-size:0.85rem;color:#888;'>AI factors: <i>" + F[mode].label
-          + "</i> boundary — flip it and the AI equivalences move. Carbon and water lists differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other.</span>";
+          + "<br><br><span style='font-size:0.85rem;color:#888;'>AI values use the most conservative independent full-chain accounting; provider-measured on-site values run roughly 5–100× lower (see factors below). Carbon and water lists differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other.</span>";
         el("calc-out").innerHTML = out;
       }
       el("c-cat").onchange = function () {
@@ -1024,8 +1013,6 @@
         s.min = 0; s.max = c.max; s.step = c.step; s.value = c.def;
         calc();
       };
-      el("b-onsite").onclick = function () { mode = "onsite"; this.classList.add("active"); el("b-full").classList.remove("active"); calc(); };
-      el("b-full").onclick = function () { mode = "fullchain"; this.classList.add("active"); el("b-onsite").classList.remove("active"); calc(); };
       el("c-amt").oninput = calc;
       calc();
     })();
