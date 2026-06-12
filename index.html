@@ -393,9 +393,9 @@
       max-width: 100%;
     }
 
-    /* dedicated AI is colored blue, as in the 2025 essay's energy chart */
+    /* dedicated AI is colored sienna — blue is reserved for water (see comparator) */
     .chart-bar.ai {
-      background-color: #3B82F6;
+      background-color: #A0522D;
     }
 
     .chart-value {
@@ -404,7 +404,12 @@
       white-space: nowrap;
     }
 
-    /* Ensure minimal bar visibility */
+    /* Ensure minimal bar visibility — all chart bars floor at 8px so visual
+       order never inverts against the printed values */
+    .chart-bar {
+      min-width: 8px;
+    }
+
     .tiny .chart-bar {
       min-width: 8px;
     }
@@ -804,9 +809,17 @@
   </h5>
 
   <figure>
-    <img src="img/psa-c4-jevons-x.png" width="100%" alt="">
+    <img src="img/psa-c4-jevons-x.png" width="100%"
+      alt="PSA poster: two jagged lines crossing in a giant X. A thin blue line plunges, labeled ENERGY PER PROMPT: DOWN TO 3% OF WHAT IT WAS, with a small happy thought bubble reading Good for climate! A thick red line climbs, labeled AI COMPUTE CAPACITY: roughly 300% of early 2025, tripled in 18 months, with a bigger sad thought bubble reading Bad for climate! Headline: EFFICIENCY WENT UP. SO DID THE TOTALS. Kicker: BOTH LINES ARE TRUE. THAT'S THE PROBLEM.">
     <figcaption style="text-align:center;">
-      <i>.....</i>
+      <i>Per-prompt energy fell to ~3% of its year-earlier value in the 12 months to mid-2025 (<a
+          href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google</a>),
+        while AI-factory capacity tripled in 18 months (<a
+          href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">IEA</a>) and data-centre
+        electricity grew 17% in 2025 alone (<a
+          href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions">IEA</a>).
+        Both lines are true; the fuzzy halos narrowing left-to-right are the year's other story — in May 2025 these
+        lines were guesses, in June 2026 they are measurements.</i>
     </figcaption>
   </figure>
 
@@ -1064,7 +1077,7 @@
 
   <h2 id="carbonchart">Annual Carbon Emissions by Activity (kg CO₂e)</h2>
   <p>Linear scale comparison of carbon footprints [<b>estimates</b>] across human activities. Dedicated AI is colored
-    <span style="color:#3B82F6;font-weight:bold">blue</span>. Rows whose values changed since the May 2025 essay are
+    <span style="color:#A0522D;font-weight:bold">sienna</span>. Rows whose values changed since the May 2025 essay are
     marked <span class="delta">UPDATED ▼/▲</span>; rows added this year are marked <span class="delta new">NEW</span>;
     unmarked rows are unchanged.
   </p>
@@ -1538,7 +1551,7 @@
   <h2>Estimated Water Footprint by Activity (June 2026)</h2>
   <p>Annual, personal-scale comparison, in litres per year, <b>with ambiguity ranges</b> — the AI rows span the full
     boundary disagreement (on-site-only at the low end; full-chain at the high end). Dedicated AI is colored <span
-      style="color:#3B82F6;font-weight:bold">blue</span>.</p>
+      style="color:#A0522D;font-weight:bold">sienna</span>.</p>
 
   <div class="emissions-chart">
     <h2>Estimated Water Footprint by Activity (June 2026)</h2>
@@ -1664,7 +1677,7 @@
   <p>A deliberately mixed-duration chart — single physical events (one burger, one bath, one flush) against digital
     activities at their natural scales (a year of extreme AI use; a minute of video generation; an hour of screen time).
     Mixing durations is the point: it shows how many <i>years</i> of digital habit fit inside one lunch. Dedicated AI is
-    colored <span style="color:#3B82F6;font-weight:bold">blue</span>; ranges span on-site-only to full-chain water
+    colored <span style="color:#A0522D;font-weight:bold">sienna</span>; ranges span on-site-only to full-chain water
     accounting.</p>
 
   <div class="emissions-chart">
@@ -1909,7 +1922,6 @@
     </p>
   </div>
 
-  <!-- PSA №6 placeholder — uncomment when img/psa-w8-golf-bad.png is saved:
   <figure style="margin:2rem 0;">
     <img src="img/psa-w8-golf-bad.png"
       alt="Satirical PSA poster. Huge jagged headline: GOLF is BAD, with an upside-down golf club as the exclamation mark. Isometric golf-course tiles interspersed with a cascading waterfall of alternating statements: In 2024, golf used 30 times more DIRECT water than datacenters — but count the water behind their electricity — and golf's lead shrinks to 2.4 times — and if datacenters keep growing as projected — by 2028 they may draw even. Kicker at bottom: GOLF ISN'T BAD. SINGLE-NUMBER HEADLINES ARE."
@@ -1930,8 +1942,6 @@
           href="#figure0">Figure 0</a>.</p>
     </figcaption>
   </figure>
-  -->
-
   <p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built
       or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with
     similar or worse siting patterns in China, India, and the Gulf (<a
@@ -2146,14 +2156,6 @@
 
 
 
-  <!-- PSA №4 placeholder — uncomment when img/psa-c4-efficiency.png is saved:
- <figure style="margin:2rem 0;">
-  <img src="img/psa-c4-efficiency.png" alt="PSA poster, two arrows only: a thin arrow plunging down labeled ENERGY PER PROMPT divided by 33 in one year, and a massive arrow rising labeled TOTAL EMISSIONS SINCE 2019 plus 51 percent. Slogan: EFFICIENCY ISN'T ABSOLUTION." class="header-image">
-  <figcaption class="chart-notes" style="font-style:normal;">
-  <p><b>PSA №4 — "Efficiency Isn't Absolution."</b> Per-prompt energy fell 33× in twelve months (<a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google 2025</a>) while Google's absolute emissions rose 51% above 2019 (<a href="https://sustainability.google/google-2025-environmental-report/">Google ER 2025</a>) and Microsoft's 23.4% above 2020 (<a href="https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/">Microsoft 2025</a>). Jevons, 1865 — still undefeated.</p>
-  </figcaption>
- </figure>
- -->
 
   <div class="highlight">
     <p><b>What would change this analysis.</b> Falsifiability, stated plainly — the observations that would force this
