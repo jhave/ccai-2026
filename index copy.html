@@ -606,33 +606,6 @@
       color: #c00;
     }
 
-    .calc .slider-bar-track {
-      height: 7px;
-      background: #eee;
-      border-radius: 2px;
-      margin: 2px 0 0;
-      overflow: hidden;
-    }
-
-    .calc .slider-bar {
-      height: 7px;
-      width: 0%;
-      background: #3B82F6;
-      border-radius: 2px;
-      transition: width 0.15s ease;
-    }
-
-    .calc .slider-bar.carbon {
-      background: #c00;
-    }
-
-    .calc .slider-share {
-      font-size: 0.75rem;
-      color: #888;
-      font-family: system-ui, sans-serif;
-      margin: 1px 0 0.6rem;
-    }
-
     @media (max-width: 600px) {
       .chart-row {
         grid-template-columns: 130px 1fr 110px;
@@ -687,7 +660,7 @@
       visibility: hidden;
       transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1000;
-      white-space: pre-line;
+      white-space: normal;
       text-align: left;
     }
 
@@ -739,22 +712,25 @@
   <h1>The Water &amp; Wattage of #genAI in Context | A Comparative Data Analysis (June 11, 2026)</h1>
   <tiny>Researched, written and designed by Claude's Fable 5 model, from a prompt by David Jhave Johnston.
     11.06.2026 &nbsp;·&nbsp; sequel to <a href="https://glia.ca/2025/ccai/">Carbon Emissions of #genAI in Context
-      (05.05.2025)</a>.</tiny>
+      (05.05.2025)</a>. Wherever necessary, values have been updated to reflect new info. The 2025 conclusion has
+    survived a year of vastly better data.</tiny>
 
   <figure style="margin:2rem 0;">
     <img src="img/PSA-care-about-earth.png" width="100%" alt="PSA C1: INTRO">
-    <figcaption style="text-align:center;">
-      <i>How much water and electricity does #genAI actually use?</i> <br>The data is more nuanced than the headlines.
+    <figcaption>
+      This work began with a question: <i>How much water and electricity does #genAI actually use?</i>
+      Answers were never going to be indisputable — but the numbers, once assembled, are more nuanced than headlines.
     </figcaption>
   </figure>
 
 
-  <h3><b>TLDR;</b> <i>Individual</i> use of generative AI currently remains a minor part of the human carbon and water
+
+
+  <h3><b>TLDR;</b> <i>individual</i> use of generative AI currently remains a minor part of the human carbon and water
     footprint —
     far below crypto, aviation, personal transport, diet, pets, golf irrigation, and especially <b>military
       emissions</b>. In other words, kids, cars,
-    crypto, carnivores, combatants, golf courses, air conditioning, and air-flight consumers all have a larger climate
-    and water
+    crypto, carnivores, combatants, golf courses, air conditioning, and air cabins all have a larger climate and water
     footprint than
     aggregate AI
     queries. But <b>AI is rapidly expanding</b>, and its impacts will radically increase, posing
@@ -763,7 +739,7 @@
   <p><b>What changed since 2025?</b> Accuracy increased: providers published measured per-prompt figures
     (which came in <i>lower</i> than
     prior guesses), while ... the <i>aggregate</i> buildout became the fastest-growing industrial electricity load on
-    Earth. Efficiency increased AND the total amount of carbon and water used by AI increased.</p>
+    Earth. Efficiency increased AND the total amount of carbon and water AI by used increased.</p>
   <details class="fold">
     <summary>MIT Technology Review contextualizes the difficulty of finding certainty in measurements:</summary>
     <blockquote>
@@ -782,42 +758,38 @@
     </blockquote>
   </details>
 
-  <h5><b>Disclaimer</b>: The following <b>data comes with caveats</b> —
+
+
+  <h4><b>Disclaimer</b>: Most public disagreement about AI's footprint is not disagreement about physics; it is
+    disagreement about <i>boundaries</i>, usually undeclared —
     <span class="tooltip-trigger" tabindex="0"
-      data-tooltip="Marginal: power to run one extra query (fractions of a Wh).&#10;&#10;Amortized: includes training the AI and manufacturing hardware divided over all queries.">marginal
+      data-tooltip="Marginal: power to run one extra query (fractions of a Wh). <br><br>Amortized: includes training the AI and manufacturing hardware divided over all queries.">marginal
       vs. amortized</span>,
     <span class="tooltip-trigger" tabindex="0"
-      data-tooltip="On-site: direct power and water evaporated at the data center.&#10;&#10;Full-chain: includes upstream electricity generation, grid losses, and server manufacturing.">on-site
+      data-tooltip="On-site: direct power and water evaporated at the data center. <br><br>Full-chain: includes upstream electricity generation, grid losses, and server manufacturing.">on-site
       vs. full-chain</span>,
     <span class="tooltip-trigger" tabindex="0"
-      data-tooltip="Withdrawal: total water taken from a source (often recycled).&#10;&#10;Consumption: water lost to the local watershed, mostly evaporated in cooling towers.">water
+      data-tooltip="Withdrawal: total water taken from a source (often recycled). <br><br>Consumption: water lost to the local watershed, mostly evaporated in cooling towers.">water
       withdrawal vs. consumption</span>,
     <span class="tooltip-trigger" tabindex="0"
-      data-tooltip="Median: the cost of a typical simple query.&#10;&#10;Mean: the mathematical average, dragged higher by heavy reasoning models, agentic loops, and images.">median
+      data-tooltip="Median: the cost of a typical simple query. <br><br>Mean: the mathematical average, dragged higher by heavy reasoning models, agentic loops, and images.">median
       vs. mean</span>,
     <span class="tooltip-trigger" tabindex="0"
-      data-tooltip="Market-based: counts emissions after subtracting purchased green energy certificates.&#10;&#10;Location-based: counts actual emissions from the local grid.">market-based
+      data-tooltip="Market-based: counts emissions after subtracting purchased green energy certificates. <br><br>Location-based: counts actual emissions from the local grid.">market-based
       vs. location-based emissions</span>.
     Proprietary secrecy persists (OpenAI and Anthropic still publish no standalone audited footprint), reasoning models
-    expanded the per-query impact, and agentic workloads multiply queries invisibly. <b>Everything remains (≈)
-      approximate</b> — but considerably less approximate than it was in May 2025.
-  </h5>
-
-  <figure>
-    <img src="img/psa-c4-jevons-x.png" width="100%" alt="">
-    <figcaption style="text-align:center;">
-      <i>.....</i>
-    </figcaption>
-  </figure>
+    have fattened the per-query tail, and agentic workloads multiply queries invisibly. Everything below remains (≈)
+    approximate — but considerably less approximate than it was in May 2025.
+  </h4>
 
 
   <div class="fork">
-    <a href="#path-concerned">"I believe AI is wrecking the planet" →</a>
+    <a href="#path-concerned">"I believe AI is<br>wrecking the planet" →</a>
 
   </div>
 
   <div class="path" id="path-concerned">
-    <h4><b>Congratulations, you're (partly) correct.</b></h4>
+    <h4><b>If you believe AI is wrecking the planet — you're partly right.</b></h4>
     <p>You're right that emissions are up double digits at every AI hyperscaler. You're right that <b>two-thirds of
         new US
         data centres sit in water-stressed counties</b> . You're right that nobody — not OpenAI, not Anthropic —
@@ -825,8 +797,8 @@
       video, reasoning, or agentic footprints. None of that is denied here; all of it is cited below.</p>
     <p><b>But you may not know:</b> the per-use numbers, now measured and audited rather than guessed, are
       far <i>lower</i> than the meme numbers <b>— a year of chatting costs less carbon than one tank of gas </b>(<a
-        href="#carbonchart">chart</a>), <b>and less water than one hamburger</b> (<a href="#water">see the water
-        section</a>). The
+        href="#carbonchart">chart</a>), and less water than one hamburger (<a href="#water">see the water
+        section</a>)</b>. The
       strongest version of your concern is not about anyone's prompts; it is about siting, gas turbines, and disclosure
       — and that version is <i>stronger</i>, because it's the one the data supports (<a href="#aggregate">aggregate
         section</a>, <a href="#extrapolation">extrapolation</a>).</p>
@@ -842,19 +814,19 @@
 
 
   <div class="fork">
-    <a href="#path-skeptical">"I believe this worry is overblown" →</a>
+    <a href="#path-skeptical">"I believe this worry<br>is overblown" →</a>
   </div>
   <div class="path" id="path-skeptical">
-    <h4><b>Congratulations, you're (partly) right.</b></h4>
+    <h4><b>If you believe this worry is overblown — you're partly right.</b></h4>
     <p>You're right that the "bottle of water per email" meme is off by up to three orders of magnitude against measured
       data. You're right that a year of heavy chatbot use emits less than one tank of gasoline and sips less water than
       one burger embeds. You're right that <b>US golf courses out-consume the entire US data-centre industry's direct
         water
         draw thirty-fold</b>. All cited below.</p>
     <p><b>The part you may not expect:</b> per-use triviality does not scale to aggregate innocence. Data-centre demand
-      grew 17% in 2025 on real meters; <b>gas-turbine orders are at a 25-year high</b>; <b>hyperscaler emissions are
-        rising faster
-        than their efficiency gains</b>; and the exponential growth of #genAI use (video: ~680 kWh per generated hour)
+      grew 17% in 2025 on real meters; <b>gas-turbine orders are at a 25-year high</b>; hyperscaler emissions are rising
+      faster
+      than their efficiency gains</b>; and the exponentional growth of #genAI use (video: ~680 kWh per generated hour)
       is the pattern we need to watch (<a href="#extrapolation">extrapolation section</a>). "Trivial per-use,
       consequential in aggregate" is how automobiles looked in 1926.</p>
     <details class="fold">
@@ -868,173 +840,228 @@
     </details>
   </div>
 
-  <div class="divider">SEEING IS BELIEVING: try the Comparator below. <br>All values based on real 2026 data. Sources
-    listed
-    at end of this article.</div>
+  <div class="divider">~</div>
+
+  <h3 id="figure0">Figure 0: Why Do Credible Estimates Differ by ~40× (carbon) and ~350× (water)?</h3>
+
+  <p>Before any comparison, the disparity itself needs explaining — because every camp in the AI-environment debate
+    selects the estimate that flatters its thesis, and <i>all of these numbers are, within their own boundaries,
+      correct</i>.</p>
+
+  <div class="emissions-chart">
+    <h3>Carbon per chatbot text response (g CO₂e) — four credible answers</h3>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Google Gemini</span>
+        <span class="subtitle">(measured <b>median</b> prompt; market-based grid; Aug 2025)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 1.4%;"></div>
+      </div>
+      <div class="chart-value">0.03 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-4o benchmark</span>
+        <span class="subtitle">(independent measurement, ~1 Wh × avg US grid; Jegham et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 18%;"></div>
+      </div>
+      <div class="chart-value">≈ 0.4 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Mistral Large 2</span>
+        <span class="subtitle">(<b>full lifecycle</b> LCA incl. training &amp; hardware, ADEME-audited; per 400-token
+          response)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 52%;"></div>
+      </div>
+      <div class="chart-value">1.14 g</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">2025 essay's estimate</span>
+        <span class="subtitle">(ChatGPT, training-amortised heuristic; Tomlinson et al. 2024)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 100%;"></div>
+      </div>
+      <div class="chart-value">2.2 g</div>
+    </div>
+
+    <h3>Water per chatbot text response (mL) — five credible answers</h3>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">xAI Colossus 2</span>
+        <span class="subtitle">(on-site + amortized chip mfg; SemiAnalysis model, Mar 2026)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 0.3%;"></div>
+      </div>
+      <div class="chart-value">≈ 0.13 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Google Gemini</span>
+        <span class="subtitle">(measured median; <b>on-site cooling only</b>)</span>
+      </div>
+      <div class="chart-bar-container tiny">
+        <div class="chart-bar ai" style="width: 0.5%;"></div>
+      </div>
+      <div class="chart-value">0.26 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-4o benchmark</span>
+        <span class="subtitle">(short query, <b>incl. off-site</b> electricity water; Jegham et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 2.4%;"></div>
+      </div>
+      <div class="chart-value">≈ 1.2 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">GPT-3-era response</span>
+        <span class="subtitle">(on-site + electricity-embedded, 2020-era infrastructure; Ren et al.)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 100%;"></div>
+      </div>
+      <div class="chart-value">≈ 10 – 50 mL</div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-label">
+        <span class="title">Mistral Large 2</span>
+        <span class="subtitle">(<b>full lifecycle</b> incl. upstream agriculture-grade accounting; per 400-token
+          response)</span>
+      </div>
+      <div class="chart-bar-container">
+        <div class="chart-bar ai" style="width: 90%;"></div>
+      </div>
+      <div class="chart-value">45 mL</div>
+    </div>
+  </div>
+
+  <div class="chart-notes">
+    <p><b>All of these numbers are correct — inside their own boundaries.</b> The chart shows not a disagreement about
+      physics, but five different ways of answering the same questions.</p>
+    <details class="fold">
+      <summary>Why the disparity? The five reasons </summary>
+      <p>In roughly descending order of effect. <b>(1) Boundary scope:</b> Google counts the on-site footprint of
+        serving one prompt; Mistral counts a share of training, hardware manufacture, idle capacity, and upstream water
+        — full-chain accounting is 10–100× wider by construction. <b>(2) Median vs. mean:</b> Google reports the median
+        prompt; means are dragged upward by a heavy tail of long-context and reasoning queries (10–65× costlier). <b>(3)
+          Grid accounting:</b> market-based figures credit purchased clean energy (Google's 0.03 g); location-based
+        figures use the physical local grid (≈ 0.4 g for the same watt-hours on average US power). <b>(4) Model size
+          &amp; tokens:</b> a 400-token response from a large model is simply more computation than a median short reply
+        from an efficiency-routed one. <b>(5) Vintage:</b> per-prompt energy fell ~33× in the twelve months to August
+        2025 — estimates dated eighteen months apart describe different machines. The honest takeaway: <i>always ask
+          which boundary, which statistic, which grid, which model, which year.</i> This essay states all five for every
+        figure it uses.</p>
+    </details>
+  </div>
 
   <div class="calc" id="calc">
-    <h2>The Impact Comparator</h2>
+    <h3>Your Footprint, Both Ways</h3>
+    <p style="font-size:0.95rem; color:#555; margin-top:0;">Set your actual AI habits. Then flip the accounting boundary
+      and watch the number change <i>without your behavior changing</i>. That flip is the entire methodology debate, in
+      one switch.</p>
 
-    <label for="c-cat">Activity:</label>
-    <select id="c-cat"
-      style="width:100%; padding:0.5rem; font-size:0.95rem; border:1px solid #ccc; border-radius:4px; background:#fff; font-family: system-ui, sans-serif;">
-      <option value="chat">AI chat queries</option>
-      <option value="reason">AI reasoning (chain-of-thought) queries</option>
-      <option value="img">AI images generated</option>
-      <option value="video">AI video generated (hours)</option>
-      <option value="code">AI agentic coding (hours)</option>
-      <option value="flight" selected>Transatlantic flights (one person, round-trip)</option>
-      <option value="burger">Hamburgers</option>
-      <option value="bath">Baths (full tub)</option>
-      <option value="shower">Showers (8-minute)</option>
-      <option value="flush">Toilet flushes</option>
-      <option value="drive">Car driving (miles)</option>
-      <option value="golf">Golf rounds</option>
-      <option value="soldier">Soldiers funded (person-years)</option>
-    </select>
+    <label>Chat queries per day: <output id="o-chat">30</output></label>
+    <input type="range" id="i-chat" min="0" max="200" value="30">
 
-    <label>Amount: <output id="c-out">2</output> <span id="c-unit">flights</span></label>
-    <input type="range" id="c-amt" min="0" max="3" step="1" value="2">
+    <label>Reasoning / chain-of-thought queries per day: <output id="o-reason">10</output></label>
+    <input type="range" id="i-reason" min="0" max="100" value="10">
 
-    <div style="margin-top:0.9rem; font-size:0.8rem; color:#c00; font-family:system-ui,sans-serif; font-weight:600;">
-      CARBON <span id="c-ckg" style="color:#333;"></span></div>
-    <div id="c-cbars">
-      <div class="slider-bar-track">
-        <div class="slider-bar carbon" style="width:0%"></div>
-      </div>
+    <label>Images generated per day: <output id="o-img">10</output></label>
+    <input type="range" id="i-img" min="0" max="1000" value="10">
+
+    <label>AI video generated per week (minutes): <output id="o-video">0</output></label>
+    <input type="range" id="i-video" min="0" max="60" value="0">
+
+    <label>Agentic coding per day (active hours): <output id="o-code">2</output></label>
+    <input type="range" id="i-code" min="0" max="12" value="2">
+
+    <div class="boundary-switch">
+      <button id="b-onsite" class="active" type="button">Provider-measured / on-site boundary</button>
+      <button id="b-full" type="button">Independent / full-chain boundary</button>
     </div>
-    <div class="slider-share" id="c-cscale"></div>
-
-    <div style="margin-top:0.4rem; font-size:0.8rem; color:#3B82F6; font-family:system-ui,sans-serif; font-weight:600;">
-      WATER <span id="c-wl" style="color:#333;"></span></div>
-    <div id="c-wbars">
-      <div class="slider-bar-track">
-        <div class="slider-bar" style="width:0%"></div>
-      </div>
-    </div>
-    <div class="slider-share" id="c-wscale"></div>
 
     <div class="calc-out" id="calc-out"></div>
 
     <details class="fold">
-      <summary>The factors behind this comparator (field terminology &amp; sources)</summary>
-      <p style="font-size:0.85rem;"><b>AI categories — full-chain accounting, deliberately the HIGH end:</b> every AI
-        number in this comparator uses the highest independently calculated full-chain reading — the ceiling, not the
-        typical value: chat 1.2 Wh and 45 mL per
-        query (Jegham '25 benchmark; Mistral ADEME-audited full lifecycle); reasoning 30 Wh; image 3 Wh (Luccioni
-        FAccT '24); video 678 kWh/hour (MIT TR '25, measured at 0.94 kWh per 5-second clip); coding 1,000 Wh per
-        active hour (autonomous-harness outlier, Couch '26); carbon 0.4 kg CO₂e/kWh (US location-based grid, EPA
-        eGRID); water 5 L/kWh including electricity-embedded water (Macknick '12 / Ren '25). <b>Provider-measured
-          on-site values are a small fraction of these</b> — chat 0.24 Wh and 0.26 mL (Google '25 median), coding 130
-        Wh/hr measured, carbon 0.125 kg/kWh, water 0.5 L/kWh — so the AI figures shown here are the ceiling; the
-        measured floor runs roughly 5–100× lower depending on category (see <a href="#figure0">Figure 0</a>).<br><br>
-        <b>Non-AI categories:</b> transatlantic round trip (one person) 2,900 kg CO₂e incl. RF×2 (atmosfair; water not
-        quantified here); hamburger ≈7 kg CO₂e (Poore &amp; Nemecek '18) and 927 L water (SemiAnalysis '26); bath ≈265
-        L, 8-minute shower ≈64 L, WaterSense toilet flush ≈4.8 L (EPA — carbon not quantified: water-heating energy
-        varies too widely by home); driving 0.4 kg CO₂e/mile (EPA; water not quantified); golf round ≈0.7 kg CO₂e and
-        ≈14,400 L irrigation (CarbonSave/GCSAA, USGA, ÷ ~30,000 rounds per course-year); soldier person-year ≈33,000
-        kg CO₂e (Crawford '19 / SGR-CEOBS '22; water not quantified). <b>Bar scales (fixed):</b> each carbon bar = one
-        car-year (4,600 kg, EPA); each water bar = 100,000 L (≈ 108 burgers ≈ 377 bathtubs); big values stack
-        additional bars. All values ≈.
-      </p>
+      <summary>The factors behind this calculator (field terminology &amp; sources)</summary>
+      <p style="font-size:0.85rem;">Per-unit energy — on-site→full-chain: chat 0.24→1.2 Wh (Google '25 median → Jegham
+        '25 benchmark); reasoning 10→30 Wh (Jegham '25); image 1→3 Wh (Luccioni FAccT '24); video 11.3 kWh/min both
+        boundaries (MIT TR '25, measured — boundary affects only conversions); coding 130→1,000 Wh per active hour
+        (Couch '26 measured → autonomous-harness outlier). Conversions: carbon 0.125 kg CO₂e/kWh (market-based
+        clean-energy portfolio, implied by Google's disclosure) → 0.4 kg/kWh (US location-based grid average, EPA
+        eGRID); water 0.5 L/kWh (on-site WUE, SemiAnalysis '26) → 5 L/kWh (incl. electricity-embedded water, Macknick
+        '12 / Ren '25); chat water uses the published per-query constants (0.26 mL Google → 45 mL Mistral full-LCA).
+        Benchmarks: burger 927 L &amp; 5–9 kg CO₂e; bathtub 265 L; tank of gas 105 kg; Paris⇄NYC round trip 2,900 kg;
+        car-year 4,600 kg; driving ≈0.25 kg/km. All values ≈.</p>
     </details>
   </div>
 
   <script>
     (function () {
-      var F = { chatWh: 1.2, reasonWh: 30, imgWh: 3.0, videoWhHr: 678000, codeWhHr: 1000, kg: 0.4, l: 5.0, chatMl: 45 };
-      var CATS = {
-        chat: { unit: "queries", eq: "AI chat queries", max: 36500, step: 100, def: 10950, ai: "chat" },
-        reason: { unit: "queries", eq: "AI reasoning queries", max: 18250, step: 50, def: 3650, ai: "reason" },
-        img: { unit: "images", eq: "AI images", max: 365000, step: 500, def: 3650, ai: "img" },
-        video: { unit: "hours", eq: "hours of AI video", max: 50, step: 1, def: 1, ai: "video" },
-        code: { unit: "hours", eq: "hours of AI agentic coding", max: 4000, step: 10, def: 730, ai: "code" },
-        flight: { unit: "flights (one person, round-trip)", eq: "one-person transatlantic round trips", max: 5, step: 1, def: 2, kg: 2900, l: 0, nqW: true },
-        burger: { unit: "burgers", eq: "hamburgers", max: 100, step: 1, def: 52, kg: 7, l: 927 },
-        bath: { unit: "baths", eq: "baths (full tub)", max: 365, step: 5, def: 52, kg: 0, l: 265, nqC: true },
-        shower: { unit: "showers", eq: "8-minute showers", max: 730, step: 5, def: 365, kg: 0, l: 64, nqC: true },
-        flush: { unit: "flushes", eq: "toilet flushes", max: 3650, step: 10, def: 1825, kg: 0, l: 4.8, nqC: true },
-        drive: { unit: "miles", eq: "miles of car driving", max: 24000, step: 100, def: 12000, kg: 0.4, l: 0, nqW: true },
-        golf: { unit: "rounds", eq: "golf rounds", max: 52, step: 1, def: 20, kg: 0.7, l: 14400 },
-        soldier: { unit: "person-years", eq: "soldier person-years", max: 2, step: 1, def: 1, kg: 33000, l: 0, nqW: true }
+      var F = {
+        onsite: { chatWh: 0.24, reasonWh: 10, imgWh: 1.0, videoWhMin: 11300, codeWhHr: 130, kg: 0.125, l: 0.5, chatMl: 0.26, label: "provider-measured / on-site" },
+        fullchain: { chatWh: 1.2, reasonWh: 30, imgWh: 3.0, videoWhMin: 11300, codeWhHr: 1000, kg: 0.4, l: 5.0, chatMl: 45, label: "independent / full-chain" }
       };
-      var CARBON_SCALE = 4600;   // one car-year, kg CO2e
-      var WATER_SCALE = 100000;  // litres
-      function el(id) { return document.getElementById(id); }
-      function perUnit(key) {
-        var c = CATS[key], f = F;
-        if (!c.ai) return { kg: c.kg, l: c.l, nqW: !!c.nqW, nqC: !!c.nqC };
-        var wh = { chat: f.chatWh, reason: f.reasonWh, img: f.imgWh, video: f.videoWhHr, code: f.codeWhHr }[c.ai];
-        var l = (c.ai === "chat") ? f.chatMl / 1000 : (wh / 1000) * f.l;
-        return { kg: (wh / 1000) * f.kg, l: l, nqW: false, nqC: false };
-      }
-      function fmtBig(x) {
-        if (x >= 1e9) return (x / 1e9).toFixed(1) + " billion";
-        if (x >= 1e6) return (x / 1e6).toFixed(1) + " million";
-        if (x >= 1000) return Math.round(x).toLocaleString();
-        if (x >= 100) return Math.round(x).toString();
+      var mode = "onsite";
+      function val(id) { return +document.getElementById(id).value; }
+      function fmt(x) {
+        if (x >= 100) return Math.round(x).toLocaleString();
         if (x >= 1) return x.toFixed(1);
         return x.toFixed(2);
       }
-      function renderBars(wrapId, scaleId, value, scale, scaleWord, cls) {
-        var MAXB = 30; // safety cap; never reached with current category maxima
-        var pct = scale > 0 ? 100 * value / scale : 0;
-        var full = Math.min(Math.floor(pct / 100), MAXB), rem = pct - Math.floor(pct / 100) * 100;
-        function track(w) { return '<div class="slider-bar-track"><div class="slider-bar ' + cls + '" style="width:' + w + '%"></div></div>'; }
-        var html = "";
-        if (pct <= 0) html = track(0);
-        else { for (var j = 0; j < full; j++) html += track(100); if (rem > 0 && full < MAXB) html += track(Math.max(rem, 0.5)); }
-        el(wrapId).innerHTML = html;
-        var tracks = full + (rem > 0 ? 1 : 0);
-        el(scaleId).textContent = "bar scale: " + scaleWord + (tracks > 1 ? " each (" + fmtBig(pct / 100) + " bars)" : "");
-      }
-      function equivList(kind, amount) {
-        var sel = el("c-cat").value, p = perUnit(sel);
-        var base = kind === "kg" ? amount * p.kg : amount * p.l;
-        var items = [];
-        Object.keys(CATS).forEach(function (k) {
-          if (k === sel) return;
-          var q = perUnit(k), per = kind === "kg" ? q.kg : q.l;
-          if (kind === "l" && (q.nqW || per <= 0)) return;
-          if (kind === "kg" && (q.nqC || per <= 0)) return;
-          items.push("<b>" + fmtBig(base / per) + "</b> " + CATS[k].eq);
-        });
-        return items.join(" &nbsp;·&nbsp; ");
-      }
       function calc() {
-        var sel = el("c-cat").value, c = CATS[sel], n = +el("c-amt").value, p = perUnit(sel);
-        el("c-out").textContent = n.toLocaleString();
-        el("c-unit").textContent = c.unit;
-        var kg = p.nqC ? null : n * p.kg, l = p.nqW ? null : n * p.l;
-        el("c-ckg").textContent = p.nqC ? "not quantified for this category" : "≈ " + fmtBig(kg) + " kg CO₂e";
-        el("c-wl").textContent = p.nqW ? "not quantified for this category" : "≈ " + fmtBig(l) + " L";
-        if (p.nqC) { renderBars("c-cbars", "c-cscale", 0, CARBON_SCALE, "", "carbon"); el("c-cscale").textContent = "bar scale: one car-year (4,600 kg CO₂e) — no defensible carbon figure for this category"; }
-        else renderBars("c-cbars", "c-cscale", kg, CARBON_SCALE, "one car-year (4,600 kg CO₂e)", "carbon");
-        if (p.nqW) { renderBars("c-wbars", "c-wscale", 0, WATER_SCALE, "", ""); el("c-wscale").textContent = "bar scale: 100,000 L — no defensible water figure for this category"; }
-        else renderBars("c-wbars", "c-wscale", l, WATER_SCALE, "100,000 L (≈ 108 burgers)", "");
-        var out = "<b>" + n.toLocaleString() + " " + c.eq + "</b> creates —<br><br>"
-          + "<span style='color:#c00;font-weight:700;'>Same CARBON as:</span><br>"
-          + (p.nqC ? "— (carbon not quantified for this category)" : (kg > 0 ? equivList("kg", n) : "—")) + "<br><br>"
-          + "<span style='color:#3B82F6;font-weight:700;'>Same WATER as:</span><br>"
-          + (p.nqW ? "— (water not quantified for this category)" : (l > 0 ? equivList("l", n) : "—"))
-          + "<br><br><span style='font-size:0.85rem;color:#888;'>AI values use the <b>highest</b> independently calculated full-chain accounting (<a href='https://arxiv.org/abs/2505.09598'>ref</a>, <a href='https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/'>ref</a>, <a href='https://cacm.acm.org/sustainability-and-computing/making-ai-less-thirsty/'>ref</a>) — a ceiling, not a typical value; provider-measured on-site figures run roughly 5–100× lower (see factors below). Carbon and water lists differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other.</span>";
-        el("calc-out").innerHTML = out;
+        ["chat", "reason", "img", "video", "code"].forEach(function (k) {
+          document.getElementById("o-" + k).textContent = val("i-" + k);
+        });
+        var f = F[mode];
+        var chatKWh = val("i-chat") * f.chatWh * 365 / 1000;
+        var reasonKWh = val("i-reason") * f.reasonWh * 365 / 1000;
+        var imgKWh = val("i-img") * f.imgWh * 365 / 1000;
+        var videoKWh = val("i-video") * 52 * f.videoWhMin / 1000;
+        var codeKWh = val("i-code") * f.codeWhHr * 365 / 1000;
+        var kWh = chatKWh + reasonKWh + imgKWh + videoKWh + codeKWh;
+        var kg = kWh * f.kg;
+        var waterL = (kWh - chatKWh) * f.l + val("i-chat") * 365 * f.chatMl / 1000;
+        var out = "<b>" + fmt(kWh) + " kWh</b> per year under the <i>" + f.label + "</i> boundary ⇒ "
+          + "<b>" + fmt(kg) + " kg CO₂e</b> &nbsp;(≈ " + fmt(kg / 105) + " tanks of gas · "
+          + fmt(100 * kg / 2900) + "% of one Paris⇄NYC round trip · "
+          + fmt(100 * kg / 4600) + "% of a car-year · ≈ " + fmt(kg / 0.25) + " km of driving)<br>"
+          + "<b>" + fmt(waterL) + " L water</b> &nbsp;(≈ " + fmt(waterL / 927) + " burgers · "
+          + fmt(waterL / 265) + " bathtubs)<br>"
+          + "<span style='font-size:0.85rem;color:#888;'>Now flip the boundary — same you, different number. That gap is the discourse.</span>";
+        document.getElementById("calc-out").innerHTML = out;
       }
-      el("c-cat").onchange = function () {
-        var c = CATS[this.value], s = el("c-amt");
-        s.min = 0; s.max = c.max; s.step = c.step; s.value = c.def;
-        calc();
-      };
-      el("c-amt").oninput = calc;
+      document.getElementById("b-onsite").onclick = function () { mode = "onsite"; this.classList.add("active"); document.getElementById("b-full").classList.remove("active"); calc(); };
+      document.getElementById("b-full").onclick = function () { mode = "fullchain"; this.classList.add("active"); document.getElementById("b-onsite").classList.remove("active"); calc(); };
+      ["chat", "reason", "img", "video", "code"].forEach(function (k) { document.getElementById("i-" + k).oninput = calc; });
       calc();
     })();
   </script>
 
-  <div class="divider">Generative AI exists within a complex web of human activities <br>that collectively impact our
-    climate.</div>
+  <div class="divider">~</div>
 
   <div class="intro">
-    <p>
+    <p>Generative AI exists within a complex web of human activities that collectively impact our climate.<br><br>
       A year ago this analysis depended on triangulated guesswork. Since then, the guesses got audited. Google published
       a measured methodology: the median Gemini Apps text prompt consumes <span class="key-figure">0.24 Wh of
         electricity, emits 0.03 g CO₂e, and evaporates 0.26 mL of water</span> — and its per-prompt energy fell
@@ -1909,29 +1936,6 @@
     </p>
   </div>
 
-  <!-- PSA №6 placeholder — uncomment when img/psa-w8-golf-bad.png is saved:
-  <figure style="margin:2rem 0;">
-    <img src="img/psa-w8-golf-bad.png"
-      alt="Satirical PSA poster. Huge jagged headline: GOLF is BAD, with an upside-down golf club as the exclamation mark. Isometric golf-course tiles interspersed with a cascading waterfall of alternating statements: In 2024, golf used 30 times more DIRECT water than datacenters — but count the water behind their electricity — and golf's lead shrinks to 2.4 times — and if datacenters keep growing as projected — by 2028 they may draw even. Kicker at bottom: GOLF ISN'T BAD. SINGLE-NUMBER HEADLINES ARE."
-      class="header-image">
-    <figcaption class="chart-notes" style="font-style:normal;">
-      <p><b>PSA №6 — "GOLF is BAD!" (it isn't; single-number headlines are).</b> The cascade, every number sourced: US
-        golf irrigation ≈548 billion gal/yr (<a
-          href="https://www.usga.org/content/dam/usga/pdf/Water%20Resource%20Center/how-much-water-does-golf-use.pdf">USGA</a>)
-        vs. US data centres' <i>direct</i> consumption 17.4 billion gal (2023) — 31:1. Add the ~211 billion gal
-        evaporated at the power plants making their electricity (≈10× the on-site total) and golf's lead shrinks to
-        ≈2.4:1 (<a
-          href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf">LBNL
-          2024</a>). Scale that with LBNL's 2028 electricity projection (325–580 TWh) and the full-chain total
-        (≈430–770 billion gal) reaches rough parity with golf — though in <i>direct</i> water, golf still leads
-        ~8–14× in 2028 (38–73 billion gal projected direct). Caveats both ways: golf's figure is survey-vintage and
-        increasingly recycled non-potable water; the 2028 indirect figure naively scales today's grid-water intensity,
-        which falls as wind and solar grow. Same activity, three boundaries, three headlines — see <a
-          href="#figure0">Figure 0</a>.</p>
-    </figcaption>
-  </figure>
-  -->
-
   <p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built
       or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with
     similar or worse siting patterns in China, India, and the Gulf (<a
@@ -1952,41 +1956,21 @@
       and disclosure problem, not a per-prompt problem</b>. A prompt is a drop; a gigawatt campus in a desert is a
     policy choice.</p>
 
-  <figure style="margin:2rem 0;">
-    <img src="img/psa-w6-drop-campus.png"
-      alt="PSA poster: one enormous translucent water drop suspended in a cyan sky over an aerial view of a vast data-centre campus stamped into cracked desert earth. Slogan: A DROP ISN'T THE PROBLEM. A DESERT CAMPUS MIGHT BE."
-      class="header-image">
-    <figcaption class="chart-notes" style="font-style:normal;">
-      <p><b>PSA №3a — "A Drop Isn't the Problem. A Desert Campus Might Be."</b> A median prompt evaporates 0.26 mL
-        on-site (<a
-          href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google
-          2025</a>) — but roughly two-thirds of new US data centres built or planned since 2022 sit in regions of high
-        water stress (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg
-          2025</a>), and a 400 MW campus consumes ~346 million gallons/yr (<a
-          href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis 2026</a>).
-        The water question is where, not whether.</p>
-    </figcaption>
-  </figure>
-
-  <figure style="margin:2rem 0;">
-    <img src="img/psa-w7-fenceline.png"
-      alt="PSA poster, aerial view: a vast flat windowless data-centre warehouse with fan-wall cooling and a long row of containerized methane gas turbines, separated by a single chain-link fence from a small dignified neighbourhood — houses, church, school, gardens — visibly smaller than the warehouse roof alone; a thin cross-section strip shows one shared aquifer beneath both. Slogan: YOUR PROMPT ISN'T THE PROBLEM. SOCIOECONOMIC INEQUITY MIGHT BE."
-      class="header-image">
-    <figcaption class="chart-notes" style="font-style:normal;">
-      <p><b>PSA №3b — "Your Prompt Isn't the Problem. Socioeconomic Inequity Might Be."</b> Same air, same aquifer, not
-        the same burden: xAI's Memphis data centre runs dozens of methane gas turbines beside Boxtown, a historically
-        Black community already carrying a cancer risk four times the national average — now the subject of NAACP /
-        Southern Environmental Law Center legal action (<a
-          href="https://www.selc.org/press-release/elon-musks-xai-threatened-with-lawsuit-over-air-pollution-from-memphis-data-center/">SELC
-          2025</a>; <a
-          href="https://earthjustice.org/press/2026/naacp-asks-court-for-emergency-action-to-stop-illegal-air-pollution-from-xais-data-center-power-plant">Earthjustice
-          2026</a>). Peer-reviewed modelling puts US data centres' public-health burden above $20 billion/yr by 2028,
-        with per-household costs in the most-affected, disproportionately disadvantaged counties up to 200× those
-        elsewhere (<a href="https://arxiv.org/abs/2412.06288">Han, Ren et al., "The Unpaid Toll"</a>). The service is
-        global; the burden is local. Turbines, permits, and fence lines are decided per facility — which is exactly why
-        disclosure and siting standards, not user guilt, are this essay's asks.</p>
-    </figcaption>
-  </figure>
+  <!-- PSA №3 is a diptych: 3a (siting/water — image in img/, ready) + 3b (fence line / environmental justice — awaiting render).
+      Uncomment both together when img/psa-w7-fenceline.png is saved, so neither runs without its counterpart:
+ <figure style="margin:2rem 0;">
+  <img src="img/psa-w6-drop-campus.png" alt="PSA poster: one enormous translucent water drop suspended in a cyan sky over an aerial view of a vast data-centre campus stamped into cracked desert earth. Slogan: A DROP ISN'T THE PROBLEM. A DESERT CAMPUS MIGHT BE." class="header-image">
+  <figcaption class="chart-notes" style="font-style:normal;">
+  <p><b>PSA №3a — "A Drop Isn't the Problem. A Desert Campus Might Be."</b> A median prompt evaporates 0.26 mL on-site (<a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/">Google 2025</a>) — but roughly two-thirds of new US data centres built or planned since 2022 sit in regions of high water stress (<a href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg 2025</a>), and a 400 MW campus consumes ~346 million gallons/yr (<a href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis 2026</a>). The water question is where, not whether.</p>
+  </figcaption>
+ </figure>
+ <figure style="margin:2rem 0;">
+  <img src="img/psa-w7-fenceline.png" alt="PSA poster, aerial view: a vast flat windowless data-centre warehouse with fan-wall cooling and a long row of containerized methane gas turbines, separated by a single chain-link fence from a small dignified neighbourhood — houses, church, school, gardens — visibly smaller than the warehouse roof alone; a thin cross-section strip shows one shared aquifer beneath both. Slogan: YOUR PROMPT ISN'T THE PROBLEM. SOCIOECONOMIC INEQUITY MIGHT BE." class="header-image">
+  <figcaption class="chart-notes" style="font-style:normal;">
+  <p><b>PSA №3b — "Your Prompt Isn't the Problem. Socioeconomic Inequity Might Be."</b> Same air, same aquifer, not the same burden: xAI's Memphis data centre runs dozens of methane gas turbines beside Boxtown, a historically Black community already carrying a cancer risk four times the national average — now the subject of NAACP / Southern Environmental Law Center legal action (<a href="https://www.selc.org/press-release/elon-musks-xai-threatened-with-lawsuit-over-air-pollution-from-memphis-data-center/">SELC 2025</a>; <a href="https://earthjustice.org/press/2026/naacp-asks-court-for-emergency-action-to-stop-illegal-air-pollution-from-xais-data-center-power-plant">Earthjustice 2026</a>). Peer-reviewed modelling puts US data centres' public-health burden above $20 billion/yr by 2028, with per-household costs in the most-affected, disproportionately disadvantaged counties up to 200× those elsewhere (<a href="https://arxiv.org/abs/2412.06288">Han, Ren et al., "The Unpaid Toll"</a>). The service is global; the burden is local. Turbines, permits, and fence lines are decided per facility — which is exactly why disclosure and siting standards, not user guilt, are this essay's asks.</p>
+  </figcaption>
+ </figure>
+ -->
 
   <div class="divider">~</div>
 
@@ -2143,9 +2127,6 @@
     policy has.
   </p>
 
-
-
-
   <!-- PSA №4 placeholder — uncomment when img/psa-c4-efficiency.png is saved:
  <figure style="margin:2rem 0;">
   <img src="img/psa-c4-efficiency.png" alt="PSA poster, two arrows only: a thin arrow plunging down labeled ENERGY PER PROMPT divided by 33 in one year, and a massive arrow rising labeled TOTAL EMISSIONS SINCE 2019 plus 51 percent. Slogan: EFFICIENCY ISN'T ABSOLUTION." class="header-image">
@@ -2189,7 +2170,6 @@
   <p>AI remains, as of 2026, a small slice of the catastrophe — and it is the slice that is growing. Consider also what
     it contributes: knowledge, medicine, proteins, materials discovery, optimization, code, companionship in thought. It
     is a profoundly useful technology. Usefulness is precisely why its curve, alone among the slices, points up.</p>
-
 
   <div class="divider">~</div>
 
@@ -2389,140 +2369,6 @@
   </figcaption>
  </figure>
  -->
-
-  <div class="divider">~</div>
-
-  <h3 id="figure0">Figure 0: Why Do Credible Estimates Differ by ~40× (carbon) and ~350× (water)?</h3>
-
-  <p>Before any comparison, the disparity itself needs explaining — because every camp in the AI-environment debate
-    selects the estimate that flatters its thesis, and <i>all of these numbers are, within their own boundaries,
-      correct</i>.</p>
-
-  <div class="emissions-chart">
-    <h3>Carbon per chatbot text response (g CO₂e) — four credible answers</h3>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Google Gemini</span>
-        <span class="subtitle">(measured <b>median</b> prompt; market-based grid; Aug 2025)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 1.4%;"></div>
-      </div>
-      <div class="chart-value">0.03 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-4o benchmark</span>
-        <span class="subtitle">(independent measurement, ~1 Wh × avg US grid; Jegham et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 18%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.4 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Mistral Large 2</span>
-        <span class="subtitle">(<b>full lifecycle</b> LCA incl. training &amp; hardware, ADEME-audited; per 400-token
-          response)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 52%;"></div>
-      </div>
-      <div class="chart-value">1.14 g</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">2025 essay's estimate</span>
-        <span class="subtitle">(ChatGPT, training-amortised heuristic; Tomlinson et al. 2024)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">2.2 g</div>
-    </div>
-
-    <h3>Water per chatbot text response (mL) — five credible answers</h3>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">xAI Colossus 2</span>
-        <span class="subtitle">(on-site + amortized chip mfg; SemiAnalysis model, Mar 2026)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 0.3%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.13 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Google Gemini</span>
-        <span class="subtitle">(measured median; <b>on-site cooling only</b>)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 0.5%;"></div>
-      </div>
-      <div class="chart-value">0.26 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-4o benchmark</span>
-        <span class="subtitle">(short query, <b>incl. off-site</b> electricity water; Jegham et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 2.4%;"></div>
-      </div>
-      <div class="chart-value">≈ 1.2 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">GPT-3-era response</span>
-        <span class="subtitle">(on-site + electricity-embedded, 2020-era infrastructure; Ren et al.)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">≈ 10 – 50 mL</div>
-    </div>
-
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Mistral Large 2</span>
-        <span class="subtitle">(<b>full lifecycle</b> incl. upstream agriculture-grade accounting; per 400-token
-          response)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 90%;"></div>
-      </div>
-      <div class="chart-value">45 mL</div>
-    </div>
-  </div>
-
-  <div class="chart-notes">
-    <p><b>All of these numbers are correct — inside their own boundaries.</b> The chart shows not a disagreement about
-      physics, but five different ways of answering the same questions.</p>
-    <details class="fold">
-      <summary>Why the disparity? The five reasons </summary>
-      <p>In roughly descending order of effect. <b>(1) Boundary scope:</b> Google counts the on-site footprint of
-        serving one prompt; Mistral counts a share of training, hardware manufacture, idle capacity, and upstream water
-        — full-chain accounting is 10–100× wider by construction. <b>(2) Median vs. mean:</b> Google reports the median
-        prompt; means are dragged upward by a heavy tail of long-context and reasoning queries (10–65× costlier). <b>(3)
-          Grid accounting:</b> market-based figures credit purchased clean energy (Google's 0.03 g); location-based
-        figures use the physical local grid (≈ 0.4 g for the same watt-hours on average US power). <b>(4) Model size
-          &amp; tokens:</b> a 400-token response from a large model is simply more computation than a median short reply
-        from an efficiency-routed one. <b>(5) Vintage:</b> per-prompt energy fell ~33× in the twelve months to August
-        2025 — estimates dated eighteen months apart describe different machines. The honest takeaway: <i>always ask
-          which boundary, which statistic, which grid, which model, which year.</i> This essay states all five for every
-        figure it uses.</p>
-    </details>
-  </div>
 
   <div class="divider">~</div>
 
