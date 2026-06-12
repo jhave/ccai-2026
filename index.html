@@ -395,9 +395,17 @@
       min-width: 8px;
     }
 
-    /* dedicated AI is colored sienna — blue is reserved for water (see comparator) */
+    /* dedicated AI is colored sienna in carbon charts; water charts use blue (non-AI) and dark blue (AI) */
     .chart-bar.ai {
       background-color: #A0522D;
+    }
+
+    .emissions-chart.water .chart-bar {
+      background-color: #3B82F6;
+    }
+
+    .emissions-chart.water .chart-bar.ai {
+      background-color: #1e3a8a;
     }
 
     .chart-value {
@@ -440,7 +448,7 @@
       font-size: 1.15rem;
       color: #555;
       margin: 2.5rem auto;
-      max-width: 560px;
+      max-width: 672px;
       line-height: 1.6;
     }
 
@@ -1217,7 +1225,7 @@
     <!-- Typical beef consumption -->
     <div class="chart-row">
       <div class="chart-label">
-        <span class="title">Typical US beef habit</span>
+        <span class="title">Typical beef eaten in a year by one US person</span>
         <span class="subtitle">(~26 kg beef / yr) <span class="delta new">NEW</span></span>
       </div>
       <div class="chart-bar-container">
@@ -1563,10 +1571,10 @@
     the climate impact of feeding a large pet dog, or one passenger seat on a transatlantic flight — has now been
     <b>confirmed and strengthened</b> by measured disclosure data. </p>
 
-  <p class="pull">If the data is correct,<br>
-    then one programmer running AI coding agents all day, every day, for a year<br>
-    <b>emits less carbon</b> than <b style="color:#c00;">1/10th</b> of<br>
-    one passenger on one transatlantic round trip flight.<br>
+  <p class="pull">If the data is correct, then<br>
+    one programmer running AI coding agents all day, every day, for a year<br>
+    <b>emits less carbon</b> than <b style="color:#c00;">1/10th</b> of one passenger<br>
+    on one transatlantic round trip flight.<br>
     <span style="font-size:0.7rem; font-style:normal; color:#888;">[Sources: <a
         href="https://simonpcouch.com/blog/2026-01-20-cc-impact/">coding-agent energy, measured (Couch '26)</a> ·
       <a href="https://www.atmosfair.de/en/offset/flight/">round trip ≈2,900 kg CO₂e incl. RF×2 (atmosfair)</a> ·
@@ -1629,14 +1637,21 @@
       burger- and golf-style comparisons uninformative for public-water planning. SemiAnalysis, for its part, counted
       only "blue" water on both sides — the burger figure already excludes rainfall.)</span></p>
 
+  <div class="divider">The water used chatting with AI 50× a day, every day, for a year<br><b>≈</b><br>the water
+    embedded in eating <b>one</b> beef burger.<br><span style="font-size:0.7rem;">[50 × 365 × 45 mL full-chain (<a
+        href="https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/">Mistral LCA</a>) ≈
+      821 L vs one burger ≈ 927 L (<a
+        href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis</a>) — true
+      even at the highest AI accounting]</span></div>
+
   <h2 style="font-size:2.2rem;">Water, One Chart: Years, Events, Habits</h2>
   <p>Annual habits and single events together — mixing durations is the point: it shows how many <i>years</i> of
     digital habit fit inside one lunch. Each full bar = <b>100,000 L</b>; big values stack bars. AI =
-    <span style="color:#A0522D;font-weight:bold">sienna</span>, spanning on-site-only → full-chain accounting.</p>
+    <span style="color:#1e3a8a;font-weight:bold">dark blue</span>, spanning on-site-only → full-chain accounting.</p>
 
-<div class="emissions-chart">
+<div class="emissions-chart water">
   <div class="chart-row">
-    <div class="chart-label"><span class="title">Typical US beef habit</span> <span class="subtitle">(~26 kg beef / yr)</span></div>
+    <div class="chart-label"><span class="title">Typical beef eaten in a year by one US person</span> <span class="subtitle">(~26 kg beef / yr)</span></div>
     <div class="chart-bar-container">
       <div class="chart-bar" style="width: 100%;"></div>
       <div class="chart-bar" style="width: 100%;"></div>
@@ -1762,7 +1777,7 @@ below.</p>
     </figcaption>
   </figure>
 
-  <div class="emissions-chart">
+  <div class="emissions-chart water">
     <h2>Annual Water Consumption, United States (billions of gallons / yr)</h2>
 
     <div class="chart-row">
