@@ -909,7 +909,8 @@
     <details class="fold">
       <summary>The factors behind this comparator (field terminology &amp; sources)</summary>
       <p style="font-size:0.85rem;"><b>AI categories — full-chain accounting, deliberately the HIGH end:</b> every AI
-        number in this comparator uses the most conservative independent full-chain reading: chat 1.2 Wh and 45 mL per
+        number in this comparator uses the highest independently calculated full-chain reading — the ceiling, not the
+        typical value: chat 1.2 Wh and 45 mL per
         query (Jegham '25 benchmark; Mistral ADEME-audited full lifecycle); reasoning 30 Wh; image 3 Wh (Luccioni
         FAccT '24); video 678 kWh/hour (MIT TR '25, measured at 0.94 kWh per 5-second clip); coding 1,000 Wh per
         active hour (autonomous-harness outlier, Couch '26); carbon 0.4 kg CO₂e/kWh (US location-based grid, EPA
@@ -1005,7 +1006,7 @@
           + (p.nqC ? "— (carbon not quantified for this category)" : (kg > 0 ? equivList("kg", n) : "—")) + "<br><br>"
           + "<span style='color:#3B82F6;font-weight:700;'>Same WATER as:</span><br>"
           + (p.nqW ? "— (water not quantified for this category)" : (l > 0 ? equivList("l", n) : "—"))
-          + "<br><br><span style='font-size:0.85rem;color:#888;'>AI values use the most conservative independent full-chain accounting; provider-measured on-site values run roughly 5–100× lower (see factors below). Carbon and water lists differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other.</span>";
+          + "<br><br><span style='font-size:0.85rem;color:#888;'>AI values use the <b>highest</b> independently calculated full-chain accounting (<a href='https://arxiv.org/abs/2505.09598'>ref</a>, <a href='https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/'>ref</a>, <a href='https://cacm.acm.org/sustainability-and-computing/making-ai-less-thirsty/'>ref</a>) — a ceiling, not a typical value; provider-measured on-site figures run roughly 5–100× lower (see factors below). Carbon and water lists differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other.</span>";
         el("calc-out").innerHTML = out;
       }
       el("c-cat").onchange = function () {
