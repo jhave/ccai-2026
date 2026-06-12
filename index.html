@@ -881,7 +881,7 @@
       <option value="img">AI images generated</option>
       <option value="video">AI video generated (hours)</option>
       <option value="code">AI agentic coding (hours)</option>
-      <option value="flight" selected>Transatlantic round-trip flights</option>
+      <option value="flight" selected>Transatlantic flights (one person, round-trip)</option>
       <option value="burger">Hamburgers</option>
       <option value="bath">Baths (full tub)</option>
       <option value="shower">Showers (8-minute)</option>
@@ -896,12 +896,12 @@
 
     <div style="margin-top:0.9rem; font-size:0.8rem; color:#c00; font-family:system-ui,sans-serif; font-weight:600;">
       CARBON <span id="c-ckg" style="color:#333;"></span></div>
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="c-cbar"></div></div>
+    <div id="c-cbars"><div class="slider-bar-track"><div class="slider-bar carbon" style="width:0%"></div></div></div>
     <div class="slider-share" id="c-cscale"></div>
 
     <div style="margin-top:0.4rem; font-size:0.8rem; color:#3B82F6; font-family:system-ui,sans-serif; font-weight:600;">
       WATER <span id="c-wl" style="color:#333;"></span></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="c-wbar"></div></div>
+    <div id="c-wbars"><div class="slider-bar-track"><div class="slider-bar" style="width:0%"></div></div></div>
     <div class="slider-share" id="c-wscale"></div>
 
     <div class="boundary-switch">
@@ -943,7 +943,7 @@
         img: { unit: "images", eq: "AI images", max: 365000, step: 500, def: 3650, ai: "img" },
         video: { unit: "hours", eq: "hours of AI video", max: 50, step: 1, def: 1, ai: "video" },
         code: { unit: "hours", eq: "hours of AI agentic coding", max: 4000, step: 10, def: 730, ai: "code" },
-        flight: { unit: "flights", eq: "transatlantic round trips", max: 3, step: 1, def: 2, kg: 2900, l: 0, nqW: true },
+        flight: { unit: "flights (one person, round-trip)", eq: "one-person transatlantic round trips", max: 3, step: 1, def: 2, kg: 2900, l: 0, nqW: true },
         burger: { unit: "burgers", eq: "hamburgers", max: 100, step: 1, def: 52, kg: 7, l: 927 },
         bath: { unit: "baths", eq: "baths (full tub)", max: 365, step: 5, def: 52, kg: 0, l: 265, nqC: true },
         shower: { unit: "showers", eq: "8-minute showers", max: 730, step: 5, def: 365, kg: 0, l: 64, nqC: true },
@@ -971,12 +971,20 @@
         if (x >= 1) return x.toFixed(1);
         return x.toFixed(2);
       }
-      function setBar(barId, scaleId, value, scale, scaleWord) {
+      function renderBars(wrapId, scaleId, value, scale, scaleWord, cls) {
+        var MAXB = 4;
         var pct = scale > 0 ? 100 * value / scale : 0;
-        el(barId).style.width = Math.min(pct, 100) > 0 ? Math.max(Math.min(pct, 100), 0.5) + "%" : "0%";
-        el(scaleId).textContent = pct > 100
-          ? "bar scale: " + scaleWord + " — this is " + fmtBig(pct / 100) + "× the full bar"
-          : "bar scale: " + scaleWord;
+        var full = Math.floor(pct / 100), rem = pct - full * 100;
+        function track(w) { return '<div class="slider-bar-track"><div class="slider-bar ' + cls + '" style="width:' + w + '%"></div></div>'; }
+        var html = "";
+        if (pct <= 0) html = track(0);
+        else if (full >= MAXB) { for (var i = 0; i < MAXB; i++) html += track(100); }
+        else { for (var j = 0; j < full; j++) html += track(100); if (rem > 0) html += track(Math.max(rem, 0.5)); }
+        el(wrapId).innerHTML = html;
+        var tracks = full >= MAXB ? MAXB : full + (rem > 0 ? 1 : 0);
+        el(scaleId).textContent = full >= MAXB
+          ? "bar scale: " + scaleWord + " each — this is " + fmtBig(pct / 100) + "× the full bar"
+          : "bar scale: " + scaleWord + (tracks > 1 ? " each" : "");
       }
       function equivList(kind, amount) {
         var sel = el("c-cat").value, p = perUnit(sel);
@@ -998,10 +1006,10 @@
         var kg = p.nqC ? null : n * p.kg, l = p.nqW ? null : n * p.l;
         el("c-ckg").textContent = p.nqC ? "not quantified for this category" : "≈ " + fmtBig(kg) + " kg CO₂e";
         el("c-wl").textContent = p.nqW ? "not quantified for this category" : "≈ " + fmtBig(l) + " L";
-        if (p.nqC) { el("c-cbar").style.width = "0%"; el("c-cscale").textContent = "bar scale: one car-year (4,600 kg CO₂e) — no defensible carbon figure for this category"; }
-        else setBar("c-cbar", "c-cscale", kg, CARBON_SCALE, "one car-year (4,600 kg CO₂e)");
-        if (p.nqW) { el("c-wbar").style.width = "0%"; el("c-wscale").textContent = "bar scale: 100,000 L — no defensible water figure for this category"; }
-        else setBar("c-wbar", "c-wscale", l, WATER_SCALE, "100,000 L (≈ 108 burgers)");
+        if (p.nqC) { renderBars("c-cbars", "c-cscale", 0, CARBON_SCALE, "", "carbon"); el("c-cscale").textContent = "bar scale: one car-year (4,600 kg CO₂e) — no defensible carbon figure for this category"; }
+        else renderBars("c-cbars", "c-cscale", kg, CARBON_SCALE, "one car-year (4,600 kg CO₂e)", "carbon");
+        if (p.nqW) { renderBars("c-wbars", "c-wscale", 0, WATER_SCALE, "", ""); el("c-wscale").textContent = "bar scale: 100,000 L — no defensible water figure for this category"; }
+        else renderBars("c-wbars", "c-wscale", l, WATER_SCALE, "100,000 L (≈ 108 burgers)", "");
         var out = "<b>" + n.toLocaleString() + " " + c.eq + "</b> creates —<br><br>"
           + "<span style='color:#c00;font-weight:700;'>Same CARBON as:</span><br>"
           + (p.nqC ? "— (carbon not quantified for this category)" : (kg > 0 ? equivList("kg", n) : "—")) + "<br><br>"
