@@ -64,7 +64,7 @@
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       margin-top: 2.5rem;
     }
 
@@ -225,7 +225,7 @@
     }
 
     .chart-notes {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-style: italic;
       margin-top: 1rem;
       border-left: 3px solid #eee;
@@ -340,7 +340,7 @@
 
     .emissions-chart h2 {
       margin-bottom: 1.5rem;
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       border-bottom: 1px solid #eee;
       padding-bottom: 0.5rem;
     }
@@ -353,44 +353,46 @@
     }
 
     .chart-row {
-      display: grid;
-      grid-template-columns: 200px 1fr 200px;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
       width: 100%;
     }
 
     .chart-label {
-      text-align: left;
-      padding-right: 15px;
+      order: 1;
+      padding-right: 10px;
     }
 
     .chart-label .title {
+      display: inline;
       font-weight: 600;
-      font-size: 16px;
-      display: block;
-      margin-bottom: 3px;
+      font-size: 14px;
     }
 
     .chart-label .subtitle {
-      font-size: 14px;
-      color: #555;
-      display: block;
+      display: inline;
+      font-size: 12px;
+      color: #777;
     }
 
     .chart-bar-container {
-      position: relative;
-      height: 30px;
+      order: 3;
+      flex-basis: 100%;
+      height: auto;
+      position: static;
     }
 
     .chart-bar {
-      position: absolute;
-      height: 30px;
+      display: block;
+      position: static;
+      height: 9px;
+      margin: 2px 0 0;
       background-color: #F9A825;
       border-radius: 2px;
-      left: 0;
       max-width: 100%;
+      min-width: 8px;
     }
 
     /* dedicated AI is colored sienna — blue is reserved for water (see comparator) */
@@ -399,8 +401,10 @@
     }
 
     .chart-value {
-      text-align: center;
-      font-size: 14px;
+      order: 2;
+      margin-left: auto;
+      font-size: 13px;
+      font-weight: 600;
       white-space: nowrap;
     }
 
@@ -429,6 +433,42 @@
     .delta.same {
       color: #999;
     }
+
+    .pull {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #555;
+      margin: 2.5rem auto;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    details.appendix > summary {
+      display: block;
+      text-align: center;
+      padding: 1rem;
+      border: 2px solid #c00;
+      border-radius: 6px;
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #c00;
+      cursor: pointer;
+      list-style: none;
+    }
+    details.appendix > summary::-webkit-details-marker { display: none; }
+    details.appendix > summary:hover { background: #c00; color: #fff; }
+    details.appendix[open] > summary { margin-bottom: 1rem; }
+
+    .toc {
+      text-align: center;
+      font-family: system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0;
+    }
+    .toc a { margin: 0 0.6rem; }
 
     /* ----- progressive disclosure (chevron folds) ----- */
     details.fold {
@@ -823,6 +863,8 @@
     </figcaption>
   </figure>
 
+  <p class="toc">Jump to: <a href="#carbonchart">CARBON</a> · <a href="#water">WATER</a> · <a href="#nuance">CONCLUSIONS</a></p>
+
 
   <div class="fork">
     <a href="#path-concerned">"I believe AI is wrecking the planet" →</a>
@@ -1076,9 +1118,9 @@
   <div class="divider">~</div>
 
   <h2 id="carbonchart">Annual Carbon Emissions by Activity (kg CO₂e)</h2>
-  <p>Linear scale comparison of carbon footprints [<b>estimates</b>] across human activities. Dedicated AI is colored
-    <span style="color:#A0522D;font-weight:bold">sienna</span>. Rows whose values changed since the May 2025 essay are
-    marked <span class="delta">UPDATED ▼/▲</span>; rows added this year are marked <span class="delta new">NEW</span>;
+  <p>Each full bar = <b>one car-year</b> (4,600 kg CO₂e, EPA); big values stack bars — the comparator's
+    grammar. Dedicated AI is colored <span style="color:#A0522D;font-weight:bold">sienna</span>. Rows whose values
+    changed since May 2025 are marked <span class="delta">UPDATED ▼/▲</span>; rows added this year are marked <span class="delta new">NEW</span>;
     unmarked rows are unchanged.
   </p>
 
@@ -1093,6 +1135,14 @@
       </div>
       <div class="chart-bar-container">
         <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 70%;"></div>
       </div>
       <div class="chart-value">≈ 25 – 40,000 kg/yr</div>
     </div>
@@ -1105,7 +1155,11 @@
             class="delta new">NEW</span></span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 51.5%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 48%;"></div>
       </div>
       <div class="chart-value">≈ 20,600 kg/yr</div>
     </div>
@@ -1118,7 +1172,8 @@
             ▼</span></span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 22.5%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
+        <div class="chart-bar" style="width: 96%;"></div>
       </div>
       <div class="chart-value">≈ 9,000 kg/yr</div>
     </div>
@@ -1130,7 +1185,7 @@
         <span class="subtitle">(12,000 mi / yr)</span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 11.5%;"></div>
+        <div class="chart-bar" style="width: 100%;"></div>
       </div>
       <div class="chart-value">≈ 4,600 kg/yr</div>
     </div>
@@ -1142,7 +1197,7 @@
         <span class="subtitle">(RT, economy)</span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 7.25%;"></div>
+        <div class="chart-bar" style="width: 63%;"></div>
       </div>
       <div class="chart-value">≈ 2,900 kg / person</div>
     </div>
@@ -1154,7 +1209,7 @@
         <span class="subtitle">(food-health, annual)</span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 4.375%;"></div>
+        <div class="chart-bar" style="width: 38%;"></div>
       </div>
       <div class="chart-value">≈ 1,750 kg/yr</div>
     </div>
@@ -1166,7 +1221,7 @@
         <span class="subtitle">(~26 kg beef / yr) <span class="delta new">NEW</span></span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 3.9%;"></div>
+        <div class="chart-bar" style="width: 34%;"></div>
       </div>
       <div class="chart-value">≈ 1,560 kg/yr</div>
     </div>
@@ -1179,7 +1234,7 @@
             ▼</span></span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 1.1%;"></div>
+        <div class="chart-bar ai" style="width: 9.3%;"></div>
       </div>
       <div class="chart-value">≈ 40 – 430 kg/yr</div>
     </div>
@@ -1192,7 +1247,7 @@
             class="delta new">NEW</span></span>
       </div>
       <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 0.75%;"></div>
+        <div class="chart-bar ai" style="width: 6.5%;"></div>
       </div>
       <div class="chart-value">≈ 100 – 300 kg/yr</div>
     </div>
@@ -1225,10 +1280,9 @@
   <div class="chart-notes">
     <details class="fold">
       <summary>How to read the bars + what changed since May 2025</summary>
-      <p><b>How to read the bars.</b> Bars are drawn at the <i>top</i> of each range (so "Generative AI: images,
-        extreme" is drawn at 430 kg = 1.1% of the 40,000 kg military bar — proportionally correct, though visually
-        slight). Bars under ~0.3% are floored at 8px minimum visibility, which is why streaming and chatbot bars look
-        similar despite a ~6× difference; trust the printed values, not the pixels.</p>
+      <p><b>How to read the bars.</b> Each full bar equals one car-year (4,600 kg CO₂e); larger values stack
+        additional bars (the military row stacks 8.7). Bars are drawn at the top of each printed range, and every bar
+        floors at 8px minimum visibility — trust the printed values, not the pixels.</p>
       <p><b>What changed since May 2025.</b> The <b>chatbot row</b> fell from ≈40 kg/yr to ≈0.5–7 kg/yr as measured
         disclosures and independent benchmarks replaced the training-amortised heuristic. The <b>image-extreme top
           end</b> fell from 1,100 to ≈430 kg/yr: the 2025 figure extrapolated a 3 g/image cost for SD-3.5-Large via an
@@ -1491,9 +1545,9 @@
     </div>
   </details>
 
-  <div class="divider">~</div>
+  <p class="pull">All these are estimates.<br>Little is quantitatively exact in such sprawling planetary systems.</p>
 
-  <p><b>Note</b>: All these are estimates. Provider per-prompt figures exclude <i>embodied emissions</i> — chip
+  <p>Provider per-prompt figures exclude <i>embodied emissions</i> — chip
     fabrication, data-centre concrete and steel, the <i>cradle-to-grave</i> pathways — which remain the largest
     disclosure gap (Mistral's audited LCA suggests hardware adds a meaningful but not dominant share). Little is
     quantitatively exact in such sprawling planetary systems. But pause to consider: the claim that anchored the 2025
@@ -1548,289 +1602,119 @@
     ~2.4× the water of the burgers sold by a single In-N-Out restaurant (<a
       href="https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint">SemiAnalysis</a>).</p>
 
-  <h2>Estimated Water Footprint by Activity (June 2026)</h2>
-  <p>Annual, personal-scale comparison, in litres per year, <b>with ambiguity ranges</b> — the AI rows span the full
-    boundary disagreement (on-site-only at the low end; full-chain at the high end). Dedicated AI is colored <span
-      style="color:#A0522D;font-weight:bold">sienna</span>.</p>
+  <h2 style="font-size:2.2rem;">Water, One Chart: Years, Events, Habits</h2>
+  <p>Annual habits and single events together — mixing durations is the point: it shows how many <i>years</i> of
+    digital habit fit inside one lunch. Each full bar = <b>100,000 L</b>; big values stack bars. AI =
+    <span style="color:#A0522D;font-weight:bold">sienna</span>, spanning on-site-only → full-chain accounting.</p>
 
-  <div class="emissions-chart">
-    <h2>Estimated Water Footprint by Activity (June 2026)</h2>
-
-    <!-- Golf course -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Golf course irrigation</span>
-        <span class="subtitle">(one 18-hole US course / yr — <b>~1,000× this chart's scale</b>)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">≈ 431,000,000 L/yr</div>
+<div class="emissions-chart">
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">Typical US beef habit</span> <span class="subtitle">(~26 kg beef / yr)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 100%;"></div>
+      <div class="chart-bar" style="width: 100%;"></div>
+      <div class="chart-bar" style="width: 100%;"></div>
+      <div class="chart-bar" style="width: 100%;"></div>
     </div>
-
-    <!-- Beef habit -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Typical US beef habit</span>
-        <span class="subtitle">(~26 kg beef / yr × 15,400 L/kg, global avg)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">≈ 400,000 L/yr</div>
-    </div>
-
-    <!-- Coffee -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Daily coffee habit</span>
-        <span class="subtitle">(1 cup/day × ~140 L embedded per cup)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 12.8%;"></div>
-      </div>
-      <div class="chart-value">≈ 51,000 L/yr</div>
-    </div>
-
-    <!-- Shower -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Daily 8-minute shower</span>
-        <span class="subtitle">(2.1 gal/min WaterSense head; direct use)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 5.8%;"></div>
-      </div>
-      <div class="chart-value">≈ 23,000 L/yr</div>
-    </div>
-
-    <!-- Reasoning-heavy chat -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Reasoning-heavy AI use</span>
-        <span class="subtitle">(50 long reasoning queries/day; efficient models → R1-class)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 0.93%;"></div>
-      </div>
-      <div class="chart-value">≈ 70 – 3,700 L/yr</div>
-    </div>
-
-    <!-- Agentic coding -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Agentic coding, extreme</span>
-        <span class="subtitle">(≈80% Max-plan budget; on-site WUE → full-chain)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 0.6%;"></div>
-      </div>
-      <div class="chart-value">≈ 240 – 2,400 L/yr</div>
-    </div>
-
-    <!-- One hamburger -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">ONE hamburger</span>
-        <span class="subtitle">(single burger, embedded water, ~95% in beef)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 0.23%;"></div>
-      </div>
-      <div class="chart-value">≈ 927 L <i>each</i></div>
-    </div>
-
-    <!-- Chatbot -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Chatbot use</span>
-        <span class="subtitle">(50 queries/day; on-site median → full lifecycle)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar ai" style="width: 0.2%;"></div>
-      </div>
-      <div class="chart-value">≈ 5 – 820 L/yr</div>
-    </div>
+    <div class="chart-value">≈ 400,000 L/yr</div>
   </div>
-
-  <div class="chart-notes">
-    <details class="fold">
-      <summary>Math &amp; sources for every bar</summary>
-      <p>Chatbot: 50 q/day × 365 = 18,250 q/yr; × 0.26 mL (Google, on-site) ≈ 5 L; × 1.2 mL (Jegham, incl. off-site) ≈
-        22 L; × 45 mL (Mistral, full lifecycle) ≈ 820 L. Reasoning-heavy: × ~4 mL (efficient) to ~200 mL (R1-class long
-        prompts) ⇒ 70–3,700 L. Agentic coding: ~475 kWh/yr × 0.5 L/kWh on-site WUE ≈ 240 L; × ~4–5 L/kWh including
-        electricity-embedded water (Ren et al. US averages) ≈ 2,400 L. Burger: SemiAnalysis, 245 gal. Beef: Mekonnen
-        &amp; Hoekstra (2012), ~15,400 L/kg. Coffee: Water Footprint Network, ~140 L/cup (mostly rain-fed "green" water
-        — a real but categorically gentler draw than datacenter evaporation in a stressed basin). Shower: EPA WaterSense
-        2.1 gal/min × 8 min × 365. Golf: USGA average ~312,000 gal/day per 18-hole course × 365 ≈ 431 million L (bar
-        truncated at chart width; at true scale it would be ~1,000 chart-widths).</p>
-    </details>
-    <p><b>Reading the ranges.</b> The AI bars are drawn at the top of their ranges and still barely register against
-      food and turf. Even the most damning boundary (full-lifecycle, reasoning-heavy, 3,700 L/yr) equals four burgers,
-      two months of one person's showers, or <b>0.0009%</b> of one golf course's irrigation. And the caveats cut both
-      ways: green-vs-blue water matters (coffee's 140 L is mostly rainfall on plantations; a datacenter's 0.26 mL is
-      evaporated potable water in a specific basin), so cross-category comparisons orient but do not absolve. The local
-      siting problem below is where the genuine water issue lives.</p>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">Daily coffee habit</span> <span class="subtitle">(1 cup/day, embedded)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 51%;"></div>
+    </div>
+    <div class="chart-value">≈ 51,000 L/yr</div>
   </div>
-
-  <h2>Water Comparison: Single Events vs. Digital Habits (litres)</h2>
-  <p>A deliberately mixed-duration chart — single physical events (one burger, one bath, one flush) against digital
-    activities at their natural scales (a year of extreme AI use; a minute of video generation; an hour of screen time).
-    Mixing durations is the point: it shows how many <i>years</i> of digital habit fit inside one lunch. Dedicated AI is
-    colored <span style="color:#A0522D;font-weight:bold">sienna</span>; ranges span on-site-only to full-chain water
-    accounting.</p>
-
-  <div class="emissions-chart">
-    <h2>Estimated Water Footprint: Events &amp; Habits (June 2026)</h2>
-
-    <!-- Images, year -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">1,000 images/day, for a YEAR</span>
-        <span class="subtitle">(365,000 images; on-site WUE → full-chain)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 100%;"></div>
-      </div>
-      <div class="chart-value">≈ 500 – 5,000 L/yr</div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">Daily 8-minute shower</span> <span class="subtitle">(direct use, yr)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 23%;"></div>
     </div>
-
-    <!-- Coding, year -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">Agentic coding every day, for a YEAR</span>
-        <span class="subtitle">(≈80% Max-plan budget; on-site → full-chain)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 48%;"></div>
-      </div>
-      <div class="chart-value">≈ 240 – 2,400 L/yr</div>
-    </div>
-
-    <!-- ONE beef burger -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">ONE beef burger</span>
-        <span class="subtitle">(US blue-water → global all-colors accounting)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 47%;"></div>
-      </div>
-      <div class="chart-value">≈ 927 – 2,350 L</div>
-    </div>
-
-    <!-- Bathtub -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">ONE full bathtub</span>
-        <span class="subtitle">(~70 gallons, EPA)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 5.3%;"></div>
-      </div>
-      <div class="chart-value">≈ 265 L</div>
-    </div>
-
-    <!-- Tofu burger -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">ONE tofu/soy burger</span>
-        <span class="subtitle">(150 g soy patty, all-colors accounting)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 3.2%;"></div>
-      </div>
-      <div class="chart-value">≈ 160 L</div>
-    </div>
-
-    <!-- Video generation, 1 minute -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">1 MINUTE of AI video generation</span>
-        <span class="subtitle">(12 × 5-sec clips, CogVideoX-class; on-site → full-chain)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar ai" style="width: 1.2%;"></div>
-      </div>
-      <div class="chart-value">≈ 6 – 60 L</div>
-    </div>
-
-    <!-- Toilet flush -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">ONE toilet flush</span>
-        <span class="subtitle">(WaterSense 4.8 L → pre-1992 fixtures up to 26 L)</span>
-      </div>
-      <div class="chart-bar-container">
-        <div class="chart-bar" style="width: 0.5%;"></div>
-      </div>
-      <div class="chart-value">≈ 5 – 26 L</div>
-    </div>
-
-    <!-- Gaming hour -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">1 hour of video gaming</span>
-        <span class="subtitle">(console → high-end gaming PC; electricity-embedded water)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar" style="width: 0.04%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.2 – 2 L</div>
-    </div>
-
-    <!-- Streaming hour -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">1 hour of streaming video</span>
-        <span class="subtitle">(device + network + datacenter, IEA energy basis)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar" style="width: 0.008%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.2 – 0.4 L</div>
-    </div>
-
-    <!-- Surfing hour -->
-    <div class="chart-row">
-      <div class="chart-label">
-        <span class="title">1 hour of web surfing</span>
-        <span class="subtitle">(laptop + network; electricity-embedded water)</span>
-      </div>
-      <div class="chart-bar-container tiny">
-        <div class="chart-bar" style="width: 0.006%;"></div>
-      </div>
-      <div class="chart-value">≈ 0.1 – 0.3 L</div>
-    </div>
+    <div class="chart-value">≈ 23,000 L/yr</div>
   </div>
-
-  <div class="chart-notes">
-    <details class="fold">
-      <summary>Math &amp; sources for every bar</summary>
-      <p>Conversion basis: device/datacenter electricity × water embedded in US electricity generation, ~2–4 L/kWh
-        consumptive average (Macknick et al. 2012; Ren et al.); datacenter rows add on-site cooling at ~0.5 L/kWh WUE at
-        the low end. <b>Images:</b> 2.9 Wh × 365,000 ≈ 1,060 kWh/yr ⇒ ~500 L (on-site WUE only) to ~5,000 L
-        (full-chain). <b>Coding:</b> ~475 kWh/yr ⇒ 240–2,400 L (as above). <b>Beef burger:</b> 927 L (SemiAnalysis, US
-        irrigation blue-water) to 2,350 L (Water Footprint Network 150 g patty, green+blue+grey). <b>Tofu/soy
-          burger:</b> ~160 L for the same 150 g patty (WFN) — the same sandwich, six-to-fifteen-fold less water, and
-        most of soy's footprint is rain-fed green water besides. <b>Video generation:</b> measured ~0.94 kWh per
-        5-second clip (CogVideoX-class, MIT Technology Review's 2025 measurements) ⇒ ~11.3 kWh per minute ⇒ ~6 L
-        (on-site) to ~60 L (full-chain) — and ~4–5 kg CO₂e per minute on average grids, making one minute of generated
-        video ≈ a full day of 1,000 generated images. This is the modality where per-output footprints stop being
-        trivial. <b>Gaming:</b> 0.1–0.5 kWh/h (console → enthusiast PC, LBNL green-gaming estimates) ⇒ 0.2–2 L/h.
-        <b>Streaming:</b> ~0.077 kWh/h (IEA) ⇒ ~0.2–0.4 L/h. <b>Surfing:</b> ~0.03–0.06 kWh/h ⇒ ~0.1–0.3 L/h (derived
-        from device wattage; the least certain row and the least consequential).
-      </p>
-    </details>
-    <p><b>Readings.</b> One toilet flush embeds more water than a <i>month</i> of median-boundary chatbot prompting (4.8
-      L vs. 0.26 mL × 50/day × 30 ≈ 0.4 L). One bathtub outweighs a year of full-lifecycle daily chatbot use, twice
-      over. One beef burger outweighs the top-of-range year of agentic coding — and swapping it for tofu saves more
-      water than that entire coding year consumes at its low boundary. The inversion to watch: AI <i>video</i>
-      generation is the first consumer modality whose per-minute footprint rivals physical-world events; its disclosure
-      (none exists from any provider) matters more than another decimal place on chat prompts.</p>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">AI images: 1,000/day for a YEAR</span> <span class="subtitle">(365,000 images)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 5%;"></div>
+    </div>
+    <div class="chart-value">≈ 500 – 5,000 L</div>
   </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">AI reasoning-heavy YEAR</span> <span class="subtitle">(50 CoT queries/day)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 3.7%;"></div>
+    </div>
+    <div class="chart-value">≈ 70 – 3,700 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">ONE hour of AI video</span> <span class="subtitle">(678 kWh)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 3.4%;"></div>
+    </div>
+    <div class="chart-value">≈ 340 – 3,400 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">AI agentic coding YEAR</span> <span class="subtitle">(extreme)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 2.4%;"></div>
+    </div>
+    <div class="chart-value">≈ 240 – 2,400 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">ONE beef burger</span> <span class="subtitle">(single burger, ~95% in beef)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 2.35%;"></div>
+    </div>
+    <div class="chart-value">≈ 927 – 2,350 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">AI chatbot YEAR</span> <span class="subtitle">(50 queries/day)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar ai" style="width: 0.82%;"></div>
+    </div>
+    <div class="chart-value">≈ 5 – 820 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">ONE full bathtub</span> <span class="subtitle">(EPA, ~70 gal)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 0.27%;"></div>
+    </div>
+    <div class="chart-value">≈ 265 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">ONE tofu/soy burger</span> <span class="subtitle">(150 g patty)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 0.16%;"></div>
+    </div>
+    <div class="chart-value">≈ 160 L</div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label"><span class="title">ONE toilet flush</span> <span class="subtitle">(WaterSense → pre-1992)</span></div>
+    <div class="chart-bar-container">
+      <div class="chart-bar" style="width: 0.03%;"></div>
+    </div>
+    <div class="chart-value">≈ 5 – 26 L</div>
+  </div>
+</div>
 
-  <figure style="margin:2rem 0;">
+<div class="chart-notes">
+<details class="fold"><summary>Math &amp; sources for every bar</summary>
+<p>Beef: 26 kg/yr × 15,400 L/kg (Mekonnen &amp; Hoekstra '12). Coffee: ~140 L/cup embedded, mostly rain-fed "green"
+water (WFN). Shower: EPA WaterSense 2.1 gal/min × 8 min × 365. AI rows span on-site WUE (0.5 L/kWh, SemiAnalysis '26)
+to full-chain incl. electricity-embedded water (5 L/kWh, Macknick '12 / Ren '25): images 2.9 Wh each (Luccioni FAccT
+'24); reasoning 4–200 mL/query (Jegham '25); video 678 kWh/hr (MIT TR '25); coding 130–1,000 Wh/hr (Couch '26);
+chatbot 0.26 mL (Google '25, on-site median) → 45 mL (Mistral ADEME full-LCA). Burger 245 gal (SemiAnalysis '26) →
+2,350 L (WFN all-colors); tofu ~160 L (WFN); bathtub/flush EPA. Screen-hours barely register: gaming ≈0.2–2 L/hr,
+streaming ≈0.2–0.4 L/hr, web ≈0.1–0.3 L/hr. One 18-hole golf course irrigates ≈431,000,000 L/yr — <b>4,310 of these
+bars</b> (USGA). Green-vs-blue caveat: coffee's rainfall and a datacenter's evaporated potable water in a stressed
+basin are not ecologically identical — comparisons orient, they don't absolve. All values ≈.</p>
+</details>
+<p><b>Reading.</b> The AI bars, drawn at the top of their ranges, barely register against food and turf: the most
+damning AI year (~3,700 L) equals four burgers or two months of showers. The genuine water issue is siting — see
+below.</p>
+</div>
+
+<figure style="margin:2rem 0;">
     <a href="https://chatgpt.com/s/m_6a2a68a9cc308191ae29eda8110e58dc"><img src="img/psa-w1-burger-bathtubs.png"
         alt="PSA poster: one giant hamburger beside a row of nine clawfoot bathtubs (five outlined to show the 3.5–9 tub accounting range), dwarfing a tiny red bucket labeled 'one day of heavy AI use: 1–15 L'. Slogan: YOUR CHATBOT ISN'T THE THIRSTY ONE."
         class="header-image"></a>
@@ -1942,7 +1826,9 @@
           href="#figure0">Figure 0</a>.</p>
     </figcaption>
   </figure>
-  <p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built
+  <p class="pull">And yet…<br>data centres' air-pollution health burden is modelled to exceed $20&nbsp;billion/yr by 2028.</p>
+
+  <p>The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built
       or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with
     similar or worse siting patterns in China, India, and the Gulf (<a
       href="https://www.bloomberg.com/graphics/2025-ai-impacts-data-centers-water-data/">Bloomberg, 2025</a>). The
@@ -2004,6 +1890,9 @@
 
   <p>What does the data say now?</p>
 
+  <details class="fold">
+    <summary>The 2026 aggregate numbers — quoted &amp; sourced</summary>
+
   <div class="chart-notes">
     <p>"Data centre electricity consumption is estimated to amount to around 415 terawatt hours (TWh), or about 1.5% of
       global electricity consumption in 2024 … projected to double to reach around 945 TWh by 2030 in the Base Case,
@@ -2038,6 +1927,8 @@
         href="https://www.carbonbrief.org/ai-five-charts-that-put-data-centre-energy-use-and-emissions-into-context/">Carbon
         Brief synthesis</a>).</p>
   </div>
+
+  </details>
 
   <!-- Pie: selected technology & activity shares of global electricity / warming (≈2026) -->
   <style>
@@ -2195,7 +2086,8 @@
 
   <div class="divider">~</div>
 
-  <h3>Categorical Breakdown of Carbon &amp; Water Signatures (2026 revisions)</h3>
+  <details class="appendix">
+    <summary>APPENDIX ▸ Categorical Breakdown of Carbon &amp; Water Signatures (2026 revisions)</summary>
   <p>Each category represents a distinct metabolic process within our planetary system, characterized by specific
     patterns of molecular exchange. The cards below update the 2025 analysis where the data moved.</p>
 
@@ -2359,6 +2251,8 @@
     </div>
 
   </div>
+
+  </details>
 
   <div class="divider">~</div>
 
@@ -2585,35 +2479,11 @@
       friend.</p>
   </details>
 
-  <div class="divider">~</div>
-
-  <h3>Appendix: Reflections on Patterns of Molecular Exchange</h3>
-  <p>The visualizations and categorical analyses above reveal not merely quantitative differences but qualitative
-    dimensions of our collective participation in a planetary metabolism. Carbon molecules and water molecules,
-    circulating through these diverse systems of human activity, trace the outlines of technological, economic, and
-    social priorities. Their movements — from military operations to digital cognition to irrigated fairways —
-    constitute a form of planetary writing that transcends territorial demarcations.</p>
-  <p>The hierarchy of impact that emerged in 2025 stands confirmed in 2026, now with audit trails: the infrastructures
-    of aggression and speculation remain the most intensive sites of molecular transformation, while the newest
-    computational systems — despite their overwhelming cultural prominence — remain comparatively modest in their
-    molecular circulation. What changed is the derivative: among all the slices, only AI's is growing. A molecule of CO₂
-    does not care whether it was exhaled by a jet engine, a server farm, a golf-course mower, or a child. Neither guilt
-    nor rapture is a measurement. Attention is. Keep measuring.</p>
-
-  <div class="divider">~</div>
-
-  <p>This quantitative exploration extends the May 2025 analysis written in conjunction with the <i><a
-        href="https://glia.ca/2025/eahe/" target="_blank">Everyone at Home Everywhere</a></i> project, a one-year
-    durational <i>non-performance</i> exploring planetary belonging through intentional linguistic and behavioral
-    shifts: not using nation-state names, not watching films with weapons.</p>
-  <p>For further exploration of AI's relationship with ecological consciousness, see the companion project <i><a
-        href="https://glia.ca/2025/wuai/" target="_blank">Whole-Use-AI</a></i>, which examines the ethical and material
-    dimensions of computational systems in creative practice.</p>
-
-  <div class="divider">~</div>
-
-  <p>Carbon molecules, like all of Earth's material substrates, recognize no territorial demarcations. Their movements
-    and accumulations constitute a planetary metabolism that transcends artificial constructs of separation.</p>
+  <p class="pull">Carbon molecules recognize no territorial demarcations;<br>their movements constitute a planetary
+    metabolism.<br><span style="font-size:0.85rem;">The molecular-exchange meditation continues in the <a
+        href="https://glia.ca/2025/ccai/">2025 essay</a> · companions: <a href="https://glia.ca/2025/eahe/"
+      target="_blank">Everyone at Home Everywhere</a> · <a href="https://glia.ca/2025/wuai/"
+      target="_blank">Whole-Use-AI</a></span></p>
 
   <h3>All information is (≈) approximate.</h3>
 
