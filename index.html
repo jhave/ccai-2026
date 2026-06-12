@@ -872,95 +872,63 @@
   <div class="divider">~</div>
 
   <div class="calc" id="calc">
-    <h3>Your Footprint, Both Ways</h3>
-    <p style="font-size:0.95rem; color:#555; margin-top:0;">Everything below is <b>per year</b>, so activities can be
-      compared honestly. Each row shows two live bars: <span style="color:#c00;font-weight:700">carbon</span> (share of
-      your total annual CO₂e) and <span style="color:#3B82F6;font-weight:700">water</span> (share of your total annual
-      litres). AI rows respond to the accounting-boundary switch; burgers are burgers under any accounting.</p>
+    <h3>The Impact Comparator</h3>
+    <p style="font-size:0.95rem; color:#555; margin-top:0;">Pick one activity and how much of it you do <b>per year</b>.
+      Two bars show its carbon and water impact against fixed scales; beneath them, the same impact is translated into
+      every other category — carbon and water listed <i>separately</i>, because the rankings differ (golf is
+      water-heavy and carbon-light; flights are the reverse). AI factors respond to the accounting-boundary switch
+      (<a href="#figure0">why two boundaries? — see Figure 0 just below</a>).</p>
 
-    <label>AI chat queries / year: <output id="o-chat">10,950</output></label>
-    <input type="range" id="i-chat" min="0" max="73000" step="100" value="10950">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-chat"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-chat"></div></div>
-    <div class="slider-share" id="share-chat"></div>
+    <label for="c-cat">Activity:</label>
+    <select id="c-cat" style="width:100%; padding:0.5rem; font-size:0.95rem; border:1px solid #ccc; border-radius:4px; background:#fff; font-family: system-ui, sans-serif;">
+      <option value="chat">AI chat queries</option>
+      <option value="reason">AI reasoning (chain-of-thought) queries</option>
+      <option value="img">AI images generated</option>
+      <option value="video">AI video generated (minutes)</option>
+      <option value="code">AI agentic coding (hours)</option>
+      <option value="flight" selected>Transatlantic round-trip flights</option>
+      <option value="burger">Hamburgers eaten</option>
+      <option value="drive">Car driving (miles)</option>
+      <option value="golf">Golf rounds played</option>
+      <option value="soldier">Soldiers funded (person-years)</option>
+    </select>
 
-    <label>AI reasoning (chain-of-thought) queries / year: <output id="o-reason">3,650</output></label>
-    <input type="range" id="i-reason" min="0" max="36500" step="50" value="3650">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-reason"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-reason"></div></div>
-    <div class="slider-share" id="share-reason"></div>
+    <label>Amount per year: <output id="c-out">3</output> <span id="c-unit">flights</span></label>
+    <input type="range" id="c-amt" min="0" max="20" step="1" value="3">
 
-    <label>AI images generated / year: <output id="o-img">3,650</output></label>
-    <input type="range" id="i-img" min="0" max="365000" step="500" value="3650">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-img"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-img"></div></div>
-    <div class="slider-share" id="share-img"></div>
+    <div style="margin-top:0.9rem; font-size:0.8rem; color:#c00; font-family:system-ui,sans-serif; font-weight:600;">
+      CARBON <span id="c-ckg" style="color:#333;"></span></div>
+    <div class="slider-bar-track"><div class="slider-bar carbon" id="c-cbar"></div></div>
+    <div class="slider-share" id="c-cscale"></div>
 
-    <label>AI video generated, minutes / year: <output id="o-video">0</output></label>
-    <input type="range" id="i-video" min="0" max="3120" step="5" value="0">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-video"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-video"></div></div>
-    <div class="slider-share" id="share-video"></div>
-
-    <label>AI agentic coding, hours / year: <output id="o-code">730</output></label>
-    <input type="range" id="i-code" min="0" max="4380" step="10" value="730">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-code"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-code"></div></div>
-    <div class="slider-share" id="share-code"></div>
-
-    <label>Transatlantic round-trip flights / year: <output id="o-flight">1</output></label>
-    <input type="range" id="i-flight" min="0" max="12" step="1" value="1">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-flight"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-flight"></div></div>
-    <div class="slider-share" id="share-flight"></div>
-
-    <label>Hamburgers eaten / year: <output id="o-burger">52</output></label>
-    <input type="range" id="i-burger" min="0" max="1000" step="5" value="52">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-burger"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-burger"></div></div>
-    <div class="slider-share" id="share-burger"></div>
-
-    <label>Car driving, miles / year: <output id="o-drive">12,000</output></label>
-    <input type="range" id="i-drive" min="0" max="30000" step="100" value="12000">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-drive"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-drive"></div></div>
-    <div class="slider-share" id="share-drive"></div>
-
-    <label>Golf rounds played / year: <output id="o-golf">0</output></label>
-    <input type="range" id="i-golf" min="0" max="150" step="1" value="0">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-golf"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-golf"></div></div>
-    <div class="slider-share" id="share-golf"></div>
-
-    <label>Soldiers funded, person-years / year: <output id="o-soldier">0</output></label>
-    <input type="range" id="i-soldier" min="0" max="5" step="1" value="0">
-    <div class="slider-bar-track"><div class="slider-bar carbon" id="cbar-soldier"></div></div>
-    <div class="slider-bar-track"><div class="slider-bar" id="wbar-soldier"></div></div>
-    <div class="slider-share" id="share-soldier"></div>
+    <div style="margin-top:0.4rem; font-size:0.8rem; color:#3B82F6; font-family:system-ui,sans-serif; font-weight:600;">
+      WATER <span id="c-wl" style="color:#333;"></span></div>
+    <div class="slider-bar-track"><div class="slider-bar" id="c-wbar"></div></div>
+    <div class="slider-share" id="c-wscale"></div>
 
     <div class="boundary-switch">
-      <button id="b-onsite" class="active" type="button">Provider-measured / on-site boundary (AI rows)</button>
-      <button id="b-full" type="button">Independent / full-chain boundary (AI rows)</button>
+      <button id="b-onsite" class="active" type="button">Provider-measured / on-site boundary (AI factors)</button>
+      <button id="b-full" type="button">Independent / full-chain boundary (AI factors)</button>
     </div>
 
     <div class="calc-out" id="calc-out"></div>
 
     <details class="fold">
-      <summary>The factors behind this calculator (field terminology &amp; sources)</summary>
-      <p style="font-size:0.85rem;"><b>AI rows, per-unit energy — on-site→full-chain:</b> chat 0.24→1.2 Wh (Google '25
-        median → Jegham '25 benchmark); reasoning 10→30 Wh (Jegham '25); image 1→3 Wh (Luccioni FAccT '24); video 11.3
-        kWh/min both boundaries (MIT TR '25, measured — boundary affects only conversions); coding 130→1,000 Wh per
-        active hour (Couch '26 measured → autonomous-harness outlier). Conversions: carbon 0.125 kg CO₂e/kWh
-        (market-based clean-energy portfolio, implied by Google's disclosure) → 0.4 kg/kWh (US location-based grid
-        average, EPA eGRID); water 0.5 L/kWh (on-site WUE, SemiAnalysis '26) → 5 L/kWh (incl. electricity-embedded
-        water, Macknick '12 / Ren '25); chat water uses the published per-query constants (0.26 mL Google → 45 mL
-        Mistral full-LCA).<br><br>
-        <b>Non-AI rows, boundary-independent:</b> transatlantic round trip 2,900 kg CO₂e incl. RF×2 (atmosfair; water
-        not quantified here); hamburger ≈7 kg CO₂e (Poore &amp; Nemecek '18, 60 kg/kg beef × ~115 g patty) and 927 L
-        water (SemiAnalysis '26); driving 0.4 kg CO₂e/mile (EPA; water not quantified here); golf round ≈0.7 kg CO₂e
-        and ≈14,400 L irrigation (20.6 t and 431 ML per course-year ÷ ~30,000 rounds — Driving the Green/GCSAA, USGA);
-        soldier person-year ≈33,000 kg CO₂e (midpoint of 25–40 t, Crawford '19 / SGR-CEOBS '22; water not quantified
-        here). Benchmarks: bathtub 265 L; tank of gas 105 kg; car-year 4,600 kg; driving ≈0.25 kg/km. All values ≈.</p>
+      <summary>The factors behind this comparator (field terminology &amp; sources)</summary>
+      <p style="font-size:0.85rem;"><b>AI categories, per-unit energy — on-site→full-chain:</b> chat 0.24→1.2 Wh
+        (Google '25 median → Jegham '25 benchmark); reasoning 10→30 Wh (Jegham '25); image 1→3 Wh (Luccioni FAccT '24);
+        video 11.3 kWh/min both boundaries (MIT TR '25, measured); coding 130→1,000 Wh per active hour (Couch '26
+        measured → autonomous-harness outlier). Conversions: carbon 0.125→0.4 kg CO₂e/kWh (market-based portfolio →
+        US location-based grid, EPA eGRID); water 0.5→5 L/kWh (on-site WUE, SemiAnalysis '26 → incl.
+        electricity-embedded water, Macknick '12 / Ren '25); chat water uses published per-query constants (0.26 mL
+        Google → 45 mL Mistral full-LCA).<br><br>
+        <b>Non-AI categories, boundary-independent:</b> transatlantic round trip 2,900 kg CO₂e incl. RF×2 (atmosfair;
+        water not quantified here); hamburger ≈7 kg CO₂e (Poore &amp; Nemecek '18) and 927 L water (SemiAnalysis '26);
+        driving 0.4 kg CO₂e/mile (EPA; water not quantified); golf round ≈0.7 kg CO₂e and ≈14,400 L irrigation
+        (CarbonSave/GCSAA, USGA, ÷ ~30,000 rounds per course-year); soldier person-year ≈33,000 kg CO₂e (Crawford '19 /
+        SGR-CEOBS '22; water not quantified). <b>Bar scales (fixed):</b> carbon bar = one car-year (4,600 kg, EPA);
+        water bar = 100,000 L (≈ 108 burgers ≈ 377 bathtubs); bars overflowing their scale show a ×N multiplier
+        instead of growing. All values ≈.</p>
     </details>
   </div>
 
@@ -970,76 +938,86 @@
         onsite: { chatWh: 0.24, reasonWh: 10, imgWh: 1.0, videoWhMin: 11300, codeWhHr: 130, kg: 0.125, l: 0.5, chatMl: 0.26, label: "provider-measured / on-site" },
         fullchain: { chatWh: 1.2, reasonWh: 30, imgWh: 3.0, videoWhMin: 11300, codeWhHr: 1000, kg: 0.4, l: 5.0, chatMl: 45, label: "independent / full-chain" }
       };
-      // Non-AI rows: fixed kg CO2e and litres per unit (boundary-independent). waterNq = water not quantified here.
-      var FIXED = {
-        flight: { kg: 2900, l: 0, waterNq: true },
-        burger: { kg: 7, l: 927 },
-        drive: { kg: 0.4, l: 0, waterNq: true },
-        golf: { kg: 0.7, l: 14400 },
-        soldier: { kg: 33000, l: 0, waterNq: true }
+      var CATS = {
+        chat: { label: "AI chat queries", unit: "queries", eq: "AI chat queries", max: 100000, step: 100, def: 10000, ai: "chat" },
+        reason: { label: "AI reasoning queries", unit: "queries", eq: "AI reasoning queries", max: 50000, step: 50, def: 3650, ai: "reason" },
+        img: { label: "AI images", unit: "images", eq: "AI images", max: 500000, step: 500, def: 3650, ai: "img" },
+        video: { label: "AI video", unit: "minutes", eq: "minutes of AI video", max: 5000, step: 5, def: 60, ai: "video" },
+        code: { label: "AI agentic coding", unit: "hours", eq: "hours of AI agentic coding", max: 4000, step: 10, def: 730, ai: "code" },
+        flight: { label: "Transatlantic round trips", unit: "flights", eq: "transatlantic round trips", max: 20, step: 1, def: 3, kg: 2900, l: 0, nq: true },
+        burger: { label: "Hamburgers", unit: "burgers", eq: "hamburgers", max: 1000, step: 5, def: 52, kg: 7, l: 927 },
+        drive: { label: "Car driving", unit: "miles", eq: "miles of car driving", max: 40000, step: 100, def: 12000, kg: 0.4, l: 0, nq: true },
+        golf: { label: "Golf rounds", unit: "rounds", eq: "golf rounds", max: 300, step: 1, def: 20, kg: 0.7, l: 14400 },
+        soldier: { label: "Soldiers funded", unit: "person-years", eq: "soldier person-years", max: 10, step: 1, def: 1, kg: 33000, l: 0, nq: true }
       };
-      var AI = ["chat", "reason", "img", "video", "code"];
-      var ALL = AI.concat(["flight", "burger", "drive", "golf", "soldier"]);
+      var CARBON_SCALE = 4600;   // one car-year, kg CO2e
+      var WATER_SCALE = 100000;  // litres
       var mode = "onsite";
-      function val(id) { return +document.getElementById(id).value; }
-      function fmt(x) {
-        if (x >= 100) return Math.round(x).toLocaleString();
+      function el(id) { return document.getElementById(id); }
+      function perUnit(key) {
+        var c = CATS[key], f = F[mode];
+        if (!c.ai) return { kg: c.kg, l: c.l, nq: !!c.nq };
+        var wh = { chat: f.chatWh, reason: f.reasonWh, img: f.imgWh, video: f.videoWhMin, code: f.codeWhHr }[c.ai];
+        var l = (c.ai === "chat") ? f.chatMl / 1000 : (wh / 1000) * f.l;
+        return { kg: (wh / 1000) * f.kg, l: l, nq: false };
+      }
+      function fmtBig(x) {
+        if (x >= 1e9) return (x / 1e9).toFixed(1) + " billion";
+        if (x >= 1e6) return (x / 1e6).toFixed(1) + " million";
+        if (x >= 1000) return Math.round(x).toLocaleString();
+        if (x >= 100) return Math.round(x).toString();
         if (x >= 1) return x.toFixed(1);
         return x.toFixed(2);
       }
-      function aiEnergyKWh(k, f) {
-        var n = val("i-" + k);
-        if (k === "chat") return n * f.chatWh / 1000;
-        if (k === "reason") return n * f.reasonWh / 1000;
-        if (k === "img") return n * f.imgWh / 1000;
-        if (k === "video") return n * f.videoWhMin / 1000;
-        if (k === "code") return n * f.codeWhHr / 1000;
-        return 0;
+      function setBar(barId, scaleId, value, scale, colorWord) {
+        var pct = scale > 0 ? 100 * value / scale : 0;
+        el(barId).style.width = Math.min(pct, 100) > 0 ? Math.max(Math.min(pct, 100), 0.5) + "%" : "0%";
+        el(scaleId).textContent = pct > 100
+          ? "bar scale: " + colorWord + " — this is " + fmtBig(pct / 100) + "× the full bar"
+          : "bar scale: " + colorWord;
+      }
+      function equivList(kind, amount) {
+        var sel = el("c-cat").value, p = perUnit(sel);
+        var base = kind === "kg" ? amount * p.kg : amount * p.l;
+        var items = [];
+        Object.keys(CATS).forEach(function (k) {
+          if (k === sel) return;
+          var q = perUnit(k), per = kind === "kg" ? q.kg : q.l;
+          if (kind === "l" && (q.nq || per === 0)) return;
+          if (per <= 0) return;
+          items.push("<b>" + fmtBig(base / per) + "</b> " + CATS[k].eq);
+        });
+        return items.join(" &nbsp;·&nbsp; ");
       }
       function calc() {
-        ALL.forEach(function (k) {
-          document.getElementById("o-" + k).textContent = val("i-" + k).toLocaleString();
-        });
-        var f = F[mode];
-        var carbon = {}, water = {}, aiKWh = 0;
-        AI.forEach(function (k) {
-          var kWh = aiEnergyKWh(k, f);
-          aiKWh += kWh;
-          carbon[k] = kWh * f.kg;
-          water[k] = (k === "chat") ? val("i-chat") * f.chatMl / 1000 : kWh * f.l;
-        });
-        Object.keys(FIXED).forEach(function (k) {
-          carbon[k] = val("i-" + k) * FIXED[k].kg;
-          water[k] = val("i-" + k) * FIXED[k].l;
-        });
-        var totC = 0, totW = 0;
-        ALL.forEach(function (k) { totC += carbon[k]; totW += water[k]; });
-        ALL.forEach(function (k) {
-          var cs = totC > 0 ? 100 * carbon[k] / totC : 0;
-          var ws = totW > 0 ? 100 * water[k] / totW : 0;
-          document.getElementById("cbar-" + k).style.width = (cs > 0 ? Math.max(cs, 0.5) : 0) + "%";
-          document.getElementById("wbar-" + k).style.width = (ws > 0 ? Math.max(ws, 0.5) : 0) + "%";
-          var wtxt = (FIXED[k] && FIXED[k].waterNq)
-            ? "water: not quantified here"
-            : "water: " + fmt(water[k]) + " L — " + fmt(ws) + "%";
-          document.getElementById("share-" + k).textContent =
-            "carbon: " + fmt(carbon[k]) + " kg — " + fmt(cs) + "% of your total · " + wtxt;
-        });
-        var out = "<b>TOTAL Carbon &amp; Water impact:</b> <b>" + fmt(totC) + " kg CO₂e</b> and <b>" + fmt(totW)
-          + " L water</b> per year &nbsp;(AI rows under the <i>" + f.label + "</i> boundary; AI = "
-          + fmt(aiKWh) + " kWh = " + fmt(totC > 0 ? 100 * (aiKWh * f.kg) / totC : 0) + "% of your carbon).<br>"
-          + "Carbon context: ≈ " + fmt(totC / 105) + " tanks of gas · " + fmt(100 * totC / 2900)
-          + "% of one Paris⇄NYC round trip · " + fmt(100 * totC / 4600) + "% of a car-year.<br>"
-          + "Water context: ≈ " + fmt(totW / 927) + " burgers · " + fmt(totW / 265) + " bathtubs.<br>"
-          + "<span style='font-size:0.85rem;color:#888;'>AI equivalences at this boundary: 1 minute of AI video ≈ "
-          + Math.round(f.videoWhMin / f.imgWh).toLocaleString() + " images ≈ "
-          + Math.round(f.videoWhMin / f.chatWh).toLocaleString() + " chat queries ≈ "
-          + fmt(f.videoWhMin / f.codeWhHr) + " hours of agentic coding. Now flip the boundary — same you, different number. That gap is the discourse.</span>";
-        document.getElementById("calc-out").innerHTML = out;
+        var sel = el("c-cat").value, c = CATS[sel], n = +el("c-amt").value, p = perUnit(sel);
+        el("c-out").textContent = n.toLocaleString();
+        el("c-unit").textContent = c.unit + " / year";
+        var kg = n * p.kg, l = p.nq ? null : n * p.l;
+        el("c-ckg").textContent = "≈ " + fmtBig(kg) + " kg CO₂e / year";
+        el("c-wl").textContent = p.nq ? "not quantified for this category" : "≈ " + fmtBig(l) + " L / year";
+        setBar("c-cbar", "c-cscale", kg, CARBON_SCALE, "one car-year (4,600 kg CO₂e)");
+        if (p.nq) { el("c-wbar").style.width = "0%"; el("c-wscale").textContent = "bar scale: 100,000 L — no defensible water figure for this category"; }
+        else setBar("c-wbar", "c-wscale", l, WATER_SCALE, "100,000 L (≈ 108 burgers)");
+        var out = "<b>TOTAL Carbon &amp; Water impact:</b> <i>" + n.toLocaleString() + " "
+          + c.eq + " per year</i> ≈ <b>" + fmtBig(kg) + " kg CO₂e</b>"
+          + (p.nq ? "" : " and <b>" + fmtBig(l) + " L water</b>")
+          + " &nbsp;(AI factors: <i>" + F[mode].label + "</i> boundary).<br><br>"
+          + "<span style='color:#c00;font-weight:700;'>Same CARBON as:</span><br>"
+          + (kg > 0 ? equivList("kg", n) : "—") + "<br><br>"
+          + "<span style='color:#3B82F6;font-weight:700;'>Same WATER as:</span><br>"
+          + (p.nq ? "— (water not quantified for this category)" : (l > 0 ? equivList("l", n) : "—"))
+          + "<br><br><span style='font-size:0.85rem;color:#888;'>Carbon and water equivalences differ on purpose: the same activity can be a giant in one molecule and a rounding error in the other. AI equivalences move when you flip the boundary.</span>";
+        el("calc-out").innerHTML = out;
       }
-      document.getElementById("b-onsite").onclick = function () { mode = "onsite"; this.classList.add("active"); document.getElementById("b-full").classList.remove("active"); calc(); };
-      document.getElementById("b-full").onclick = function () { mode = "fullchain"; this.classList.add("active"); document.getElementById("b-onsite").classList.remove("active"); calc(); };
-      ALL.forEach(function (k) { document.getElementById("i-" + k).oninput = calc; });
+      el("c-cat").onchange = function () {
+        var c = CATS[this.value], s = el("c-amt");
+        s.min = 0; s.max = c.max; s.step = c.step; s.value = c.def;
+        calc();
+      };
+      el("b-onsite").onclick = function () { mode = "onsite"; this.classList.add("active"); el("b-full").classList.remove("active"); calc(); };
+      el("b-full").onclick = function () { mode = "fullchain"; this.classList.add("active"); el("b-onsite").classList.remove("active"); calc(); };
+      el("c-amt").oninput = calc;
       calc();
     })();
   </script>
@@ -2055,6 +2033,24 @@
       boundary disclaimer above.
     </p>
   </div>
+
+  <!-- PSA №6 placeholder — uncomment when img/psa-w8-golf-cloud.png is saved:
+  <figure style="margin:2rem 0;">
+    <img src="img/psa-w8-golf-cloud.png"
+      alt="PSA poster: a grid of thirty-one identical square tiles — thirty lush green golf-fairway tiles each with a tiny flag, and one grey tile holding a small data-centre warehouse — each tile representing the same annual water volume. Slogan: GOLF OUT-DRINKS THE CLOUD, THIRTY TO ONE."
+      class="header-image">
+    <figcaption class="chart-notes" style="font-style:normal;">
+      <p><b>PSA №6 — "Golf Out-Drinks the Cloud, Thirty to One."</b> US golf course irrigation: ~1.5 billion gallons
+        per day, ≈548 billion gallons/yr (<a
+          href="https://www.usga.org/content/dam/usga/pdf/Water%20Resource%20Center/how-much-water-does-golf-use.pdf">USGA</a>).
+        All US data centres' direct water consumption: 17.4 billion gallons/yr in 2023 (<a
+          href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf">LBNL
+          2024</a>) — a ratio of ~31:1. Caveats cut both ways: golf increasingly irrigates with recycled non-potable
+        water, and "direct" excludes the ~211 billion gallons embedded in data centres' electricity. Equal tiles, equal
+        water; the point is proportion, not absolution.</p>
+    </figcaption>
+  </figure>
+  -->
 
   <p><b>And yet.</b> The same year produced Bloomberg's finding that roughly <b>two-thirds of new US data centres built
       or planned since 2022 sit in regions of high water stress</b> — 26 in Arizona, 26 in Texas, 67 in Virginia — with
