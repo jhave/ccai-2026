@@ -985,7 +985,7 @@
         number in this comparator uses the highest independently calculated full-chain reading — the ceiling, not the
         typical value: chat 1.2 Wh and 45 mL per
         query (Jegham '25 benchmark; Mistral ADEME-audited full lifecycle); reasoning 30 Wh; image 3 Wh (Luccioni
-        FAccT '24); video 678 kWh/hour (MIT TR '25, measured at 0.94 kWh per 5-second clip); coding 1,000 Wh per
+        FAccT '24); video 678 kWh/hour (MIT TR '25, measured at 0.94 kWh per 5-second clip; an independent cost-based estimate of Sora-2 video, <a href="https://reclaimedsystems.substack.com/p/every-sora-ai-video-burns-1-kilowatt" target="_blank" rel="noopener">Alexander '26</a>, ~0.94 kWh and ~4 L per 10-second clip, is consistent with this); coding 1,000 Wh per
         active hour (autonomous-harness outlier, Couch '26); carbon 0.4 kg CO₂e/kWh (US location-based grid, EPA
         eGRID); water 5 L/kWh including electricity-embedded water (Macknick '12 / Ren '25). <b>Provider-measured
           on-site values are a small fraction of these</b> — chat 0.24 Wh and 0.26 mL (Google '25 median), coding 130
@@ -2158,7 +2158,7 @@ below.</p>
         for GPT-4o-class queries</p>
       <p>The decisive event of the year: a hyperscaler published a full measurement methodology — active accelerators,
         host CPU and DRAM, idle reserve machines, and data-centre overhead (PUE) all included — and reported a median
-        prompt 33× more energy-efficient and 44× lower-carbon than twelve months prior. Independent benchmarking (Jegham
+        prompt 33× more energy-efficient and 44× lower-carbon than twelve months prior — gains traceable to TPU generational efficiency (<a href="https://arxiv.org/abs/2606.15870" target="_blank" rel="noopener">Google, arXiv 2606.15870</a>). Independent benchmarking (Jegham
         et al.) lands within roughly 2–7× of the provider figure depending on prompt length, which for this literature
         constitutes remarkable convergence.</p>
       <p class="methodological-note">Note: median, not mean; market-based emissions accounting; on-site water only;
@@ -2280,7 +2280,10 @@ below.</p>
         Island/Crane for Microsoft; Kairos for Google; X-energy for Amazon), and ordering gas turbines at a 25-year high
         — 15–27 GW of on-site gas projected for US data centres by 2030. Google's absolute emissions are +51% over 2019
         even as its data-centre energy emissions fell 12% on 27% more electricity (genuine decoupling, overwhelmed by
-        growth); Microsoft's are +23.4% over 2020. Watch what they build, not what they tweet.</p>
+        growth); Microsoft's are +23.4% over 2020. And the disclosure floor is rising: on 10 June 2026 Amazon — historically the
+        largest blind spot — published its first absolute figure, <b>2.5 billion gallons (9.46 billion L) of data-centre
+        water withdrawn in 2025</b> at a best-in-class 0.12 L/kWh WUE, ~⅔ returned. Watch what they build, not what they
+        tweet.</p>
       <p class="methodological-note">Note: corporate "net-zero by 2030" pledges now coexist with rising absolute
         emissions at every hyperscaler. Additionality — new clean generation matched to new load, not certificates
         shuffled across a continent — is the test that matters.</p>
@@ -2288,7 +2291,9 @@ below.</p>
           href="https://sustainability.google/google-2025-environmental-report/" target="_blank">Google Environmental
           Report 2025</a> &amp; <a
           href="https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/"
-          target="_blank">Microsoft 2025 Sustainability Report</a></p>
+          target="_blank">Microsoft 2025 Sustainability Report</a> &amp; <a
+          href="https://www.aboutamazon.com/news/sustainability/amazon-data-center-water-usage" target="_blank" rel="noopener">AWS
+          Water Disclosure 2026</a> (<a href="https://www.datacenterdynamics.com/en/news/amazon-data-centers-used-25bn-gallons-of-water/" target="_blank" rel="noopener">DCD</a>)</p>
     </div>
 
     <div class="category-card">
@@ -2311,6 +2316,44 @@ below.</p>
   </div>
 
   </details>
+
+  <div class="divider">~</div>
+
+  <section>
+    <h3>Systemic Caveats: Where the Comparator Stops</h3>
+    <p>The per-user comparisons above are mathematically accurate for one person's daily habits — but reading AI's
+      footprint through "carbon" or "water" alone hides three systemic effects. The June 2026 United Nations University
+      report <a href="https://unu.edu/inweh/news/environmental-cost-of-AIs-Enrgy-use-carbon-water-and-land-footprints" target="_blank" rel="noopener"><i>Environmental
+        Cost of Artificial Intelligence</i></a> (UNU-INWEH) names them; each chevron opens the evidence.</p>
+
+    <details class="fold">
+      <summary>1. The e-waste tail &amp; environmental justice — benefits North, burdens South</summary>
+      <p>Operational metrics (watt-hours, litres) ignore the hardware lifecycle. AI accelerators turn over every 24–36
+        months, and the UNU report projects up to <b>2.5 million tonnes of AI e-waste per year by 2030</b> — consistent
+        with the 1.2–5.0 Mt peer-reviewed range (<a href="https://www.nature.com/articles/s43588-024-00712-6" target="_blank" rel="noopener">Wang
+        et al., <i>Nature Computational Science</i></a>). The decoupling is geographic: the model's value is consumed in
+        the Global North while e-waste processing and rare-earth extraction concentrate in the Global South — the same
+        burden-shifting visible at the fence line in Memphis, scaled to the planet.</p>
+    </details>
+
+    <details class="fold">
+      <summary>2. The displacement paradox — a greener grid can be a thirstier one</summary>
+      <p>Carbon and water do not fall in tandem. When an operator cuts its <b>carbon</b> footprint by shifting load to
+        zero-carbon baseload — nuclear, or concentrated solar-thermal — the <b>water</b> footprint often rises, because
+        those generation cycles are heavily evaporative. A prompt routed to a "perfectly green" grid can simultaneously
+        deepen a local watershed deficit. The UNU report frames this as the core tension of single-metric optimization;
+        it is also why §water above insists the real issue is <i>siting</i>, not the prompt.</p>
+    </details>
+
+    <details class="fold">
+      <summary>3. The baseline illusion — the comparator is a snapshot, not a verdict</summary>
+      <p>Every equivalence here assumes today's baselines. "A year of chatting ≈ one burger" rests on the current
+        resource intensity of industrial agriculture; if food systems decarbonize and de-water over the next decade, the
+        comparative "cheapness" of digital consumption shifts with them. The comparator is a tool for <i>contemporary</i>
+        spatial context — orienting one person's choices today — not an endorsement of the buildout's long-run
+        sustainability. The aggregate curve, not the per-prompt ratio, is what the next decade turns on.</p>
+    </details>
+  </section>
 
   <div class="divider">To the friend who questions your daily AI use:<br>a year of your prompting costs the
     atmosphere<br>less than one tank of gasoline,<br>and the watershed less than one hamburger.</div>
@@ -2415,6 +2458,17 @@ below.</p>
 
   <h3>References</h3>
 
+  <p class="reference-item">Alexander, Alistair / Reclaimed Systems. 2026. "Every Sora AI Video Burns 1 Kilowatt
+    Hour and Emits 466 Grams of Carbon. And for What, Exactly?" <a
+      href="https://reclaimedsystems.substack.com/p/every-sora-ai-video-burns-1-kilowatt" target="_blank" rel="noopener">reclaimedsystems.substack.com</a>.
+    (Independent cost-based estimate: ~0.94 kWh, ~4 L, ~466 g CO₂ per 10-second Sora-2 clip.)</p>
+
+  <p class="reference-item">Amazon Web Services. 2026. "Amazon Data Center Water Usage." June 10, 2026. <a
+      href="https://www.aboutamazon.com/news/sustainability/amazon-data-center-water-usage" target="_blank" rel="noopener">aboutamazon.com</a>.
+    (First absolute disclosure: 2.5 billion gal / 9.46 billion L withdrawn 2025; WUE 0.12 L/kWh; ~⅔ returned. Reported by
+    <a href="https://www.datacenterdynamics.com/en/news/amazon-data-centers-used-25bn-gallons-of-water/" target="_blank" rel="noopener">Data Center
+    Dynamics</a> and <a href="https://www.latitudemedia.com/news/amazon-finally-reports-its-annual-water-use-at-data-centers/" target="_blank" rel="noopener">Latitude Media</a>.)</p>
+
   <p class="reference-item">Altman, Sam. 2025. "The Gentle Singularity." Personal blog, June 2025. <a
       href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener">https://blog.samaltman.com/the-gentle-singularity</a>.
     (0.34 Wh and 0.000085 gal per average ChatGPT query; no methodology provided. Reported with caveats by <a
@@ -2491,6 +2545,11 @@ below.</p>
       href="https://arxiv.org/abs/2412.06288" target="_blank" rel="noopener">https://arxiv.org/abs/2412.06288</a>. (US data-centre public-health burden
     &gt;$20 B/yr by 2028; per-household costs up to 200× higher in the most-affected, disproportionately disadvantaged
     counties.)</p>
+
+  <p class="reference-item">Google. 2026. "Google's Training Supercomputers from TPU v2 to Ironwood: Architectural
+    Stability, Scale, Resilience, Power Efficiency, and Sustainability Across Five Generations." arXiv:2606.15870. <a
+      href="https://arxiv.org/abs/2606.15870" target="_blank" rel="noopener">arxiv.org/abs/2606.15870</a>. (Performance-per-watt and
+    carbon-per-FLOP gains across five TPU generations — the hardware basis of the per-prompt efficiency curve.)</p>
 
   <p class="reference-item">International Energy Agency. 2025. <i>Energy and AI</i> (World Energy Outlook Special
     Report). April 2025. <a
@@ -2621,6 +2680,11 @@ below.</p>
     Management of Two Swedish Golf Courses." <i>Urban Forestry &amp; Urban Greening</i>. <a
       href="https://www.sciencedirect.com/science/article/pii/S1618866716302692" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/pii/S1618866716302692</a>.
   </p>
+
+  <p class="reference-item">United Nations University (UNU-INWEH). 2026. <i>Environmental Cost of Artificial
+    Intelligence: Carbon, Water and Land Footprints</i>. June 2026. <a
+      href="https://unu.edu/inweh/news/environmental-cost-of-AIs-Enrgy-use-carbon-water-and-land-footprints" target="_blank" rel="noopener">unu.edu/inweh</a>.
+    (Projects ~945 TWh and ~399 Mt CO₂ by 2030 and up to 2.5 Mt AI e-waste/yr; environmental-justice framing.)</p>
 
   <p class="reference-item">US Department of Defense. 2023. <i>Plan to Reduce Greenhouse Gas Emissions</i>. <a
       href="https://media.defense.gov/2023/Jun/16/2003243454/-1/-1/1/2023-DOD-PLAN-TO-REDUCE-GREENHOUSE-GAS-EMISSIONS.PDF" target="_blank" rel="noopener">https://media.defense.gov</a>.
